@@ -56,5 +56,7 @@
 </script>
 
 <style scoped>
-
+    .v-btn {
+        height: 100% !important;
+    }
 </style>
