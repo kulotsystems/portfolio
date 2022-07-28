@@ -56,7 +56,7 @@ export default {
          *                     examples: 4.5, 5
          *                     this is REQUIRED (you know what to do)
          *
-         *         content   - the actual review
+         *        content    - the actual review
          *                     examples: (come on, examples? really?)
          *                     this is REQUIRED (please be brutally honest)
          *
