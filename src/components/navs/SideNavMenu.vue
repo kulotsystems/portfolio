@@ -2,20 +2,20 @@
     <v-list rounded>
         <v-list-item-group
             color="primary"
-            active-class="info white--text"
+            active-class="primary white--text"
             :value="activeMenuItem.index"
         >
             <v-list-item
                 v-for="menuItem in menuItems"
                 :key="menuItem.name"
                 @click="menuClick(menuItem.name)"
-                :class="{ 'info': menuItem.name === activeMenuItem.item.name }"
+                :class="{ 'primary': menuItem.name === activeMenuItem.item.name }"
             >
                 <v-list-item-icon>
-                    <v-icon :color="menuItem.name === activeMenuItem.item.name ? 'white' : 'info'">{{ menuItem.icon }}</v-icon>
+                    <v-icon :color="menuItem.name === activeMenuItem.item.name ? 'white' : 'primary'">{{ menuItem.icon }}</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
-                    <v-list-item-title :class="{ 'white--text': menuItem.name === activeMenuItem.item.name, 'info--text': menuItem.name !== activeMenuItem.item.name}">{{ menuItem.text }}</v-list-item-title>
+                    <v-list-item-title :class="{ 'white--text': menuItem.name === activeMenuItem.item.name, 'primary--text': menuItem.name !== activeMenuItem.item.name}">{{ menuItem.text }}</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
         </v-list-item-group>

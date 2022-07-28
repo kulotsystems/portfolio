@@ -61,7 +61,7 @@
                 <p class="text-body-1 text-sm-h6 text-md-h5 text-justify mb-5">
                     I built this application using
                     <template v-for="(tech, index) in project.techStack">
-                        <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="info--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
+                        <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
                     </template>.
                 </p>
             </v-col>

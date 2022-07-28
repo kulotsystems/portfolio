@@ -4,7 +4,7 @@
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             :text="menuItem.name !== activeMenuItem"
-            :class="{ 'info--text': menuItem.name === activeMenuItem }"
+            :class="{ 'primary--text': menuItem.name === activeMenuItem }"
             :large="$vuetify.breakpoint.mdAndUp"
             color="white"
             elevation="0"
