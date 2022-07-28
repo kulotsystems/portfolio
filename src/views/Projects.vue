@@ -49,7 +49,7 @@
 
             <!-- project intro -->
             <v-col cols="12" sm="6" md="5">
-                <p class="text-body-1 text-sm-h6 text-md-h5 text-justify mb-5">
+                <p class="text-body-1 text-sm-h6 text-md-h5 mb-5">
                     <b>{{ project.title }}</b> is
                     <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
                         an {{ project.desc.substr(3) }}
@@ -58,7 +58,7 @@
                         a {{ project.desc.substr(2) }}
                     </template>
                 </p>
-                <p class="text-body-1 text-sm-h6 text-md-h5 text-justify mb-5">
+                <p class="text-body-1 text-sm-h6 text-md-h5 mb-5">
                     I built this application using
                     <template v-for="(tech, index) in project.techStack">
                         <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
