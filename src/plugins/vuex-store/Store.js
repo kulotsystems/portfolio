@@ -16,7 +16,8 @@ Vue.use(Vuex);
 import dialog       from './modules/store-dialog.js';
 import projects     from './modules/store-projects.js';
 import navigation   from './modules/store-navigation.js';
-import technologies from './modules/store-technologies.js'
+import technologies from './modules/store-technologies.js';
+import reviews      from './modules/store-reviews.js';
 
 
 export default new Vuex.Store({
@@ -57,7 +58,8 @@ export default new Vuex.Store({
         dialog,
         projects,
         navigation,
-        technologies
+        technologies,
+        reviews
     }
 
 });
