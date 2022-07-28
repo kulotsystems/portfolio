@@ -11,7 +11,7 @@
                 v-for="menuItem in menuItems"
                 :key="menuItem.name"
                 @click="menuClick(menuItem.name)"
-                :class="{ 'info white--text': menuItem.name === activeMenuItem.name, 'info--text': menuItem.name !== activeMenuItem.name}"
+                :class="{ 'primary white--text': menuItem.name === activeMenuItem.name, 'primary--text': menuItem.name !== activeMenuItem.name}"
             >
                 <v-list-item-title>
                     <span class="text-button">{{ menuItem.text }}</span>

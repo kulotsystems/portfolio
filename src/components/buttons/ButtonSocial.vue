@@ -21,7 +21,7 @@
             },
             color: {
                 type   : String,
-                default: 'info'
+                default: 'primary'
             },
             small: {
                 type   : Boolean,

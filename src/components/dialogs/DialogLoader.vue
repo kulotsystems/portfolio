@@ -3,7 +3,7 @@
         <v-progress-circular
             :size="70"
             :width="7"
-            color="info"
+            color="primary"
             indeterminate
         />
     </v-dialog>

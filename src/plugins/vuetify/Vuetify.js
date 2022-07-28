@@ -80,10 +80,10 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
-                primary  : '#363062',
+                primary  : '#4169e1',
                 secondary: '#ac4cbc',
                 success  : '#68cf29',
-                info     : '#3a82ef',
+                info     : '#363062',
                 warning  : '#ffab2d',
                 error    : '#f72b50',
                 light    : '#c8c8c8',

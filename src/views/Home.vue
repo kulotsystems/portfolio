@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <div class="info--text text--lighten-2">
+        <div class="primary--text text--lighten-2">
             <h1>HOME PAGE</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet doloremque facere fugit in, iste magnam maiores molestiae nam natus necessitatibus neque nostrum obcaecati quod recusandae tempora totam velit veniam!</p>
         </div>

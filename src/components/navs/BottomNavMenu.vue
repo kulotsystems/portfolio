@@ -1,11 +1,11 @@
 <template>
-    <v-bottom-navigation app grow :value="activeMenuItem.index" active-class="info white--text" :height="48">
+    <v-bottom-navigation app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48">
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             @click="menuClick(menuItem.name)"
         >
-            <span :class="{ 'info--text': menuItem.name !== activeMenuItem.item.name }">{{ menuItem.text }}</span>
+            <span :class="{ 'primary--text': menuItem.name !== activeMenuItem.item.name }">{{ menuItem.text }}</span>
             <v-icon>{{ menuItem.icon }}</v-icon>
         </v-btn>
     </v-bottom-navigation>

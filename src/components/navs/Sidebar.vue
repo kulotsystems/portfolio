@@ -7,7 +7,7 @@
             floating
             overlay-opacity="0.1"
         >
-            <v-app-bar color="info" class="white--text" flat :dense="$vuetify.breakpoint.smAndDown">
+            <v-app-bar color="primary" class="white--text" flat :dense="$vuetify.breakpoint.smAndDown">
                 <v-app-bar-title>
                     {{ $store.getters.appName }}
                 </v-app-bar-title>

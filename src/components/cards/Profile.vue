@@ -12,8 +12,8 @@
             </v-avatar>
 
             <div class="mt-4">
-                <p class="text-h4 info--text text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.profile.name }}</small></p>
-                <p class="text-body-1 info--text text--darken-1 mb-0">{{ $store.getters.profile.title }}</p>
+                <p class="text-h4 primary--text text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.profile.name }}</small></p>
+                <p class="text-body-1 primary--text text--darken-1 mb-0">{{ $store.getters.profile.title }}</p>
             </div>
         </v-card-text>
         <v-card-actions class="justify-center">

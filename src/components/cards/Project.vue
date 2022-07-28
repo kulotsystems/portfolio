@@ -26,7 +26,7 @@
             <v-spacer/>
             <v-btn
                 text
-                color="info"
+                color="primary"
                 exact
                 router
                 :to="{ name: 'projects', params: { slug: this.project.slug } }"
