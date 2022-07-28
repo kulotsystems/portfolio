@@ -14,7 +14,7 @@ Download and install the following tools:
 2. A **code editor** such as
    [VS Code](https://code.visualstudio.com),
    [Sublime Text](https://www.sublimetext.com),
-   [Webstorm](https://www.jetbrains.com/webstorm) or
+   [WebStorm](https://www.jetbrains.com/webstorm) or
    [Notepad++](https://notepad-plus-plus.org/downloads).
 
 ### Installation
