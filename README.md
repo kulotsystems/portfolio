@@ -42,7 +42,7 @@ Download and install the following tools:
 
 ## Contribute
 
-#### Write a Review about Me
+#### Write a Review About Me
 If you've met me, and you want to be part of this application,
 please write something about me by following these steps:
 1. [**Fork**](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository.
