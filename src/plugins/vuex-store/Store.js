@@ -18,6 +18,7 @@ import projects     from './modules/store-projects.js';
 import navigation   from './modules/store-navigation.js';
 import technologies from './modules/store-technologies.js';
 import reviews      from './modules/store-reviews.js';
+import pullRequests from './modules/store-pull-requests.js';
 
 
 export default new Vuex.Store({
@@ -59,7 +60,8 @@ export default new Vuex.Store({
         projects,
         navigation,
         technologies,
-        reviews
+        reviews,
+        pullRequests
     }
 
 });
