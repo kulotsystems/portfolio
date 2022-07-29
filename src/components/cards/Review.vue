@@ -1,24 +1,28 @@
 <template>
     <v-card align="center" height="100%" class="primary lighten-5">
         <v-card-text>
-            <div class="mb-5">
+            <div class="mb-6">
                 <v-avatar size="120">
-                    <v-img :src="avatar"/>
+                    <v-img v-if="avatar" :src="avatar">
+                        <template v-slot:placeholder>
+                            <v-skeleton-loader type="card-avatar"/>
+                        </template>
+                    </v-img>
+                    <v-img v-else class="primary lighten-3"/>
                 </v-avatar>
             </div>
+            <v-rating :value="review.review.rating" class="mb-4" readonly dense style="opacity: 0.8" half-increments/>
             <p class="review text-body-1 primary--text text--darken-2">
                 {{ review.review.content }}
             </p>
         </v-card-text>
-        <v-card-subtitle class="pt-0 primary--text">
+        <div class="primary--text py-4 review-footer">
             <p class="text-body-1 font-weight-bold mb-0">{{ fullName }}</p>
-            <p class="mb-0">{{ role }}</p>
-        </v-card-subtitle>
-        <v-card-actions class="justify-center pt-0">
+            <p>{{ role }}</p>
             <button-social v-if="review.socials.facebook !== ''" :url="review.socials.facebook" class="mx-1" small text outlined>$facebook</button-social>
             <button-social v-if="review.socials.twitter !== ''"  :url="review.socials.twitter" class="mx-1"  small text outlined>$twitter</button-social>
             <button-social v-if="review.socials.github   !== ''" :url="review.socials.github"   class="mx-1" small text outlined>$github</button-social>
-        </v-card-actions>
+        </div>
     </v-card>
 </template>
 
@@ -49,7 +53,7 @@
                 let fullName = '';
                 if(personal.title !== '')
                     fullName += personal.title + ' ';
-                fullName += personal.firstName + ' ';
+                fullName += (personal.firstName === '' ? 'Poop' : personal.firstName) + ' '; // told ya
                 if(personal.middleName !== '')
                     fullName += personal.middleName.substr(0, 1) + '. ';
                 fullName += personal.lastName;
@@ -67,15 +71,22 @@
                 return roles.join(', ');
             }
         },
-        methods : {},
-        created() {
-            console.log(this.review);
-        }
+        methods: {}
     }
 </script>
 
 <style scoped>
+    .v-card__text {
+        margin-bottom: 120px !important;
+    }
+
     .review {
         line-height: 27px;
+    }
+
+    .review-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
     }
 </style>
