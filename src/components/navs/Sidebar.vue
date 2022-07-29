@@ -13,7 +13,7 @@
                 </v-app-bar-title>
             </v-app-bar>
             <profile/>
-            <template v-slot:append v-if="$vuetify.breakpoint.smAndUp">
+            <template v-slot:append v-if="$vuetify.breakpoint.smAndUp && windowHeight >= 640">
                 <side-nav-menu class="mb-5"/>
             </template>
         </v-navigation-drawer>
@@ -29,11 +29,24 @@
         },
         data() {
             return {
-
+                // https://stackoverflow.com/questions/54166847/how-to-access-the-window-object-in-vue-js
+                windowHeight: window.innerHeight
             }
         },
         computed: {},
-        methods: {}
+        methods : {
+            onResize() {
+                this.windowHeight = window.innerHeight
+            }
+        },
+        mounted() {
+            this.$nextTick(() => {
+                window.addEventListener('resize', this.onResize);
+            });
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.onResize);
+        }
     }
 </script>
 
