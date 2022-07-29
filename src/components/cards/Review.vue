@@ -20,7 +20,7 @@
             <p class="text-body-1 font-weight-bold mb-0">{{ fullName }}</p>
             <p>{{ role }}</p>
             <button-social v-if="review.socials.facebook !== ''" :url="review.socials.facebook" class="mx-1" small text outlined>$facebook</button-social>
-            <button-social v-if="review.socials.twitter !== ''"  :url="review.socials.twitter" class="mx-1"  small text outlined>$twitter</button-social>
+            <button-social v-if="review.socials.twitter  !== ''" :url="review.socials.twitter" class="mx-1"  small text outlined>$twitter</button-social>
             <button-social v-if="review.socials.github   !== ''" :url="review.socials.github"   class="mx-1" small text outlined>$github</button-social>
         </div>
     </v-card>
