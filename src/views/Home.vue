@@ -1,10 +1,8 @@
 <template>
-    <v-container>
-        <div class="primary--text text--lighten-2">
-            <h1>HOME PAGE</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet doloremque facere fugit in, iste magnam maiores molestiae nam natus necessitatibus neque nostrum obcaecati quod recusandae tempora totam velit veniam!</p>
-        </div>
-    </v-container>
+    <div class="dark--text text--lighten-2 pa-3 pb-0">
+        <h1>HOME</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quia repellendus sint suscipit voluptatum? Dolor, dolorum ducimus facere modi nemo omnis ratione sed voluptatem? Aliquam delectus ex illum pariatur sequi?</p>
+    </div>
 </template>
 
 <script>

@@ -3,7 +3,9 @@
         <topbar/>
         <sidebar/>
         <v-main class="grey lighten-3">
-            <router-view/>
+            <v-container>
+                <router-view/>
+            </v-container>
         </v-main>
         <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>
         <dialogs/>
