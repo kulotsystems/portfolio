@@ -10,7 +10,8 @@ export default {
 
     state: {
         reviews: {
-            michael: 'https://github.com/kulotsystems/portfolio/pull/7',
+            michael  : 'https://github.com/kulotsystems/portfolio/pull/7',
+            florencio: 'https://github.com/kulotsystems/portfolio/pull/11',
         }
     },
 
