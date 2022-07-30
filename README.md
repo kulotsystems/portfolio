@@ -2,6 +2,39 @@
 Portfolio of kulotsystems.
 
 
+## Contribute
+
+#### Write a Review About Me
+If you've met me, and you want to be part of this application,
+please write something about me by following these steps:
+1. [**Fork**](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository.
+2. Duplicate [src/plugins/vuex-store/modules/reviews/yourfirstname.js](src/plugins/vuex-store/modules/reviews/yourfirstname.js)
+   into your own `JavaScript` file in the same folder.
+
+   Example: `john.js`
+
+3. Import and add your file as a module inside
+   [src/plugins/vuex-store/modules/store-reviews.js](src/plugins/vuex-store/modules/store-reviews.js).
+
+    ```javascript
+   // EXAMPLE
+   import john from './reviews/john.js';
+   ```
+   
+    ```javascript
+        modules: {
+            person1,
+            person2,
+            john
+        }
+    ```
+
+4. Edit your file, commit your changes, then submit a [**pull request**](https://docs.github.com/en/pull-requests) to this repository.
+
+Stay awesome!
+
+
+
 ## Project Setup
 
 ### Requirements
@@ -39,37 +72,6 @@ Download and install the following tools:
     npm run build
     ```
 
-
-## Contribute
-
-#### Write a Review About Me
-If you've met me, and you want to be part of this application,
-please write something about me by following these steps:
-1. [**Fork**](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository.
-2. Duplicate [src/plugins/vuex-store/modules/reviews/yourfirstname.js](src/plugins/vuex-store/modules/reviews/yourfirstname.js)
-   into your own `JavaScript` file in the same folder.
-
-   Example: `john.js`
-
-3. Import and add your file as a module inside
-   [src/plugins/vuex-store/modules/store-reviews.js](src/plugins/vuex-store/modules/store-reviews.js).
-
-    ```javascript
-   // EXAMPLE
-   import john from './reviews/john.js';
-   ```
-   
-    ```javascript
-        modules: {
-            person1,
-            person2,
-            john
-        }
-    ```
-
-4. Edit your file, commit your changes, then submit a [**pull request**](https://docs.github.com/en/pull-requests) to this repository.
-
-Stay awesome!
 
 
 ## Preview
