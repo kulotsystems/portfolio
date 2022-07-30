@@ -8,7 +8,7 @@
                 <h2>Reviews</h2>
             </v-col>
 
-            <v-col v-for="(review, module) in reviews" :key="module" cols="12" sm="6" lg="4">
+            <v-col v-for="(review, module) in reviews" :key="module" cols="12" md="6">
                 <review :review="{ module: module, ...review }"/>
             </v-col>
         </v-row>
