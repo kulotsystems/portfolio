@@ -2,7 +2,7 @@
     <v-app>
         <topbar/>
         <sidebar/>
-        <v-main class="grey lighten-3">
+        <v-main>
             <v-container>
                 <router-view/>
             </v-container>
@@ -35,6 +35,8 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+    .v-card--hover {
+        cursor: text !important;
+    }
 </style>
