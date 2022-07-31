@@ -1,5 +1,5 @@
 <template>
-    <v-card align="center" height="100%" class="primary lighten-5 border--primary" hover>
+    <v-card align="center" height="100%" class="grey lighten-5" hover>
         <v-toolbar class="transparent" flat dense>
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
@@ -48,7 +48,7 @@
                 </v-avatar>
             </div>
             <v-rating :value="review.review.rating" class="mb-4" readonly dense style="opacity: 0.8" half-increments/>
-            <p class="review primary--text text--darken-2" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
+            <p class="review primary--text text--darken-1" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
                 {{ review.review.content }}
             </p>
         </v-card-text>
@@ -129,7 +129,7 @@
     }
 
     .review.text-h6 {
-        line-height: 35px;
+        line-height: 33px;
     }
 
     .review-footer {
