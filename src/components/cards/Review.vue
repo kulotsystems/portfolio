@@ -1,10 +1,10 @@
 <template>
-    <v-card align="center" height="100%" class="grey lighten-5" hover>
-        <v-toolbar class="transparent" flat dense>
+    <v-card align="center" height="100%" class="primary lighten-4" tile hover>
+        <v-toolbar class="transparent pt-2 pr-2" flat dense>
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
                 <template v-slot:activator="{ on, attrs }">
-                    <v-btn icon v-bind="attrs" v-on="on">
+                    <v-btn icon v-bind="attrs" v-on="on" color="primary">
                         <v-icon>more_vert</v-icon>
                     </v-btn>
                 </template>
@@ -37,25 +37,29 @@
             </v-menu>
         </v-toolbar>
         <v-card-text class="pt-0">
-            <div class="mb-6">
-                <v-avatar size="120">
-                    <v-img v-if="avatar" :src="avatar">
-                        <template v-slot:placeholder>
-                            <v-skeleton-loader type="card-avatar"/>
-                        </template>
-                    </v-img>
-                    <v-img v-else class="primary lighten-3"/>
-                </v-avatar>
-            </div>
-            <v-rating :value="review.review.rating" class="mb-4" readonly dense style="opacity: 0.8" half-increments/>
-            <p class="review primary--text text--darken-1" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
-                {{ review.review.content }}
-            </p>
+            <v-row justify="center">
+                <v-col cols="12" sm="9" md="8" lg="7">
+                    <div class="mb-4">
+                        <v-avatar size="120">
+                            <v-img v-if="avatar" :src="avatar">
+                                <template v-slot:placeholder>
+                                    <v-skeleton-loader type="card-avatar"/>
+                                </template>
+                            </v-img>
+                            <v-img v-else class="primary lighten-3"/>
+                        </v-avatar>
+                    </div>
+                    <v-rating :value="review.review.rating" class="mb-1" readonly dense style="opacity: 0.8" half-increments/>
+                    <div class="primary--text mb-6">
+                        <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
+                        <p><small>{{ role }}</small></p>
+                    </div>
+                    <p class="review primary--text text--darken-1 pb-4" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
+                        {{ review.review.content }}
+                    </p>
+                </v-col>
+            </v-row>
         </v-card-text>
-        <div class="primary--text pt-4 review-footer">
-            <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
-            <p><small>{{ role }}</small></p>
-        </div>
     </v-card>
 </template>
 
@@ -120,22 +124,12 @@
 </script>
 
 <style scoped>
-    .v-card__text {
-        margin-bottom: 60px !important;
-    }
-
     .review.text-body-1 {
         line-height: 28px;
     }
 
     .review.text-h6 {
         line-height: 33px;
-    }
-
-    .review-footer {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
     }
 
     .v-list-item .v-btn {
