@@ -1,5 +1,5 @@
 <template>
-    <v-card align="center" height="100%" class="primary lighten-5">
+    <v-card align="center" height="100%" class="primary lighten-5 border--primary" hover>
         <v-toolbar class="transparent" flat dense>
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
@@ -48,13 +48,13 @@
                 </v-avatar>
             </div>
             <v-rating :value="review.review.rating" class="mb-4" readonly dense style="opacity: 0.8" half-increments/>
-            <p class="review text-body-1 primary--text text--darken-2">
+            <p class="review primary--text text--darken-2" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
                 {{ review.review.content }}
             </p>
         </v-card-text>
         <div class="primary--text pt-4 review-footer">
-            <p class="text-body-1 font-weight-bold mb-0">{{ fullName }}</p>
-            <p>{{ role }}</p>
+            <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
+            <p><small>{{ role }}</small></p>
         </div>
     </v-card>
 </template>
@@ -124,8 +124,12 @@
         margin-bottom: 60px !important;
     }
 
-    .review {
-        line-height: 27px;
+    .review.text-body-1 {
+        line-height: 28px;
+    }
+
+    .review.text-h6 {
+        line-height: 35px;
     }
 
     .review-footer {
