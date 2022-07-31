@@ -49,8 +49,8 @@
                             <v-img v-else class="primary lighten-3"/>
                         </v-avatar>
                     </div>
-                    <v-rating :value="review.review.rating" class="mb-1" readonly dense style="opacity: 0.8" half-increments/>
-                    <div class="primary--text mb-6">
+                    <v-rating :value="review.review.rating" class="mb-1" readonly dense style="opacity: 0.7" half-increments/>
+                    <div class="primary--text text--lighten-1 mb-6">
                         <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
                         <p>{{ role }}</p>
                     </div>
