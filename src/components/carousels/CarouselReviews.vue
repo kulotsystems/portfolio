@@ -47,7 +47,7 @@
                     height = 580;
                 else if(this.$vuetify.breakpoint.md)
                     height = 670;
-                else if(this.$vuetify.breakpoint.lg)
+                else if(this.$vuetify.breakpoint.lgAndUp)
                     height = 570;
                 return height;
             }
