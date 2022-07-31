@@ -1,10 +1,10 @@
 <template>
-    <v-card align="center" height="100%" class="primary lighten-4" tile hover>
+    <v-card align="center" height="100%" class="primary lighten-5" tile flat>
         <v-toolbar class="transparent pt-2 pr-2" flat dense>
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
                 <template v-slot:activator="{ on, attrs }">
-                    <v-btn icon v-bind="attrs" v-on="on" color="primary">
+                    <v-btn icon v-bind="attrs" v-on="on">
                         <v-icon>more_vert</v-icon>
                     </v-btn>
                 </template>
@@ -52,7 +52,7 @@
                     <v-rating :value="review.review.rating" class="mb-1" readonly dense style="opacity: 0.8" half-increments/>
                     <div class="primary--text mb-6">
                         <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
-                        <p><small>{{ role }}</small></p>
+                        <p>{{ role }}</p>
                     </div>
                     <p class="review primary--text text--darken-1 pb-4" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
                         {{ review.review.content }}
