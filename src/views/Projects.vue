@@ -17,7 +17,7 @@
         <v-row v-else class="pt-sm-1 pt-md-2 pt-lg-3">
             <!-- project cover -->
             <v-col cols="12" sm="6" md="7">
-                <v-card>
+                <v-card elevation="4">
                     <v-app-bar flat color="white">
                         <v-btn icon class="mr-1" @click="$router.back()">
                             <v-icon>arrow_back</v-icon>
