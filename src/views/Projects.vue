@@ -3,7 +3,7 @@
         <!-- all projects -->
         <v-row v-if="!project">
             <v-col cols="12">
-                <div class="dark--text text--lighten-2 pa-3 pb-0">
+                <div class="dark--text text--lighten-2 pb-0">
                     <h1>PROJECTS</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet doloremque facere fugit in, iste magnam maiores molestiae nam natus necessitatibus neque nostrum obcaecati quod recusandae tempora totam velit veniam!</p>
                 </div>
