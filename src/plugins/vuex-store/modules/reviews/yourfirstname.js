@@ -47,7 +47,7 @@ export default {
         /**
          * Next, please fill in the 'review' object below with your review on me.
          * Guide:
-         *        as         - you're reviewing me as what?
+         *        as         - you're reviewing me as my _____?
          *                     examples: 'friend', 'student', 'mentee', 'client', 'co-worker', 'boss'
          *                     this is an ARRAY, so you can assign one or more values
          *                     this is also REQUIRED (or I will tell Dr. Strange to delete you in my memory)
