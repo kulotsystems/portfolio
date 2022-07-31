@@ -42,13 +42,13 @@
             height() {
                 let height = 0;
                 if(this.$vuetify.breakpoint.xs)
-                    height = 630;
+                    height = 640;
                 else if(this.$vuetify.breakpoint.sm)
-                    height = 570;
+                    height = 580;
                 else if(this.$vuetify.breakpoint.md)
-                    height = 660;
+                    height = 670;
                 else if(this.$vuetify.breakpoint.lg)
-                    height = 560;
+                    height = 570;
                 return height;
             }
         },
@@ -58,6 +58,24 @@
 
 <style>
     .v-carousel .theme--light.v-btn.v-btn--icon {
-        color: #6482fe !important;
+        color: #6482fe;
+    }
+
+    .v-carousel__controls {
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .v-carousel__controls__item {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .v-carousel__controls__item:first-child {
+        margin-left: 0;
+    }
+
+    .v-carousel__controls__item:last-child {
+        margin-right: 0;
     }
 </style>
