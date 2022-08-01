@@ -1,6 +1,6 @@
 <template>
     <v-card align="center" height="100%" tile flat>
-        <v-toolbar class="transparent pt-2 pr-2" flat dense>
+        <v-toolbar class="transparent" flat dense>
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
                 <template v-slot:activator="{ on, attrs }">
