@@ -43,13 +43,13 @@
             height() {
                 let height = 0;
                 if(this.$vuetify.breakpoint.xs)
-                    height = 620;
+                    height = 660;
                 else if(this.$vuetify.breakpoint.sm)
-                    height = 520;
+                    height = 550;
                 else if(this.$vuetify.breakpoint.md)
-                    height = 980;
+                    height = 1020;
                 else if(this.$vuetify.breakpoint.lgAndUp)
-                    height = 690;
+                    height = 790;
                 return height;
             }
         },
