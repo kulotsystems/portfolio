@@ -66,8 +66,7 @@ export default {
         review: {
             as     : ['mentee', ''],
             rating : 5,
-            content: 'That's Awesome! From my perspective, his project are amazing for a web developer. I was lucky to have a great  mentor and friend during my capstone project in college, and as a mentee, I'm grateful for that. I learned a lot from him on how to enhance my knowledge of other relevant development platforms or how to improve my web abilities.
-Everything I've learned from him would be something I genuinely embrace and appreciate.'
+            content: 'That is Awesome! From my perspective, his project are amazing for a web developer. I was lucky to have a great  mentor and friend during my capstone project in college, and as a mentee, I am grateful for that. I learned a lot from him on how to enhance my knowledge of other relevant development platforms or how to improve my web abilities. Everything I have learned from him would be something I genuinely embrace and appreciate.'
         },
         // ===================================================================================================
 
