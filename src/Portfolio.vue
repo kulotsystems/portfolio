@@ -42,6 +42,10 @@
         line-height: 28px !important;
     }
 
+    p.text-body-2 {
+        line-height: 23px !important;
+    }
+
     p.text-h6 {
         line-height: 33px !important;
     }

@@ -51,10 +51,10 @@
                     </div>
                     <v-rating :value="review.review.rating" class="mb-1" readonly dense style="opacity: 0.7" half-increments/>
                     <div class="primary--text text--lighten-1 mb-6">
-                        <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
-                        <p>{{ role }}</p>
+                        <p class="text-subtitle-2 text-md-subtitle-1 mb-0">{{ fullName }}</p>
+                        <p><small>{{ role }}</small></p>
                     </div>
-                    <p class="review primary--text pb-4" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
+                    <p class="primary--text text--lighten-1 pb-4 font-weight-bold" :class="{ 'text-body-2': $vuetify.breakpoint.smAndDown, 'text-body-1': $vuetify.breakpoint.md || $vuetify.breakpoint.lg, 'text-h6': $vuetify.breakpoint.xl }">
                         {{ review.review.content }}
                     </p>
                 </v-col>
