@@ -6,7 +6,6 @@
         :show-arrows="$vuetify.breakpoint.smAndUp"
         hide-delimiter-background
         light
-        style="border-radius: 4px;"
         cycle
         interval="15000"
     >
@@ -44,13 +43,13 @@
             height() {
                 let height = 0;
                 if(this.$vuetify.breakpoint.xs)
-                    height = 640;
+                    height = 620;
                 else if(this.$vuetify.breakpoint.sm)
-                    height = 580;
+                    height = 520;
                 else if(this.$vuetify.breakpoint.md)
-                    height = 720;
+                    height = 980;
                 else if(this.$vuetify.breakpoint.lgAndUp)
-                    height = 660;
+                    height = 690;
                 return height;
             }
         },

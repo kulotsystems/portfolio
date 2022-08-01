@@ -3,9 +3,7 @@
         <topbar/>
         <sidebar/>
         <v-main>
-            <v-container>
-                <router-view/>
-            </v-container>
+            <router-view/>
         </v-main>
         <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>
         <dialogs/>
@@ -38,5 +36,13 @@
 <style>
     .v-card--hover {
         cursor: text !important;
+    }
+
+    p.text-body-1 {
+        line-height: 28px !important;
+    }
+
+    p.text-h6 {
+        line-height: 33px !important;
     }
 </style>

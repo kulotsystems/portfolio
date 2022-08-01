@@ -4,7 +4,7 @@
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
                 <template v-slot:activator="{ on, attrs }">
-                    <v-btn icon v-bind="attrs" v-on="on">
+                    <v-btn icon v-bind="attrs" v-on="on" class="mt-2">
                         <v-icon>more_vert</v-icon>
                     </v-btn>
                 </template>
@@ -38,7 +38,7 @@
         </v-toolbar>
         <v-card-text class="pt-0">
             <v-row justify="center">
-                <v-col cols="12" sm="9" md="8" lg="7">
+                <v-col cols="12" sm="11" md="10" lg="9">
                     <div class="mb-4">
                         <v-avatar size="120">
                             <v-img v-if="avatar" :src="avatar">
@@ -54,7 +54,7 @@
                         <p class="text-subtitle-2 text-md-subtitle-1 font-weight-bold mb-0">{{ fullName }}</p>
                         <p>{{ role }}</p>
                     </div>
-                    <p class="review primary--text text--darken-1 pb-4" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
+                    <p class="review primary--text pb-4" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">
                         {{ review.review.content }}
                     </p>
                 </v-col>
@@ -124,14 +124,6 @@
 </script>
 
 <style scoped>
-    .review.text-body-1 {
-        line-height: 28px;
-    }
-
-    .review.text-h6 {
-        line-height: 33px;
-    }
-
     .v-list-item .v-btn {
         justify-content: start;
     }
