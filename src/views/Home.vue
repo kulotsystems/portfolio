@@ -16,16 +16,16 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur atque, consequuntur delectus dicta distinctio expedita illo ipsum labore magnam mollitia nostrum, omnis optio quisquam quod temporibus tenetur totam!</p>
             </div>
 
-            <v-row class="pa-2">
-                <v-col cols="12" md="6" lg="5" xl="4" class="primary lighten-4" :class="{ 'top-border-radius': $vuetify.breakpoint.smAndDown, 'left-border-radius': $vuetify.breakpoint.mdAndUp }">
+            <v-row class="pa-1">
+                <v-col cols="12" md="5" lg="4" xl="3" class="primary lighten-4" :class="{ 'top-border-radius': $vuetify.breakpoint.smAndDown, 'left-border-radius': $vuetify.breakpoint.mdAndUp }">
                     <div class="fill-height" style="display: flex; justify-content: center; align-items: center">
                         <div class="text-center">
                             <p class="text-h4 text-sm-h3 text-lg-h2 font-weight-bold primary--text">A mentor</p>
-                            <p class="primary--text" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.mdAndUp }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur consectetur dignissimos eum modi odit quas repudiandae saepe sint totam. Beatae et pariatur quos vel vero. Explicabo inventore odit voluptate?</p>
+                            <p class="primary--text" :class="{ 'text-body-2': $vuetify.breakpoint.smAndDown, 'text-body-1': $vuetify.breakpoint.md || $vuetify.breakpoint.lg, 'text-h6': $vuetify.breakpoint.xl }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur consectetur dignissimos eum modi odit quas repudiandae saepe sint totam. Beatae et pariatur quos vel vero. Explicabo inventore odit voluptate?</p>
                         </div>
                     </div>
                 </v-col>
-                <v-col cols="12" md="5" lg="6" xl="7" class="pa-0">
+                <v-col cols="12" md="6" lg="7" xl="8" class="pa-0">
                     <carousel-reviews/>
                 </v-col>
                 <v-col md="1" lg="1" xl="1" class="primary lighten-4" :class="{ 'bottom-border-radius': $vuetify.breakpoint.smAndDown, 'right-border-radius': $vuetify.breakpoint.mdAndUp }">
