@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <v-container>
         <!-- all projects -->
         <v-row v-if="!project">
             <v-col cols="12">
@@ -75,7 +75,7 @@
                 </p>
             </v-col>
         </v-row>
-    </div>
+    </v-container>
 </template>
 
 <script>

@@ -28,9 +28,15 @@ export default new Vuex.Store({
             name: 'kulotsystems'
         },
         profile: {
-            name : 'Arvic S. Babol',
-            title: 'Web Developer / Educator',
-            socials: {
+            name: {
+                title     : '',
+                firstName : 'Arvic',
+                middleName: 'Salcedo',
+                lastName  : 'Babol',
+                nameSuffix: '',
+            },
+            position: 'Web Developer / Educator',
+            socials : {
                 Twitter : 'https://twitter.com/kulotsystems',
                 Facebook: 'https://web.facebook.com/kulotsystem',
                 Github  : 'https://github.com/kulotsystems',
@@ -44,6 +50,19 @@ export default new Vuex.Store({
         },
         profile: (state) => {
             return state.profile;
+        },
+        fullName: (state) => {
+            let name     = state.profile.name;
+            let fullName = '';
+            if(name.title !== '')
+                fullName += `${name.title} `;
+            fullName += `${name.firstName} `;
+            if(name.middleName !== '')
+                fullName += `${name.middleName.substr(0, 1)}. `;
+            fullName += `${name.lastName}`;
+            if(name.nameSuffix !== '')
+                fullName += ` ${name.nameSuffix}`;
+            return fullName;
         }
     },
 

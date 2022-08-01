@@ -1,7 +1,7 @@
 <template>
     <v-card flat tile class="transparent">
         <v-card-text align="center">
-            <v-avatar size="160">
+            <v-avatar :size="avatarSize">
                 <v-img :src="profilePhoto">
                     <template v-slot:placeholder>
                         <v-row class="fill-height ma-0" align="center" justify="center">
@@ -12,8 +12,8 @@
             </v-avatar>
 
             <div class="mt-4">
-                <p class="text-h4 primary--text text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.profile.name }}</small></p>
-                <p class="text-body-1 primary--text text--darken-1 mb-0">{{ $store.getters.profile.title }}</p>
+                <p class="text-h4 primary--text text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.fullName }}</small></p>
+                <p class="text-body-1 primary--text text--darken-1 mb-0">{{ $store.getters.profile.position }}</p>
             </div>
         </v-card-text>
         <v-card-actions class="justify-center">
@@ -37,7 +37,14 @@
                 profilePhoto: profilePhoto
             }
         },
-        computed: {},
+        computed: {
+            avatarSize() {
+                let size = 160;
+                if(this.$vuetify.breakpoint.lg)
+                    size = 200;
+                return size;
+            }
+        },
         methods: {}
     }
 </script>
