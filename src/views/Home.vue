@@ -4,7 +4,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quia repellendus sint suscipit voluptatum? Dolor, dolorum ducimus facere modi nemo omnis ratione sed voluptatem? Aliquam delectus ex illum pariatur sequi?</p>
 
         <h2>Reviews</h2>
-        <carousel-reviews/>
+        <v-row justify="center">
+            <v-col cols="12" sm="11" md="10" lg="9" xl="8">
+                <carousel-reviews/>
+            </v-col>
+        </v-row>
     </div>
 </template>
 

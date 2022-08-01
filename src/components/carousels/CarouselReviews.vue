@@ -7,15 +7,17 @@
         hide-delimiter-background
         light
         style="border-radius: 4px;"
+        cycle
+        interval="15000"
     >
         <template v-slot:prev="{ on, attrs }">
-            <v-btn class="primary lighten-4" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
-                <v-icon color="primary">chevron_left</v-icon>
+            <v-btn class="white" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
+                <v-icon color="primary" style="opacity: 0.7">chevron_left</v-icon>
             </v-btn>
         </template>
         <template v-slot:next="{ on, attrs }">
-            <v-btn class="primary lighten-4" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
-                <v-icon color="primary">chevron_right</v-icon>
+            <v-btn class="white" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
+                <v-icon color="primary" style="opacity: 0.7">chevron_right</v-icon>
             </v-btn>
         </template>
         <v-carousel-item v-for="(review, module) in reviews" :key="module">
@@ -46,9 +48,9 @@
                 else if(this.$vuetify.breakpoint.sm)
                     height = 580;
                 else if(this.$vuetify.breakpoint.md)
-                    height = 670;
+                    height = 720;
                 else if(this.$vuetify.breakpoint.lgAndUp)
-                    height = 570;
+                    height = 660;
                 return height;
             }
         },
