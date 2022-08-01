@@ -27,8 +27,8 @@
                 <div class="fill-height" style="display: flex; justify-content: center; align-items: center">
                     <v-row justify="center" class="text-center py-4 py-md-0">
                         <v-col cols="12" sm="11">
-                            <p class="text-h3 text-sm-h2 text-lg-h1 font-weight-bold primary--text">Mentor</p>
-                            <p class="primary--text text--darken-1 mb-0" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.md || $vuetify.breakpoint.lg }">
+                            <p class="text-h3 text-sm-h2 text-lg-h1 font-weight-bold primary--text text--lighten-1">Mentor</p>
+                            <p class="primary--text mb-0" :class="{ 'text-body-1': $vuetify.breakpoint.smAndDown, 'text-h6': $vuetify.breakpoint.md || $vuetify.breakpoint.lg }">
                                 I'm always happy to share my passion to young developers.
                                 Mentoring is so fun that I also learn a lot along the way.
                             </p>
