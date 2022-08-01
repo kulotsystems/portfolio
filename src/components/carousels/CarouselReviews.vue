@@ -3,7 +3,7 @@
         v-model="slide"
         :continuous="false"
         :height="height"
-        :show-arrows="$vuetify.breakpoint.smAndUp"
+        :show-arrows="$vuetify.breakpoint.lgAndUp"
         hide-delimiter-background
         light
         cycle
