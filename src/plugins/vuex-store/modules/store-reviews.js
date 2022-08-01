@@ -8,6 +8,7 @@
 
 import michael from './reviews/michael.js';
 import florencio from './reviews/florencio.js';
+import junjun from './reviews/jun-jun.js';
 
 
 export default {
@@ -20,7 +21,8 @@ export default {
      */
     modules: {
         michael,
-        florencio
+        florencio,
+        junjun
 
     }
 }
