@@ -11,12 +11,12 @@
         style="border-radius: 8px;"
     >
         <template v-slot:prev="{ on, attrs }">
-            <v-btn class="primary lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
+            <v-btn class="white lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
                 <v-icon color="primary" style="opacity: 0.7">chevron_left</v-icon>
             </v-btn>
         </template>
         <template v-slot:next="{ on, attrs }">
-            <v-btn class="primary lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
+            <v-btn class="white lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" icon v-bind="attrs" v-on="on">
                 <v-icon color="primary" style="opacity: 0.7">chevron_right</v-icon>
             </v-btn>
         </template>
@@ -44,15 +44,15 @@
             height() {
                 let height = 0;
                 if(this.$vuetify.breakpoint.xs)
-                    height = 640;
+                    height = 500;
                 else if(this.$vuetify.breakpoint.sm)
-                    height = 540;
+                    height = 410;
                 else if(this.$vuetify.breakpoint.md)
-                    height = 770;
-                else if(this.$vuetify.breakpoint.lg)
-                    height = 580;
-                else if(this.$vuetify.breakpoint.xl)
                     height = 540;
+                else if(this.$vuetify.breakpoint.lg)
+                    height = 450;
+                else if(this.$vuetify.breakpoint.xl)
+                    height = 400;
                 return height;
             }
         },

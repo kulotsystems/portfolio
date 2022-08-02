@@ -3,7 +3,7 @@
         <v-container>
             <v-card flat class="transparent mt-4 mb-16 pb-16">
                 <v-card-text>
-                    <p class="text-h3 text-md-h2 font-weight-bold mb-0">
+                    <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                         Let's build your business on the Web.
                     </p>
                 </v-card-text>
@@ -30,14 +30,14 @@
                 </v-card-actions>
             </v-card>
 
-            <v-card flat class="transparent mb-16 pb-16">
+            <v-card flat class="transparent mb-16 pt-16 pb-16">
                 <v-card-text>
                     <v-row>
                         <v-col cols="12" md="5" lg="4">
                             <p class="text-h5 text-md-h4 font-weight-bold">
                                 Collaborators
                             </p>
-                            <p class="text-body-2 text-md-body-1">
+                            <p class="text-body-2 text-md-body-1 text-xl-h6 mb-0">
                                 The entire codebase for this application is available on
                                 <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
                                 {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'On the right' }}

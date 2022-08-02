@@ -45,21 +45,27 @@
     p.text-body-1,
     p.text-sm-body-1,
     p.text-md-body-1,
-    p.text-lg-body-1 {
+    p.text-lg-body-1,
+    p.text-xl-body-1
+    {
         line-height: 28px !important;
     }
 
     p.text-body-2,
     p.text-sm-body-2,
     p.text-md-body-2,
-    p.text-lg-body-2 {
+    p.text-lg-body-2,
+    p.text-xl-body-2
+    {
         line-height: 26px !important;
     }
 
     p.text-h6,
     p.text-sm-h6,
     p.text-md-h6,
-    p.text-lg-h6 {
+    p.text-lg-h6,
+    p.text-xl-h6
+    {
         line-height: 33px !important;
     }
 </style>

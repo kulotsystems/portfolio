@@ -1,6 +1,6 @@
 <template>
     <v-card flat tile class="transparent">
-        <v-card-text align="center">
+        <v-card-text class="pt-6" align="center">
             <v-avatar :size="avatarSize">
                 <v-img :src="profilePhoto">
                     <template v-slot:placeholder>
