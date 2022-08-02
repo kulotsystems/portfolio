@@ -5,8 +5,6 @@
 |
 */
 
-import ivan from './reviews/ivan.js';
-
 export default {
     namespaced: true,
 
