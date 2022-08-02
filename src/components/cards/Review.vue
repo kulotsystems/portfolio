@@ -1,62 +1,70 @@
 <template>
-    <v-card class="primary lighten-5 fill-height" align="center" tile flat>
-        <v-toolbar class="transparent" flat dense>
-            <v-spacer/>
-            <v-menu offset-y transition="slide-y-transition">
-                <template v-slot:activator="{ on, attrs }">
-                    <v-btn icon v-bind="attrs" v-on="on" class="mt-2">
-                        <v-icon>more_vert</v-icon>
-                    </v-btn>
-                </template>
-                <v-list dense class="pa-0">
-                    <v-list-item class="pa-0" v-if="pullRequest">
-                       <v-btn block tile text color="primary" @click="goto(pullRequest)">
-                           <v-icon small left>open_in_new</v-icon>
-                           <span>Pull Request</span>
-                       </v-btn>
-                    </v-list-item>
-                    <v-list-item class="pa-0" v-if="review.socials.twitter !== ''">
-                        <v-btn block tile text color="primary" @click="goto(review.socials.twitter)">
-                            <v-icon small left>$twitter</v-icon>
-                            Twitter
-                        </v-btn>
-                    </v-list-item>
-                    <v-list-item class="pa-0" v-if="review.socials.facebook !== ''">
-                        <v-btn block tile text color="primary" @click="goto(review.socials.facebook)">
-                            <v-icon small left>$facebook</v-icon>
-                            Facebook
-                        </v-btn>
-                    </v-list-item>
-                    <v-list-item class="pa-0" v-if="review.socials.github !== ''">
-                        <v-btn block tile text color="primary" @click="goto(review.socials.github)">
-                            <v-icon small left>$github</v-icon>
-                            GitHub
-                        </v-btn>
-                    </v-list-item>
-                </v-list>
-            </v-menu>
-        </v-toolbar>
-        <v-card-text class="pt-0">
+    <v-card class="fill-height" flat>
+        <v-card-text class="pa-0">
             <v-row justify="center">
-                <v-col cols="12" sm="10" md="9" lg="8">
-                    <div class="mb-4">
-                        <v-avatar size="120">
-                            <v-img v-if="avatar" :src="avatar">
+                <v-col cols="12" sm="11" md="10" lg="9" class="pa-0">
+                    <v-list-item class="px-3 px-sm-0" three-line>
+                        <v-list-item-avatar tile :size="$vuetify.breakpoint.smAndDown ? 120 : 140">
+                            <v-img v-if="avatar" :src="avatar" style="border-radius: 100%">
                                 <template v-slot:placeholder>
                                     <v-skeleton-loader type="card-avatar"/>
                                 </template>
                             </v-img>
                             <v-img v-else class="primary lighten-3"/>
-                        </v-avatar>
-                    </div>
-                    <v-rating :value="review.review.rating" class="mb-1" readonly dense style="opacity: 0.7" half-increments/>
-                    <div class="primary--text text--lighten-1 mb-6">
-                        <p class="text-subtitle-2 text-md-subtitle-1 mb-0">{{ fullName }}</p>
-                        <p><small>{{ role }}</small></p>
-                    </div>
-                    <p class="primary--text text--lighten-1 pb-4 font-weight-bold" :class="{ 'text-body-2': $vuetify.breakpoint.smAndDown, 'text-body-1': $vuetify.breakpoint.md || $vuetify.breakpoint.lg, 'text-h6': $vuetify.breakpoint.xl }">
-                        {{ review.review.content }}
-                    </p>
+                        </v-list-item-avatar>
+                        <v-list-item-content class="pa-0">
+                            <div class="justify-center">
+                                <div style="display: flex">
+                                    <v-rating :value="review.review.rating" class="pt-1" style="opacity: 0.65" readonly dense half-increments/>
+                                    <v-spacer/>
+                                    <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-btn icon v-bind="attrs" v-on="on">
+                                                <v-icon>more_vert</v-icon>
+                                            </v-btn>
+                                        </template>
+                                        <v-list dense class="pa-0">
+                                            <v-list-item class="pa-0" v-if="pullRequest">
+                                                <v-btn block tile text color="primary" @click="goto(pullRequest)">
+                                                    <v-icon small left>open_in_new</v-icon>
+                                                    <span>Pull Request</span>
+                                                </v-btn>
+                                            </v-list-item>
+                                            <v-list-item class="pa-0" v-if="review.socials.twitter !== ''">
+                                                <v-btn block tile text color="primary" @click="goto(review.socials.twitter)">
+                                                    <v-icon small left>$twitter</v-icon>
+                                                    Twitter
+                                                </v-btn>
+                                            </v-list-item>
+                                            <v-list-item class="pa-0" v-if="review.socials.facebook !== ''">
+                                                <v-btn block tile text color="primary" @click="goto(review.socials.facebook)">
+                                                    <v-icon small left>$facebook</v-icon>
+                                                    Facebook
+                                                </v-btn>
+                                            </v-list-item>
+                                            <v-list-item class="pa-0" v-if="review.socials.github !== ''">
+                                                <v-btn block tile text color="primary" @click="goto(review.socials.github)">
+                                                    <v-icon small left>$github</v-icon>
+                                                    GitHub
+                                                </v-btn>
+                                            </v-list-item>
+                                        </v-list>
+                                    </v-menu>
+                                </div>
+                                <v-list-item-title class="text-body-1 text-sm-h6 text-lg-h5 dark-text mb-1" style="opacity: 0.75">
+                                    {{ fullName }}
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="text-subtitle-2 text-sm-subtitle-1">
+                                    {{ role }}
+                                </v-list-item-subtitle>
+                            </div>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item class="px-3 px-sm-0">
+                        <p class="text-body-1 text-xl-h6 info--text text--lighten-3 font-weight-bold">
+                            <q>{{ review.review.content }}</q>
+                        </p>
+                    </v-list-item>
                 </v-col>
             </v-row>
         </v-card-text>
@@ -124,7 +132,7 @@
 </script>
 
 <style scoped>
-    .v-list-item .v-btn {
+    .dropdown .v-list-item .v-btn {
         justify-content: start;
     }
 </style>
