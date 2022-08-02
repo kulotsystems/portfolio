@@ -35,11 +35,13 @@
                     <v-row>
                         <v-col cols="12" md="5" lg="4">
                             <p class="text-h5 text-md-h4 font-weight-bold">
-                                It's open-source!
+                                Collaborators
                             </p>
-                            <p class="text-body-2 text-md-body-1 mb-0">
+                            <p class="text-body-2 text-md-body-1">
                                 The entire codebase for this application is available on
                                 <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
+                                {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'On the right' }}
+                                are some reviews from my collaborators.
                             </p>
                         </v-col>
                         <v-col cols="12" md="7" lg="8">
