@@ -64,7 +64,7 @@ export default {
 
         // here you go:
         review: {
-            as     : ['mentee', 'friend'],
+            as     : ['student', 'friend'],
             rating : 5,
             content: 'Sir Arvic is very passionate on what he\'s doing - building web solutions and teaching people how to code. He is a tech enthusiast and always updated on latest trends. I once saw sir Arvic\'s code/repo on Github and I can see how experienced he is - documentation is 🔥.'
         },
