@@ -27,6 +27,19 @@
             }
         },
         computed: {},
+        watch   : {
+            $route: {
+                immediate: true,
+                handler(to, from) {
+                    let title = `${this.$store.getters.appName} | ${this.$route.meta.title}`;
+                    if(to.name === 'projects') {
+                        if(to.params.slug)
+                            title += ` ~ ${this.$store.getters['projects/all'][to.params.slug].title}`;
+                    }
+                    document.title = title;
+                }
+            }
+        },
         methods : {
 
         }
