@@ -37,7 +37,7 @@
                             <p class="text-h5 text-md-h4 font-weight-bold">
                                 Collaborators
                             </p>
-                            <p class="text-body-2 text-md-body-1 text-xl-h6 mb-0">
+                            <p class="text-body-1 text-xl-h6 text-xl-h6 mb-0">
                                 The entire codebase for this application is available on
                                 <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
                                 {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'On the right' }}

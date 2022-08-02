@@ -44,7 +44,7 @@
             height() {
                 let height = 0;
                 if(this.$vuetify.breakpoint.xs)
-                    height = 500;
+                    height = 580;
                 else if(this.$vuetify.breakpoint.sm)
                     height = 410;
                 else if(this.$vuetify.breakpoint.md)
