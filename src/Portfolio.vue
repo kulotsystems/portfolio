@@ -34,6 +34,10 @@
 </script>
 
 <style>
+    a {
+        text-decoration: none;
+    }
+
     .v-card--hover {
         cursor: text !important;
     }
@@ -49,7 +53,7 @@
     p.text-sm-body-2,
     p.text-md-body-2,
     p.text-lg-body-2 {
-        line-height: 23px !important;
+        line-height: 26px !important;
     }
 
     p.text-h6,
