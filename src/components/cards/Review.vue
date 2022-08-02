@@ -1,5 +1,5 @@
 <template>
-    <v-card align="center" height="100%" tile flat>
+    <v-card class="primary lighten-5 fill-height" align="center" tile flat>
         <v-toolbar class="transparent" flat dense>
             <v-spacer/>
             <v-menu offset-y transition="slide-y-transition">
@@ -38,7 +38,7 @@
         </v-toolbar>
         <v-card-text class="pt-0">
             <v-row justify="center">
-                <v-col cols="12" sm="11" md="10" lg="9">
+                <v-col cols="12" sm="10" md="9" lg="8">
                     <div class="mb-4">
                         <v-avatar size="120">
                             <v-img v-if="avatar" :src="avatar">

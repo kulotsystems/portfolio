@@ -13,9 +13,9 @@
                 </v-app-bar-title>
             </v-app-bar>
             <profile/>
-            <template v-slot:append v-if="$vuetify.breakpoint.smAndUp && windowHeight >= 640">
+            <!--<template v-slot:append v-if="$vuetify.breakpoint.smAndUp && windowHeight >= 640">
                 <side-nav-menu class="mb-5"/>
-            </template>
+            </template>-->
         </v-navigation-drawer>
     </nav>
 </template>
@@ -25,7 +25,7 @@
         name: 'Sidebar',
         components: {
             'profile'      : () => import('../cards/Profile.vue'),
-            'side-nav-menu': () => import('./SideNavMenu.vue')
+            // 'side-nav-menu': () => import('./SideNavMenu.vue')
         },
         data() {
             return {
@@ -35,17 +35,17 @@
         },
         computed: {},
         methods : {
-            onResize() {
-                this.windowHeight = window.innerHeight
-            }
+            // onResize() {
+            //     this.windowHeight = window.innerHeight
+            // }
         },
         mounted() {
-            this.$nextTick(() => {
-                window.addEventListener('resize', this.onResize);
-            });
+            // this.$nextTick(() => {
+            //     window.addEventListener('resize', this.onResize);
+            // });
         },
         beforeDestroy() {
-            window.removeEventListener('resize', this.onResize);
+            // window.removeEventListener('resize', this.onResize);
         }
     }
 </script>
