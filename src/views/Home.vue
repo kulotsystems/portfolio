@@ -4,7 +4,7 @@
             <v-card flat class="transparent mt-4 mb-16 pb-16">
                 <v-card-text>
                     <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
-                        Let's build your business on the Web.
+                        Let's take your business to the Web.
                     </p>
                 </v-card-text>
 
@@ -23,7 +23,7 @@
                         <v-icon left>{{ $store.getters['navigation/mainMenuItems'][1].icon }}</v-icon>
                         See My Projects
                     </v-btn>
-                    <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.lgAndUp" @click="goto({ name: 'contact' })" text>
+                    <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.lgAndUp" @click="goto({ name: 'contact' })"  color="primary" text>
                         <v-icon left>{{ $store.getters['navigation/mainMenuItems'][2].icon }}</v-icon>
                         Let's Talk
                     </v-btn>
@@ -31,7 +31,7 @@
             </v-card>
 
             <v-card flat class="transparent mb-16 pt-16 pb-16">
-                <v-card-text>
+                <v-card-text class="pt-8">
                     <v-row>
                         <v-col cols="12" md="5" lg="4">
                             <p class="text-h5 text-md-h4 font-weight-bold">
