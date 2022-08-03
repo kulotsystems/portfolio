@@ -4,12 +4,13 @@
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             :text="menuItem.name !== activeMenuItem"
-            :class="{ 'primary--text': menuItem.name === activeMenuItem }"
-            :large="$vuetify.breakpoint.mdAndUp"
+            :class="(menuItem.name === activeMenuItem ? 'primary--text ' : '') + $store.getters['breakpoints/button/md']"
+            :large="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
+            :x-large="$vuetify.breakpoint.xl"
             color="white"
             elevation="0"
             @click="menuClick(menuItem.name)"
-            width="125"
+            :width="$vuetify.breakpoint.lgAndDown ? 125 : 150"
             class="mx-1"
         >
             <v-icon left>{{ menuItem.icon }}</v-icon>

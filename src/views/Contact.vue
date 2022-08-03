@@ -7,15 +7,15 @@
                 </p>
             </v-card-text>
 
-            <v-card-subtitle>
-                <p class="text-body-1 text-md-h6">
+            <v-card-subtitle :class="$store.getters['breakpoints/font/p']">
+                <p>
                     This page is still under development.
                 </p>
-                <p class="text-body-1 text-md-h6">
+                <p>
                     A contact form should be available here soon
                     together with a bunch of info on how to reach me.
                 </p>
-                <p class="text-body-1 text-md-h6">
+                <p>
                     Got any ideas? You can always submit a pull request to this project's repository on <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
                 </p>
             </v-card-subtitle>

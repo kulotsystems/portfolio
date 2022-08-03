@@ -3,15 +3,18 @@
         <v-navigation-drawer
             app
             v-model="$store.state.navigation.sidebar.opened"
-            :permanent="$vuetify.breakpoint.mdAndUp"
-            floating
+            :permanent="$store.getters['breakpoints/sidebar/permanent']"
+            :width="$store.getters['breakpoints/sidebar/width']"
             overlay-opacity="0.1"
             class="grey lighten-5"
+            floating
         >
-            <v-app-bar color="primary" class="white--text" flat :dense="$vuetify.breakpoint.smAndDown">
+            <v-app-bar color="primary" class="white--text" flat :height="$store.getters['breakpoints/appbar/height']">
+                <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
                 <v-app-bar-title>
                     {{ $store.getters.appName }}
                 </v-app-bar-title>
+                <v-spacer v-if="$vuetify.breakpoint.mdAndUp"/>
             </v-app-bar>
             <profile/>
             <!--<template v-slot:append v-if="$vuetify.breakpoint.smAndUp && windowHeight >= 640">

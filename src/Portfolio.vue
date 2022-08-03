@@ -55,28 +55,20 @@
         cursor: text !important;
     }
 
-    .text-body-1,
-    .text-sm-body-1,
-    .text-md-body-1,
-    .text-lg-body-1,
-    .text-xl-body-1 {
-        line-height: 28px !important;
-    }
-
-    .text-body-2,
-    .text-sm-body-2,
-    .text-md-body-2,
-    .text-lg-body-2,
-    .text-xl-body-2 {
+    p.text-body-2, .text-body-2 p {
         line-height: 25px !important;
     }
 
-    .text-h6,
-    .text-sm-h6,
-    .text-md-h6,
-    .text-lg-h6,
-    .text-xl-h6 {
-        line-height: 35px !important;
+    p.text-body-1, .text-body-1 p {
+        line-height: 28px !important;
+    }
+
+    p.text-h6, .text-h6 p{
+        line-height: 33px !important;
+    }
+
+    p.text-h5, .text-h5 p {
+        line-height: 43px !important;
     }
 
     .thumbnail .v-image__image {

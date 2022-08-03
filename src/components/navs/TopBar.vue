@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar color="primary" class="white--text" app flat :dense="$vuetify.breakpoint.smAndDown">
+    <v-app-bar color="primary" class="white--text" app flat :height="$store.getters['breakpoints/appbar/height']">
         <v-row>
             <v-container class="pa-0 fill-height">
                 <v-app-bar-nav-icon

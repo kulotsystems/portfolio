@@ -9,13 +9,13 @@
             </v-card-text>
 
             <v-card-subtitle>
-                <p class="text-body-1 text-md-h6 mb-10">
+                <p class="mb-10" :class="$store.getters['breakpoints/font/p']">
                     Most of my projects are systems that
                     follow certain requirements that solve a specific problem for a wide range of users.
                     But above anything else, I love building projects that are also useful and fun for me to use.
                 </p>
                 <v-row>
-                    <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4" lg="3">
+                    <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4">
                         <project :project="{ slug: slug, ...project }"/>
                     </v-col>
                 </v-row>
@@ -57,14 +57,14 @@
                             ${{ tech }}
                         </label-dev-tool>
                         <v-spacer/>
-                        <button-social v-if="project.repository"         :url="project.repository" class="mx-1" small text>$github</button-social>
-                        <button-social v-if="project.production != null" :url="project.production" class="mx-1" small text>open_in_new</button-social>
+                        <button-social v-if="project.repository"         :url="project.repository" class="mx-1" :small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
+                        <button-social v-if="project.production != null" :url="project.production" class="mx-1" :small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
                     </v-card-actions>
                 </v-card>
             </v-col>
 
             <!-- project intro -->
-            <v-col cols="12" md="5" class="text-body-1 text-md-h6 mb-5" :class="{ 'px-7': $vuetify.breakpoint.smAndDown }">
+            <v-col cols="12" md="5" class="mb-5" :class="($vuetify.breakpoint.smAndDown ? 'px-7 ' : '') + $store.getters['breakpoints/font/p']">
                 <p>
                     <b>{{ project.title }}</b> is
                     <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">

@@ -4,7 +4,7 @@
             <v-row justify="center">
                 <v-col cols="12" sm="11" md="10" lg="9" class="pa-0">
                     <v-list-item class="px-3 px-sm-0" three-line>
-                        <v-list-item-avatar tile :size="$vuetify.breakpoint.smAndDown ? 120 : 140">
+                        <v-list-item-avatar tile :size="avatarSize">
                             <v-img v-if="avatar" :src="avatar" style="border-radius: 100%">
                                 <template v-slot:placeholder>
                                     <v-skeleton-loader type="card-avatar"/>
@@ -15,7 +15,7 @@
                         <v-list-item-content class="pa-0">
                             <div class="justify-center">
                                 <div style="display: flex">
-                                    <v-rating :value="review.review.rating" class="pt-1" style="opacity: 0.65" readonly dense half-increments/>
+                                    <v-rating :value="review.review.rating" class="pt-1" style="opacity: 0.65" readonly dense :large="$vuetify.breakpoint.xl" half-increments/>
                                     <v-spacer/>
                                     <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
                                         <template v-slot:activator="{ on, attrs }">
@@ -51,19 +51,17 @@
                                         </v-list>
                                     </v-menu>
                                 </div>
-                                <v-list-item-title class="text-body-1 text-sm-h6 text-lg-h5 dark-text mb-1" style="opacity: 0.75">
+                                <v-list-item-title class="mb-1 mb-xl-0 dark--text text--lighten-1" :class="$store.getters['breakpoints/font/p']">
                                     {{ fullName }}
                                 </v-list-item-title>
-                                <v-list-item-subtitle class="text-subtitle-2 text-sm-subtitle-1">
+                                <v-list-item-subtitle :class="$store.getters['breakpoints/font/small']">
                                     {{ role }}
                                 </v-list-item-subtitle>
                             </div>
                         </v-list-item-content>
                     </v-list-item>
-                    <v-list-item class="px-3 px-sm-0">
-                        <p class="text-body-1 text-xl-h6 info--text text--lighten-3 font-weight-bold">
-                            <q>{{ review.review.content }}</q>
-                        </p>
+                    <v-list-item class="px-3 px-sm-0 info--text text--lighten-3" :class="$store.getters['breakpoints/font/p']">
+                        <p><q>{{ review.review.content }}</q></p>
                     </v-list-item>
                 </v-col>
             </v-row>
@@ -92,6 +90,14 @@
                 if(this.review.socials.github !== '')
                     avatar = `${this.review.socials.github}.png`;
                 return avatar;
+            },
+            avatarSize() {
+                let size = 120;
+                if(this.$vuetify.breakpoint.md || this.$vuetify.breakpoint.lg)
+                    size = 140;
+                else if(this.$vuetify.breakpoint.xl)
+                    size = 180;
+                return size;
             },
             fullName() {
                 const personal = this.review.personal;
@@ -127,6 +133,9 @@
             goto(url) {
                 window.open(url, '_blank');
             }
+        },
+        created() {
+            console.log(this.$store.getters.fontBody);
         }
     }
 </script>
