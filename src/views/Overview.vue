@@ -56,7 +56,7 @@
 
 <script>
     export default {
-        name: 'Home',
+        name: 'Overview',
         components: {
             'carousel-reviews': () => import('../components/carousels/CarouselReviews.vue')
         },
@@ -73,7 +73,7 @@
             }
         },
         created() {
-            this.$store.commit('navigation/setActiveMainMenu', 'home');
+            this.$store.commit('navigation/setActiveMainMenu', 'overview');
         },
         mounted() {
             this.$store.commit('dialog/loader/hide');

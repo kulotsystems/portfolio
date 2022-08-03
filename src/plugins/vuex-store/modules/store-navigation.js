@@ -10,12 +10,12 @@ export default {
 
     state: {
         mainMenu: {
-            active: 'home',
+            active: 'overview',
             items : [
                 {
-                    text: 'HOME',
-                    name: 'home',
-                    icon: 'home'
+                    text: 'OVERVIEW',
+                    name: 'overview',
+                    icon: 'space_dashboard'
                 },
                 {
                     text: 'PROJECTS',
