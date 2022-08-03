@@ -1,5 +1,5 @@
 <template>
-    <v-btn fab :color="color" :outlined="outlined" :text="text" :small="small" :x-small="xSmall" @click="gotoURL">
+    <v-btn fab :color="color" :outlined="outlined" :text="text" :large="large" :small="small" :x-small="xSmall" @click="gotoURL">
         <v-icon>
             <slot></slot>
         </v-icon>
@@ -22,6 +22,10 @@
             color: {
                 type   : String,
                 default: 'primary'
+            },
+            large: {
+                type   : Boolean,
+                default: false
             },
             small: {
                 type   : Boolean,

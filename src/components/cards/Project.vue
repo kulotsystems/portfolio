@@ -21,8 +21,8 @@
             <p class="description mb-0">{{ project.desc }}</p>
         </v-card-text>
         <v-card-actions>
-            <button-social v-if="project.production != null" :url="project.production" class="mx-1" x-small text>open_in_new</button-social>
-            <button-social v-if="project.repository"         :url="project.repository" class="mx-1" x-small text>$github</button-social>
+            <button-social v-if="project.production != null" :url="project.production" class="mx-1" :x-small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
+            <button-social v-if="project.repository"         :url="project.repository" class="mx-1" :x-small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
             <v-spacer/>
             <v-btn
                 text
@@ -30,9 +30,9 @@
                 exact
                 router
                 :to="{ name: 'projects', params: { slug: this.project.slug } }"
+                :x-large="$vuetify.breakpoint.xl"
             >
                 Read More
-                <v-icon right>chevron_right</v-icon>
             </v-btn>
         </v-card-actions>
     </v-card>
@@ -79,5 +79,17 @@
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         white-space: pre-wrap;
+    }
+
+    @media (min-width: 1904px) {
+        .title {
+            font-size: 24px !important;
+        }
+        .description {
+            height: 5.7rem;
+            font-size: 1.29rem;
+            line-height: 1.9rem;
+            max-height: 5.7rem;
+        }
     }
 </style>

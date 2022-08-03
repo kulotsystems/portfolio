@@ -1,6 +1,6 @@
 <template>
     <v-card flat tile class="transparent">
-        <v-card-text class="pt-6" align="center">
+        <v-card-text class="pt-9" align="center">
             <v-avatar :size="avatarSize">
                 <v-img :src="profilePhoto">
                     <template v-slot:placeholder>
@@ -12,14 +12,14 @@
             </v-avatar>
 
             <div class="mt-4">
-                <p class="text-h4 primary--text text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.fullName }}</small></p>
-                <p class="text-body-1 primary--text text--darken-1 mb-0">{{ $store.getters.profile.position }}</p>
+                <p class="text-h4 text-xl-h3 primary--text text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.fullName }}</small></p>
+                <p class="text-body-1 text-xl-h6 primary--text text--darken-1 mb-0">{{ $store.getters.profile.position }}</p>
             </div>
         </v-card-text>
         <v-card-actions class="justify-center">
-            <button-social class="mx-1" text :url="$store.getters.profile.socials.Twitter"  outlined>$twitter</button-social>
-            <button-social class="mx-1" text :url="$store.getters.profile.socials.Facebook" outlined>$facebook</button-social>
-            <button-social class="mx-1" text :url="$store.getters.profile.socials.Github"   outlined>$github</button-social>
+            <button-social class="mx-1" text :url="$store.getters.profile.socials.Twitter"  outlined :large="$vuetify.breakpoint.xl">$twitter</button-social>
+            <button-social class="mx-1" text :url="$store.getters.profile.socials.Facebook" outlined :large="$vuetify.breakpoint.xl">$facebook</button-social>
+            <button-social class="mx-1" text :url="$store.getters.profile.socials.Github"   outlined :large="$vuetify.breakpoint.xl">$github</button-social>
         </v-card-actions>
     </v-card>
 </template>
@@ -42,6 +42,8 @@
                 let size = 160;
                 if(this.$vuetify.breakpoint.lg)
                     size = 200;
+                else if(this.$vuetify.breakpoint.xl)
+                    size = 250;
                 return size;
             }
         },
