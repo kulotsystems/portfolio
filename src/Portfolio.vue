@@ -83,4 +83,9 @@
         border: 1px solid #dee2e6;
         border-radius: 0.25rem;
     }
+
+    .theme--light.v-card>.v-card__text,
+    .theme--light.v-card>.v-card__subtitle {
+        color: #5b5b5b;
+    }
 </style>
