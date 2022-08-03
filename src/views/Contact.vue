@@ -1,9 +1,25 @@
 <template>
     <v-container>
-        <div class="dark--text text--lighten-2 pb-0">
-            <h1>CONTACT</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus dolor ex facilis maiores, molestias quas quidem. Aliquam aliquid architecto ex ipsa laborum, nisi pariatur reprehenderit temporibus velit voluptate.</p>
-        </div>
+        <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16 pb-16">
+            <v-card-text>
+                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
+                    Contact Me
+                </p>
+            </v-card-text>
+
+            <v-card-subtitle>
+                <p class="text-body-1 text-md-h6">
+                    This page is still under development.
+                </p>
+                <p class="text-body-1 text-md-h6">
+                    A contact form should be available here soon
+                    together with a bunch of info on how to reach me.
+                </p>
+                <p class="text-body-1 text-md-h6">
+                    Got any ideas? You can always submit a pull request to this project's repository on <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
+                </p>
+            </v-card-subtitle>
+        </v-card>
     </v-container>
 </template>
 

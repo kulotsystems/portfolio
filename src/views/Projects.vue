@@ -1,23 +1,32 @@
 <template>
     <v-container>
         <!-- all projects -->
-        <v-row v-if="!project">
-            <v-col cols="12">
-                <div class="dark--text text--lighten-2 pb-0">
-                    <h1>PROJECTS</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet doloremque facere fugit in, iste magnam maiores molestiae nam natus necessitatibus neque nostrum obcaecati quod recusandae tempora totam velit veniam!</p>
-                </div>
-            </v-col>
-            <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4" lg="3">
-                <project :project="{ slug: slug, ...project }"/>
-            </v-col>
-        </v-row>
+        <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
+            <v-card-text>
+                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
+                    Featured Projects
+                </p>
+            </v-card-text>
+
+            <v-card-subtitle>
+                <p class="text-body-1 text-md-h6 mb-10">
+                    Most of my projects are systems that
+                    follow certain requirements that solve a specific problem for a wide range of users.
+                    But above anything else, I love building projects that are also useful and fun for me to use.
+                </p>
+                <v-row>
+                    <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4" lg="3">
+                        <project :project="{ slug: slug, ...project }"/>
+                    </v-col>
+                </v-row>
+            </v-card-subtitle>
+        </v-card>
 
         <!-- individual project -->
-        <v-row v-else class="pt-sm-1 pt-md-2 pt-lg-3">
+        <v-row v-else class="mt-sm-1 mt-md-2 mt-lg-3">
             <!-- project cover -->
-            <v-col cols="12" sm="6" md="7">
-                <v-card elevation="4">
+            <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.breakpoint.mdAndUp }">
+                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4">
                     <v-app-bar flat color="white">
                         <v-btn icon class="mr-1" @click="$router.back()">
                             <v-icon>arrow_back</v-icon>
@@ -54,10 +63,7 @@
             </v-col>
 
             <!-- project intro -->
-            <v-col cols="12" sm="6" md="5"
-                   class="text-body-1 text-sm-h6 text-lg-h5 mb-5"
-                   :class="{ 'lh-xs': $vuetify.breakpoint.xs, 'lh-sm': $vuetify.breakpoint.sm || $vuetify.breakpoint.md, 'lh-lg': $vuetify.breakpoint.lgAndUp }"
-            >
+            <v-col cols="12" md="5" class="text-body-1 text-md-h6 mb-5" :class="{ 'px-7': $vuetify.breakpoint.smAndDown }">
                 <p>
                     <b>{{ project.title }}</b> is
                     <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
@@ -72,6 +78,13 @@
                     <template v-for="(tech, index) in project.techStack">
                         <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
                     </template>.
+                    I started it on {{ formatDate(project.timeFrame.start) }}
+                    <template v-if="project.timeFrame.end">
+                        then completed it on {{ formatDate(project.timeFrame.end) }}.
+                    </template>
+                    <template v-else>
+                        and still open for changes and maintenance at present.
+                    </template>
                 </p>
             </v-col>
         </v-row>
@@ -79,6 +92,8 @@
 </template>
 
 <script>
+    import format from 'date-fns/format';
+
     export default {
         name: 'Projects',
         components: {
@@ -106,7 +121,11 @@
                     return null;
             }
         },
-        methods : {},
+        methods : {
+            formatDate(d) {
+                return format(new Date(d), 'MMMM yyyy');
+            }
+        },
         created() {
             this.$store.commit('navigation/setActiveMainMenu', 'projects');
             if(this.$route.params.slug && !this.project)
@@ -121,29 +140,5 @@
 <style scoped>
     a {
         text-decoration: none;
-    }
-
-    .lh-xs {
-        line-height: 28px;
-    }
-
-    .lh-sm {
-        line-height: 33px;
-    }
-
-    .lh-lg {
-        line-height: 38px;
-    }
-
-    .lh-xs p {
-        margin-bottom: 13px;
-    }
-
-    .lh-sm p {
-        margin-bottom: 18px;
-    }
-
-    .lh-lg p {
-        margin-bottom: 23px;
     }
 </style>
