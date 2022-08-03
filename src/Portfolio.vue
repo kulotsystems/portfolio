@@ -2,7 +2,7 @@
     <v-app>
         <topbar/>
         <sidebar/>
-        <v-main>
+        <v-main class="grey lighten-5">
             <router-view/>
         </v-main>
         <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>

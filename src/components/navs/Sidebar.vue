@@ -6,6 +6,7 @@
             :permanent="$vuetify.breakpoint.mdAndUp"
             floating
             overlay-opacity="0.1"
+            class="grey lighten-5"
         >
             <v-app-bar color="primary" class="white--text" flat :dense="$vuetify.breakpoint.smAndDown">
                 <v-app-bar-title>

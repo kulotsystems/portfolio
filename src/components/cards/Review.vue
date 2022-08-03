@@ -1,5 +1,5 @@
 <template>
-    <v-card class="fill-height" flat>
+    <v-card class="fill-height transparent" flat>
         <v-card-text class="pa-0">
             <v-row justify="center">
                 <v-col cols="12" sm="11" md="10" lg="9" class="pa-0">
