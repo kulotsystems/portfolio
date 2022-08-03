@@ -26,8 +26,8 @@
         <v-row v-else class="mt-sm-1 mt-md-2 mt-lg-3">
             <!-- project cover -->
             <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.breakpoint.mdAndUp }">
-                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4">
-                    <v-app-bar flat color="white">
+                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.breakpoint.smAndDown }">
+                    <v-app-bar flat class="transparent">
                         <v-btn icon class="mr-1" @click="$router.back()">
                             <v-icon>arrow_back</v-icon>
                         </v-btn>
@@ -42,6 +42,7 @@
                     <v-card-text class="pt-0">
                         <v-img
                             :src="project.cover"
+                            :class="{ 'thumbnail': $vuetify.breakpoint.smAndDown }"
                             height="100%"
                         >
                             <template v-slot:placeholder>

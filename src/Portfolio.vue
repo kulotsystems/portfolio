@@ -78,4 +78,9 @@
     .text-xl-h6 {
         line-height: 35px !important;
     }
+
+    .thumbnail .v-image__image {
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+    }
 </style>
