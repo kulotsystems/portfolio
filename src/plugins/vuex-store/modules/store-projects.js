@@ -23,7 +23,11 @@ export default {
                 cover      : classyCover,
                 production : 'https://www.kulotsystems.tech/old/apps/classy/temp',
                 repository : null,
-                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql']
+                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
+                timeFrame  : {
+                    start  : '2015-05',
+                    end    : null
+                }
             },
             'schedule': {
                 title      : 'Schedule',
@@ -31,15 +35,11 @@ export default {
                 cover      : scheduleCover,
                 production : 'https://www.kulotsystems.tech/old/login/redirect.php?app=schedule&account=student',
                 repository : null,
-                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql']
-            },
-            'dtr-lgu-nabua': {
-                title      : 'DTR @ LGU Nabua',
-                desc       : 'A web portal hooked into the DTR machine of LGU Nabua that provides DTR viewing and monitoring to employees.',
-                cover      : dtrCover,
-                production : 'https://www.kulotsystems.tech/dtr',
-                repository : 'https://github.com/kulotsystems/dtr-lgu-nabua',
-                techStack  : ['html', 'css', 'javascript', 'vue', 'php', 'mysql', 'laravel']
+                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
+                timeFrame  : {
+                    start  : '2020-07',
+                    end    : '2020-08'
+                }
             },
             'lending-system': {
                 title      : 'AppexGB Lending System',
@@ -47,7 +47,23 @@ export default {
                 cover      : appexgbCover,
                 production : null,
                 repository : 'https://github.com/kulotsystems/appexgb',
-                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql']
+                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
+                timeFrame  : {
+                    start  : '2020-11',
+                    end    : '2021-01'
+                }
+            },
+            'dtr-lgu-nabua': {
+                title      : 'DTR @ LGU Nabua',
+                desc       : 'A web portal hooked into the DTR machine of LGU Nabua that provides DTR viewing and monitoring to employees.',
+                cover      : dtrCover,
+                production : 'https://www.kulotsystems.tech/dtr',
+                repository : 'https://github.com/kulotsystems/dtr-lgu-nabua',
+                techStack  : ['html', 'css', 'javascript', 'vue', 'php', 'mysql', 'laravel'],
+                timeFrame  : {
+                    start  : '2021-05',
+                    end    : null
+                }
             },
             'pageant-tabulations': {
                 title      : 'Pageant Tabulations',
@@ -55,7 +71,11 @@ export default {
                 cover      : tabulationCover,
                 production : null,
                 repository : 'https://github.com/kulotsystems/pageant-tabulations',
-                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql']
+                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
+                timeFrame  : {
+                    start  : '2019-02',
+                    end    : null
+                }
             },
             'sanayon': {
                 title      : 'Sanayon',
@@ -63,7 +83,11 @@ export default {
                 cover      : sanayonCover,
                 production : null,
                 repository : 'https://github.com/kulotsystems/sanayonph',
-                techStack  : ['html', 'css', 'javascript', 'vue', 'vuetify', 'php', 'mysql', 'laravel']
+                techStack  : ['html', 'css', 'javascript', 'vue', 'vuetify', 'php', 'mysql', 'laravel'],
+                timeFrame  : {
+                    start  : '2021-09',
+                    end    : '2022-04'
+                }
             },
         }
     },

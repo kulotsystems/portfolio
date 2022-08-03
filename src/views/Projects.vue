@@ -54,10 +54,7 @@
             </v-col>
 
             <!-- project intro -->
-            <v-col cols="12" sm="6" md="5"
-                   class="text-body-1 text-sm-h6 text-lg-h5 mb-5"
-                   :class="{ 'lh-xs': $vuetify.breakpoint.xs, 'lh-sm': $vuetify.breakpoint.sm || $vuetify.breakpoint.md, 'lh-lg': $vuetify.breakpoint.lgAndUp }"
-            >
+            <v-col cols="12" sm="6" md="5" class="text-body-1 text-md-h6 mb-5">
                 <p>
                     <b>{{ project.title }}</b> is
                     <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
@@ -72,6 +69,13 @@
                     <template v-for="(tech, index) in project.techStack">
                         <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
                     </template>.
+                    I started it on {{ formatDate(project.timeFrame.start) }}
+                    <template v-if="project.timeFrame.end">
+                        then completed it on {{ formatDate(project.timeFrame.end) }}.
+                    </template>
+                    <template v-else>
+                        and still open for changes and maintenance at present.
+                    </template>
                 </p>
             </v-col>
         </v-row>
@@ -79,6 +83,8 @@
 </template>
 
 <script>
+    import format from 'date-fns/format';
+
     export default {
         name: 'Projects',
         components: {
@@ -106,7 +112,11 @@
                     return null;
             }
         },
-        methods : {},
+        methods : {
+            formatDate(d) {
+                return format(new Date(d), 'MMMM yyyy');
+            }
+        },
         created() {
             this.$store.commit('navigation/setActiveMainMenu', 'projects');
             if(this.$route.params.slug && !this.project)
@@ -121,29 +131,5 @@
 <style scoped>
     a {
         text-decoration: none;
-    }
-
-    .lh-xs {
-        line-height: 28px;
-    }
-
-    .lh-sm {
-        line-height: 33px;
-    }
-
-    .lh-lg {
-        line-height: 38px;
-    }
-
-    .lh-xs p {
-        margin-bottom: 13px;
-    }
-
-    .lh-sm p {
-        margin-bottom: 18px;
-    }
-
-    .lh-lg p {
-        margin-bottom: 23px;
     }
 </style>
