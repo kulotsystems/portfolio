@@ -18,11 +18,11 @@
                 </p>
             </v-card-subtitle>
             <v-card-actions class="px-4">
-                <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.lgAndUp" @click="goto({ name: 'projects' })" class="pr-3" color="primary" elevation="0">
+                <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.lgAndUp" @click="goto({ name: 'projects' })" color="primary" elevation="0">
                     <v-icon left>{{ $store.getters['navigation/mainMenuItems'][1].icon }}</v-icon>
                     <span v-if="$vuetify.breakpoint.smAndUp">See&nbsp;</span>My Projects
                 </v-btn>
-                <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.lgAndUp" @click="goto({ name: 'contact' })" class="pr-3"  color="primary" text>
+                <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.lgAndUp" @click="goto({ name: 'contact' })"  color="primary" text>
                     <v-icon left>{{ $store.getters['navigation/mainMenuItems'][2].icon }}</v-icon>
                     Let's Talk
                 </v-btn>
