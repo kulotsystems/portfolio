@@ -1,5 +1,5 @@
 ## Portfolio
-Portfolio of kulotsystems.
+Single Page Application #portfolio of @kulotsystems.
 
 
 ## Contribute
@@ -64,12 +64,24 @@ Download and install the following tools:
     ```sh
     npm run dev
     ```
-   <sup>- then open the provided URL in your web browser</sup>
+   <sup>Open the provided URL in your web browser, which takes a while to load for the first time.</sup>
     
     #### Compile and Minify for Production
     
     ```sh
     npm run build
+    ```
+   <sup>The output will be on a folder named `dist`.</sup>
+   
+   #### Running the Production Build
+   Install [**http-server-spa**](http-server-spa) globally:
+    ```sh
+    npm install http-server-spa -g
+    ```
+   
+   Then serve the contents of the `dist` folder:
+    ```sh
+    http-server-spa dist
     ```
 
 
