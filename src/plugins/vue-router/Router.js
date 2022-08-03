@@ -17,10 +17,10 @@ export default new VueRouter({
     routes: [
         {
             path     : '/',
-            name     : 'home',
-            component: () => import('../../views/Home.vue'),
+            name     : 'overview',
+            component: () => import('../../views/Overview.vue'),
             meta     : {
-                title: 'Home'
+                title: 'Overview'
             }
         },
         {
