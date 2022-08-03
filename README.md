@@ -1,5 +1,5 @@
 ## Portfolio
-Single Page Application #portfolio of @kulotsystems.
+Single Page Application portfolio of @kulotsystems.
 
 
 ## Contribute
