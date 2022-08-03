@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-container>
-            <v-card flat class="transparent mt-4 mb-16 pb-16">
+            <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16 pb-16">
                 <v-card-text>
                     <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                         Let's take your business to the Web.
