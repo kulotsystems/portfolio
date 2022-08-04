@@ -88,7 +88,8 @@ Download and install the following tools:
 
 ## Preview
 #### Staging
-**<https://kulotsystems.vercel.app>**
+- **<https://kulotsystems.vercel.app>**
+- **<https://kulotsystems.netlify.app>**
 
 #### Production
-**<https://kulotsystems.tech/portfolio>**
+- **<https://kulotsystems.tech/portfolio>**
