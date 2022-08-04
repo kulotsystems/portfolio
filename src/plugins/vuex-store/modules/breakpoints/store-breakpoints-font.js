@@ -56,7 +56,7 @@ export default {
 
         xSmall: (state) => {
             if(state.breakpoint.smAndDown)
-                return 'text-subtitle-1';
+                return 'text-subtitle-2';
             else if(state.breakpoint.md || state.breakpoint.lg)
                 return 'text-body-2';
             else
