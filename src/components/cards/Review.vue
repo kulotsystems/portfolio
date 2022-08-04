@@ -14,36 +14,36 @@
                         </v-list-item-avatar>
                         <v-list-item-content class="pa-0">
                             <div class="justify-center">
-                                <div style="display: flex">
-                                    <v-rating :value="review.review.rating" class="pt-1" style="opacity: 0.65" readonly dense :large="$vuetify.breakpoint.xl" half-increments/>
+                                <div style="display: flex;">
+                                    <v-rating :value="review.review.rating" class="pt-1 pt-lg-2" style="opacity: 0.65" readonly dense :large="$vuetify.breakpoint.xl" half-increments/>
                                     <v-spacer/>
                                     <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
                                         <template v-slot:activator="{ on, attrs }">
-                                            <v-btn icon v-bind="attrs" v-on="on">
+                                            <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.breakpoint.lg" :x-large="$vuetify.breakpoint.xl">
                                                 <v-icon>more_vert</v-icon>
                                             </v-btn>
                                         </template>
                                         <v-list dense class="pa-0">
                                             <v-list-item class="pa-0" v-if="pullRequest">
-                                                <v-btn block tile text color="primary" @click="goto(pullRequest)">
+                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(pullRequest)">
                                                     <v-icon small left>open_in_new</v-icon>
                                                     <span>Pull Request</span>
                                                 </v-btn>
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.twitter !== ''">
-                                                <v-btn block tile text color="primary" @click="goto(review.socials.twitter)">
+                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.twitter)">
                                                     <v-icon small left>$twitter</v-icon>
                                                     Twitter
                                                 </v-btn>
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.facebook !== ''">
-                                                <v-btn block tile text color="primary" @click="goto(review.socials.facebook)">
+                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.facebook)">
                                                     <v-icon small left>$facebook</v-icon>
                                                     Facebook
                                                 </v-btn>
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.github !== ''">
-                                                <v-btn block tile text color="primary" @click="goto(review.socials.github)">
+                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.github)">
                                                     <v-icon small left>$github</v-icon>
                                                     GitHub
                                                 </v-btn>
@@ -51,16 +51,16 @@
                                         </v-list>
                                     </v-menu>
                                 </div>
-                                <v-list-item-title class="mb-1 mb-xl-0 dark--text text--lighten-1" :class="$store.getters['breakpoints/font/p']">
+                                <v-list-item-title class="mb-1 mb-xl-0 pl-1 dark--text text--lighten-1" :class="$store.getters['breakpoints/font/p']">
                                     {{ fullName }}
                                 </v-list-item-title>
-                                <v-list-item-subtitle :class="$store.getters['breakpoints/font/small']">
+                                <v-list-item-subtitle class="pl-1" :class="$store.getters['breakpoints/font/xSmall']">
                                     {{ role }}
                                 </v-list-item-subtitle>
                             </div>
                         </v-list-item-content>
                     </v-list-item>
-                    <v-list-item class="px-3 px-sm-0 info--text text--lighten-3" :class="$store.getters['breakpoints/font/p']">
+                    <v-list-item class="px-3 px-sm-0 info--text text--lighten-3 font-weight-bold" :class="$store.getters['breakpoints/font/small']">
                         <p><q>{{ review.review.content }}</q></p>
                     </v-list-item>
                 </v-col>
@@ -92,11 +92,11 @@
                 return avatar;
             },
             avatarSize() {
-                let size = 120;
+                let size = 100;
                 if(this.$vuetify.breakpoint.md || this.$vuetify.breakpoint.lg)
-                    size = 140;
+                    size = 120;
                 else if(this.$vuetify.breakpoint.xl)
-                    size = 180;
+                    size = 140;
                 return size;
             },
             fullName() {

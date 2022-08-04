@@ -10,7 +10,7 @@
             color="white"
             elevation="0"
             @click="menuClick(menuItem.name)"
-            :width="$vuetify.breakpoint.lgAndDown ? 125 : 150"
+            :width="$vuetify.breakpoint.lgAndDown ? 125 : 160"
             class="mx-1"
         >
             <v-icon left>{{ menuItem.icon }}</v-icon>
