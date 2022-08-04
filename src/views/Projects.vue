@@ -28,15 +28,15 @@
             <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.breakpoint.mdAndUp }">
                 <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.breakpoint.smAndDown }">
                     <v-app-bar flat class="transparent">
-                        <v-btn icon class="mr-1" @click="$router.back()">
+                        <v-btn icon class="mr-1" @click="$router.back()" :x-large="$vuetify.breakpoint.xl">
                             <v-icon>arrow_back</v-icon>
                         </v-btn>
-                        <v-toolbar-title class="text-h6 pl-0">
+                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p']">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
                         <v-btn icon @click="$store.commit('dialog/image/show', { image: project.cover })">
-                            <v-icon small>open_in_full</v-icon>
+                            <v-icon :small="$vuetify.breakpoint.lgAndDown">open_in_full</v-icon>
                         </v-btn>
                     </v-app-bar>
                     <v-card-text class="pt-0">

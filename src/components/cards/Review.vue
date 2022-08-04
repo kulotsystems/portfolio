@@ -2,7 +2,7 @@
     <v-card class="fill-height transparent" flat>
         <v-card-text class="pa-0">
             <v-row justify="center">
-                <v-col cols="12" sm="11" md="10" lg="9" class="pa-0">
+                <v-col cols="12" sm="11" md="10" lg="8" class="pa-0">
                     <v-list-item class="px-3 px-sm-0" three-line>
                         <v-list-item-avatar tile :size="avatarSize">
                             <v-img v-if="avatar" :src="avatar" style="border-radius: 100%">
@@ -15,11 +15,11 @@
                         <v-list-item-content class="pa-0">
                             <div class="justify-center">
                                 <div style="display: flex;">
-                                    <v-rating :value="review.review.rating" class="pt-1 pt-lg-2" style="opacity: 0.65" readonly dense :large="$vuetify.breakpoint.xl" half-increments/>
+                                    <v-rating :value="review.review.rating" class="pt-1 pt-xl-2" style="opacity: 0.65" readonly dense half-increments/>
                                     <v-spacer/>
                                     <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
                                         <template v-slot:activator="{ on, attrs }">
-                                            <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.breakpoint.lg" :x-large="$vuetify.breakpoint.xl">
+                                            <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.breakpoint.xl">
                                                 <v-icon>more_vert</v-icon>
                                             </v-btn>
                                         </template>
@@ -32,7 +32,7 @@
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.twitter !== ''">
                                                 <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.twitter)">
-                                                    <v-icon small left>$twitter</v-icon>
+                                                    <v-icon small left large>$twitter</v-icon>
                                                     Twitter
                                                 </v-btn>
                                             </v-list-item>

@@ -36,7 +36,7 @@
         <v-card flat class="transparent mb-16 pt-8">
             <v-card-text>
                 <v-row>
-                    <v-col cols="12" md="5" lg="4">
+                    <v-col cols="12" md="5" lg="4" xl="5">
                         <p class="font-weight-bold" :class="$store.getters['breakpoints/font/h2']">
                             Collaborators
                         </p>
@@ -47,7 +47,7 @@
                             are some reviews from my collaborators.
                         </p>
                     </v-col>
-                    <v-col cols="12" md="7" lg="8">
+                    <v-col cols="12" md="7" lg="8" xl="7">
                         <carousel-reviews/>
                     </v-col>
                 </v-row>
