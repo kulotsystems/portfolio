@@ -11,12 +11,12 @@
         style="border-radius: 8px;"
     >
         <template v-slot:prev="{ on, attrs }">
-            <v-btn class="grey lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
+            <v-btn class="primary lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
                 <v-icon color="primary" style="opacity: 0.7">chevron_left</v-icon>
             </v-btn>
         </template>
         <template v-slot:next="{ on, attrs }">
-            <v-btn class="grey lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
+            <v-btn class="primary lighten-5" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
                 <v-icon color="primary" style="opacity: 0.7">chevron_right</v-icon>
             </v-btn>
         </template>
