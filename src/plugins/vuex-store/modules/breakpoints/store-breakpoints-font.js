@@ -47,11 +47,20 @@ export default {
 
         small: (state) => {
             if(state.breakpoint.smAndDown)
-                return 'text-subtitle-2';
+                return 'text-body-2';
             else if(state.breakpoint.md || state.breakpoint.lg)
                 return 'text-body-1';
             else
                 return 'text-h6';
+        },
+
+        xSmall: (state) => {
+            if(state.breakpoint.smAndDown)
+                return 'text-subtitle-1';
+            else if(state.breakpoint.md || state.breakpoint.lg)
+                return 'text-body-2';
+            else
+                return 'text-body-1';
         },
     }
 }

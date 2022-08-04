@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="pl-md-0">
         <!-- all projects -->
         <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
@@ -15,7 +15,7 @@
                     But above anything else, I love building projects that are also useful and fun for me to use.
                 </p>
                 <v-row>
-                    <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4">
+                    <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4" lg="3">
                         <project :project="{ slug: slug, ...project }"/>
                     </v-col>
                 </v-row>
@@ -57,8 +57,8 @@
                             ${{ tech }}
                         </label-dev-tool>
                         <v-spacer/>
-                        <button-social v-if="project.repository"         :url="project.repository" class="mx-1" :small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
-                        <button-social v-if="project.production != null" :url="project.production" class="mx-1" :small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
+                        <button-social v-if="project.repository"         :url="project.repository" class="mx-0" :small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
+                        <button-social v-if="project.production != null" :url="project.production" class="mx-0" :small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
                     </v-card-actions>
                 </v-card>
             </v-col>

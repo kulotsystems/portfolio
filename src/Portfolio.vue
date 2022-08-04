@@ -80,4 +80,8 @@
     .theme--light.v-card>.v-card__subtitle {
         color: #5b5b5b;
     }
+
+    .v-btn.v-size--x-large {
+        font-size: 1.1rem;
+    }
 </style>

@@ -1,13 +1,13 @@
 <template>
     <v-app-bar color="primary" class="white--text" app flat :height="$store.getters['breakpoints/appbar/height']">
         <v-row>
-            <v-container class="pa-0 fill-height">
+            <v-container class="pa-0 pr-md-5 pr-xl-4 fill-height">
                 <v-app-bar-nav-icon
                     v-if="!$store.getters['navigation/sidebarOpened']"
                     dark
                     @click="$store.commit('navigation/openSidebar')"
                 />
-                <v-app-bar-title v-if="!$store.getters['navigation/sidebarOpened']">
+                <v-app-bar-title v-if="!$store.getters['navigation/sidebarOpened']" :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
                 </v-app-bar-title>
                 <v-spacer/>

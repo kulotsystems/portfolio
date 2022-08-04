@@ -3,15 +3,15 @@
         <v-navigation-drawer
             app
             v-model="$store.state.navigation.sidebar.opened"
-            :permanent="$store.getters['breakpoints/sidebar/permanent']"
-            :width="$store.getters['breakpoints/sidebar/width']"
+            :permanent="$vuetify.breakpoint.mdAndUp"
+            :width="width"
             overlay-opacity="0.1"
             class="grey lighten-5"
             floating
         >
             <v-app-bar color="primary" class="white--text" flat :height="$store.getters['breakpoints/appbar/height']">
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
-                <v-app-bar-title>
+                <v-app-bar-title :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
                 </v-app-bar-title>
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp"/>
@@ -37,7 +37,16 @@
                 windowHeight: window.innerHeight
             }
         },
-        computed: {},
+        computed: {
+            width() {
+                if(this.$vuetify.breakpoint.mdAndDown)
+                    return 256;
+                else if(this.$vuetify.breakpoint.lg)
+                    return 320;
+                else
+                    return 384;
+            },
+        },
         methods : {
             // onResize() {
             //     this.windowHeight = window.innerHeight
