@@ -11,7 +11,7 @@
         >
             <v-app-bar color="primary" class="white--text" flat :height="$store.getters['breakpoints/appbar/height']">
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
-                <v-app-bar-title class="text-no-wrap" :class="$store.getters['breakpoints/font/h3']">
+                <v-app-bar-title :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
                 </v-app-bar-title>
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp"/>
@@ -63,6 +63,8 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+    .v-app-bar-title__content {
+        width: 100% !important;
+    }
 </style>
