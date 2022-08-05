@@ -7,6 +7,7 @@
         </v-main>
         <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>
         <dialog-loader/>
+        <dialog-image/>
     </v-app>
 </template>
 
@@ -20,7 +21,7 @@
         components: {
             'topbar'         : TopBar,
             'sidebar'        : Sidebar,
-            'dialog-loader'  : () => DialogLoader,
+            'dialog-loader'  : DialogLoader,
             'dialog-image'   : () => import('./components/dialogs/DialogImage.vue'),
             'bottom-nav-menu': () => import('./components/navs/BottomNavMenu.vue'),
         },
