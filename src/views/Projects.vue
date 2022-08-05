@@ -131,9 +131,6 @@
             this.$store.commit('navigation/setActiveMainMenu', 'projects');
             if(this.$route.params.slug && !this.project)
                 this.$router.replace({ name: 'projects' });
-        },
-        mounted() {
-            this.$store.commit('dialog/loader/hide');
         }
     }
 </script>
