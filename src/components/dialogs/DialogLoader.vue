@@ -30,7 +30,7 @@
         cursor: unset;
         position: fixed;
         z-index: 2147483647;
-        opacity: 0.7;
+        opacity: 0.9;
     }
     #dialog-loader .v-skeleton-loader__image {
         width: 100%;
