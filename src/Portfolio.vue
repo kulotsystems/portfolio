@@ -11,11 +11,14 @@
 </template>
 
 <script>
+    import TopBar  from './components/navs/TopBar.vue';
+    import Sidebar from './components/navs/Sidebar.vue';
+
     export default {
         name: 'Portfolio',
         components: {
-            'topbar'         : () => import('./components/navs/TopBar.vue'),
-            'sidebar'        : () => import('./components/navs/Sidebar.vue'),
+            'topbar'         : TopBar,
+            'sidebar'        : Sidebar,
             'bottom-nav-menu': () => import('./components/navs/BottomNavMenu.vue'),
             'dialogs'        : () => import('./components/dialogs/Dialogs.vue')
         },
