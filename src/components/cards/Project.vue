@@ -1,5 +1,5 @@
 <template>
-    <v-card height="100%" elevation="5">
+    <v-card height="100%" elevation="4">
         <v-img
             :src="project.cover"
             aspect-ratio="1.36"
