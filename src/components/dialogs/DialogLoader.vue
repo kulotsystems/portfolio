@@ -32,5 +32,6 @@
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
+        opacity: 0.9;
     }
 </style>
