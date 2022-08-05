@@ -1,5 +1,5 @@
 <template>
-    <v-container class="pl-md-0">
+    <v-container class="pl-md-0 pb-16">
         <!-- all projects -->
         <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
@@ -15,9 +15,9 @@
                     But above anything else, I love building projects that are also useful and fun for me to use.
                 </p>
                 <v-row>
-                    <v-col v-for="(project, slug, index) in projects" :key="slug" cols="12" sm="6" md="4" lg="3">
+                    <v-lazy v-model="project.transition" transition="slide-x-transition" v-for="(project, slug, index) in projects" :key="slug" class="col-sm-6 col-md-4 col-lg-3 col-12">
                         <project :project="{ slug: slug, ...project }"/>
-                    </v-col>
+                    </v-lazy>
                 </v-row>
             </v-card-subtitle>
         </v-card>

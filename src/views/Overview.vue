@@ -1,5 +1,5 @@
 <template>
-    <v-container class="pl-md-0">
+    <v-container class="pl-md-0 pb-16">
         <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16">
             <v-card-text>
                 <p class="font-weight-bold mb-0" :class="$store.getters['breakpoints/font/h1']">
@@ -33,26 +33,28 @@
             </v-card-actions>
         </v-card>
 
-        <v-card flat class="transparent mb-16 pt-8">
-            <v-card-text>
-                <v-row>
-                    <v-col cols="12" md="5" lg="4" xl="5">
-                        <p class="font-weight-bold" :class="$store.getters['breakpoints/font/h2']">
-                            Collaborators
-                        </p>
-                        <p class="mb-0" :class="$store.getters['breakpoints/font/p']">
-                            The entire codebase for this application is available on
-                            <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
-                            {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'On the right' }}
-                            are some reviews from my collaborators.
-                        </p>
-                    </v-col>
-                    <v-col cols="12" md="7" lg="8" xl="7">
-                        <carousel-reviews/>
-                    </v-col>
-                </v-row>
-            </v-card-text>
-        </v-card>
+        <v-lazy v-model="$store.state.transitions.lazy.overview.collaborators" transition="slide-x-transition">
+            <v-card flat class="transparent mt-8 mb-16">
+                <v-card-text>
+                    <v-row>
+                        <v-col cols="12" md="5" lg="4" xl="5">
+                            <p class="font-weight-bold" :class="$store.getters['breakpoints/font/h2']">
+                                Collaborators
+                            </p>
+                            <p class="mb-0" :class="$store.getters['breakpoints/font/p']">
+                                The entire codebase for this application is available on
+                                <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
+                                {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'On the right' }}
+                                are some reviews from my collaborators.
+                            </p>
+                        </v-col>
+                        <v-col cols="12" md="7" lg="8" xl="7">
+                            <carousel-reviews/>
+                        </v-col>
+                    </v-row>
+                </v-card-text>
+            </v-card>
+        </v-lazy>
     </v-container>
 </template>
 
@@ -64,7 +66,9 @@
         },
         data() {
             return {
-
+                lazy: {
+                    collaborators: false
+                }
             }
         },
         computed: {},

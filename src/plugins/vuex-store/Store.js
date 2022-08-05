@@ -20,6 +20,7 @@ import technologies from './modules/store-technologies.js';
 import reviews      from './modules/store-reviews.js';
 import pullRequests from './modules/store-pull-requests.js';
 import breakpoints  from './modules/store-breakpoints.js';
+import transitions  from './modules/store-transitions.js';
 
 
 export default new Vuex.Store({
@@ -82,7 +83,8 @@ export default new Vuex.Store({
         technologies,
         reviews,
         pullRequests,
-        breakpoints
+        breakpoints,
+        transitions
     }
 
 });
