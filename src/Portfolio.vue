@@ -89,6 +89,6 @@
     }
 
     .v-app-bar-title__content {
-        overflow: unset;
+        overflow: unset !important;
     }
 </style>
