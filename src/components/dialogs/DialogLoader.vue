@@ -1,7 +1,12 @@
 <template>
-    <v-dialog v-model="$store.state.dialog.loader.opened" fullscreen  content-class="loader text-center" :retain-focus="false" :overlay-opacity="0" persistent no-click-animation>
-        <v-skeleton-loader type="image" tile width="100%" height="100%"/>
-    </v-dialog>
+    <v-skeleton-loader
+        v-if="$store.state.dialog.loader.opened"
+        id="dialog-loader"
+        type="image"
+        tile
+        width="100%"
+        height="100%"
+    />
 </template>
 
 <script>
@@ -21,19 +26,13 @@
 </script>
 
 <style>
-    .v-dialog.loader {
-        overflow: hidden;
-        transition: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        opacity: 0.8;
-    }
-
-    .v-skeleton-loader {
+    #dialog-loader {
         cursor: unset;
+        position: fixed;
+        z-index: 2147483647;
+        opacity: 0.7;
     }
-    .v-skeleton-loader__image {
+    #dialog-loader .v-skeleton-loader__image {
         width: 100%;
         height: 100%;
     }

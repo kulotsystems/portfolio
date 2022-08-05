@@ -6,21 +6,23 @@
             <router-view/>
         </v-main>
         <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>
-        <dialogs/>
+        <dialog-loader/>
     </v-app>
 </template>
 
 <script>
     import TopBar  from './components/navs/TopBar.vue';
     import Sidebar from './components/navs/Sidebar.vue';
+    import DialogLoader from './components/dialogs/DialogLoader.vue';
 
     export default {
         name: 'Portfolio',
         components: {
             'topbar'         : TopBar,
             'sidebar'        : Sidebar,
+            'dialog-loader'  : () => DialogLoader,
+            'dialog-image'   : () => import('./components/dialogs/DialogImage.vue'),
             'bottom-nav-menu': () => import('./components/navs/BottomNavMenu.vue'),
-            'dialogs'        : () => import('./components/dialogs/Dialogs.vue')
         },
         data() {
             return {
