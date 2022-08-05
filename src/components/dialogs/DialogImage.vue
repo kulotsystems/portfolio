@@ -52,6 +52,8 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+    .v-bottom-sheet > .v-card {
+        border-radius: 10px 10px 0 0 !important;
+    }
 </style>
