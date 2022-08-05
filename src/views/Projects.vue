@@ -52,7 +52,7 @@
                             </template>
                         </v-img>
                     </v-card-text>
-                    <v-card-actions>
+                    <v-card-actions class="pt-0 pt-md-2">
                         <label-dev-tool v-for="tech in project.techStack" :key="tech" :small="tech !== 'php'" class="mx-2">
                             ${{ tech }}
                         </label-dev-tool>
