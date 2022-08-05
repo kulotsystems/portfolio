@@ -31,11 +31,11 @@
                         <v-btn icon class="mr-1" @click="$router.back()" :x-large="$vuetify.breakpoint.xl">
                             <v-icon>arrow_back</v-icon>
                         </v-btn>
-                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p']">
+                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.breakpoint.smAndDown ? ' font-weight-bold dark--text text--lighten-1' : '')">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
-                        <v-btn icon @click="$store.commit('dialog/image/show', { image: project.cover })">
+                        <v-btn icon @click="$store.commit('dialog/image/show', { image: project.cover, title: project.title })">
                             <v-icon :small="$vuetify.breakpoint.lgAndDown">open_in_full</v-icon>
                         </v-btn>
                     </v-app-bar>
