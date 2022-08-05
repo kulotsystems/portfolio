@@ -1,5 +1,5 @@
 <template>
-    <v-container class="pl-md-0 pb-16">
+    <v-container class="pl-md-0 pb-5 pb-md-12">
         <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16">
             <v-card-text>
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
