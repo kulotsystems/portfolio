@@ -57,7 +57,10 @@
             }
         },
         computed: {},
-        methods: {}
+        methods : {},
+        mounted() {
+            this.$store.commit('dialog/loader/hide');
+        }
     }
 </script>
 

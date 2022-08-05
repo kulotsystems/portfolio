@@ -1,11 +1,6 @@
 <template>
-    <v-dialog v-model="$store.state.dialog.loader.opened" max-width="80" content-class="loader text-center" :retain-focus="false" :overlay-opacity="0.1" persistent no-click-animation>
-        <v-progress-circular
-            :size="70"
-            :width="7"
-            color="primary"
-            indeterminate
-        />
+    <v-dialog v-model="$store.state.dialog.loader.opened" fullscreen  content-class="loader text-center" :retain-focus="false" :overlay-opacity="0" persistent no-click-animation>
+        <v-skeleton-loader type="image" tile width="100%" height="100%"/>
     </v-dialog>
 </template>
 
@@ -32,6 +27,14 @@
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
-        opacity: 0.9;
+        opacity: 0.8;
+    }
+
+    .v-skeleton-loader {
+        cursor: unset;
+    }
+    .v-skeleton-loader__image {
+        width: 100%;
+        height: 100%;
     }
 </style>
