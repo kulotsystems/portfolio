@@ -87,4 +87,8 @@
     .v-btn.v-size--x-large {
         font-size: 1.1rem;
     }
+
+    .v-app-bar-title__content {
+        overflow: unset;
+    }
 </style>
