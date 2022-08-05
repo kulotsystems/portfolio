@@ -7,7 +7,7 @@
                     dark
                     @click="$store.commit('navigation/openSidebar')"
                 />
-                <v-app-bar-title v-if="!$store.getters['navigation/sidebarOpened']" :class="$store.getters['breakpoints/font/h3']">
+                <v-app-bar-title class="text-no-wrap" v-if="!$store.getters['navigation/sidebarOpened']" :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
                 </v-app-bar-title>
                 <v-spacer/>
