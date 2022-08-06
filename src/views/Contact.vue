@@ -16,7 +16,7 @@
                             I will do my best to get in touch with you.
                         </p>
                         <p>
-                            You can also reach me out through
+                            You can also reach me at
                             <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a> and
                             <a :href="$store.getters.profile.socials.Facebook" target="_blank">Facebook</a>.
                         </p>
