@@ -56,9 +56,6 @@
                         <label-dev-tool v-for="tech in project.techStack" :key="tech" :small="tech !== 'php'" class="mx-2">
                             ${{ tech }}
                         </label-dev-tool>
-                        <v-spacer/>
-                        <button-social v-if="project.repository"         :url="project.repository" class="mx-0" :small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
-                        <button-social v-if="project.production != null" :url="project.production" class="mx-0" :small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -87,6 +84,17 @@
                         and still open for changes and maintenance at present.
                     </template>
                 </p>
+
+                <div class="mt-7">
+                    <v-btn color="primary" v-if="project.repository" large outlined @click="$store.commit('goto', project.repository)">
+                        <v-icon small left>$github</v-icon>
+                        Repo<template v-if="!$vuetify.breakpoint.md || $vuetify.breakpoint.md && !project.production">sitory</template>
+                    </v-btn>
+                    <v-btn color="primary" v-if="project.production" large outlined @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
+                        <v-icon small left>open_in_new</v-icon>
+                        See Live
+                    </v-btn>
+                </div>
             </v-col>
         </v-row>
     </v-container>

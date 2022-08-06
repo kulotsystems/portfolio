@@ -1,5 +1,5 @@
 <template>
-    <v-btn fab :color="color" :outlined="outlined" :text="text" :large="large" :small="small" :x-small="xSmall" @click="gotoURL">
+    <v-btn fab :color="color" :outlined="outlined" :text="text" :large="large" :small="small" :x-small="xSmall" @click="$store.commit('goto', url)">
         <v-icon>
             <slot></slot>
         </v-icon>
@@ -47,11 +47,7 @@
         },
         computed: {},
         methods : {
-            gotoURL() {
-                if(this.url) {
-                    window.open(this.url, '_blank');
-                }
-            }
+
         }
     }
 </script>

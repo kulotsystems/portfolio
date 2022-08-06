@@ -59,7 +59,7 @@ export default {
                 cover      : dtrCover,
                 production : 'https://www.kulotsystems.tech/dtr',
                 repository : 'https://github.com/kulotsystems/dtr-lgu-nabua',
-                techStack  : ['html', 'css', 'javascript', 'vue', 'php', 'mysql', 'laravel'],
+                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'vue', 'php', 'mysql', 'laravel'],
                 timeFrame  : {
                     start  : '2021-05',
                     end    : null

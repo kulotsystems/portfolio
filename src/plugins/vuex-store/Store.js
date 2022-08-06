@@ -69,7 +69,9 @@ export default new Vuex.Store({
     },
 
     mutations: {
-
+        goto: (state, url) => {
+            window.open(url, '_blank');
+        }
     },
 
     actions: {
