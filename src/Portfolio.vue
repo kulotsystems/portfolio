@@ -53,6 +53,10 @@
 </script>
 
 <style>
+    .grecaptcha-badge {
+        display: none;
+    }
+
     a {
         text-decoration: none;
     }

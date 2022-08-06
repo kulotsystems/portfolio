@@ -12,6 +12,9 @@ export default {
         lazy: {
             overview: {
                 collaborators: false
+            },
+            contact: {
+                form: false
             }
         }
     }
