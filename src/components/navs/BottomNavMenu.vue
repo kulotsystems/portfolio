@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-navigation app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48">
+    <v-bottom-navigation app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48" fixed>
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
