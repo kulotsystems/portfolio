@@ -21,8 +21,8 @@
             <p class="description mb-0">{{ project.desc }}</p>
         </v-card-text>
         <v-card-actions>
-            <button-social v-if="project.production != null" :url="project.production" class="mx-0" :x-small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
-            <button-social v-if="project.repository"         :url="project.repository" class="mx-0" :x-small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
+            <button-social v-if="project.production" :url="project.production" class="mx-0" :x-small="$vuetify.breakpoint.lgAndDown" text>open_in_new</button-social>
+            <button-social v-if="project.repository" :url="project.repository" class="mx-0" :x-small="$vuetify.breakpoint.lgAndDown" text>$github</button-social>
             <v-spacer/>
             <v-btn
                 text
