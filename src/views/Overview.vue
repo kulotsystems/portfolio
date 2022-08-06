@@ -37,7 +37,7 @@
             <v-card flat class="transparent mb-16">
                 <v-card-text>
                     <v-row>
-                        <v-col cols="12" md="5" lg="4" xl="5">
+                        <v-col cols="12" md="5" lg="4" xl="5" class="pr-md-10">
                             <p class="font-weight-bold" :class="$store.getters['breakpoints/font/h2']">
                                 Collaborators
                             </p>
