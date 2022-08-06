@@ -8,42 +8,51 @@
             </v-card-text>
 
             <v-card-subtitle :class="$store.getters['breakpoints/font/p']">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto autem eius excepturi, exercitationem iusto labore, magnam nemo nobis nostrum numquam placeat quae quibusdam quisquam ratione repellat sed, veritatis voluptatem!</p>
-            </v-card-subtitle>
-        </v-card>
-
-        <v-lazy v-model="$store.state.transitions.lazy.contact.form" transition="slide-x-transition">
-            <v-row>
-                <v-col cols="12" md="10" lg="8" xl="6">
-                    <v-card class="transparent" flat>
-                        <v-card-text>
+                <v-row>
+                    <v-col cols="12" md="5" xl="6">
+                        <p>
+                            Please fill in the form {{ $vuetify.breakpoint.smAndDown ? 'below' : 'on the right' }}
+                            for any inquiries about my services.
+                            I will do my best to get in touch with you.
+                        </p>
+                        <p>
+                            You can also reach me out through
+                            <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a> and
+                            <a :href="$store.getters.profile.socials.Facebook" target="_blank">Facebook</a>.
+                        </p>
+                        <p>
+                            Stay awesome!
+                        </p>
+                    </v-col>
+                    <v-col cols="12" md="7" xl="6">
+                        <v-lazy v-model="$store.state.transitions.lazy.contact.form" transition="slide-x-transition">
                             <v-form @submit.prevent="send" ref="contactForm">
                                 <v-text-field
-                                    v-model="form.name"
-                                    label="Name / Company"
-                                    type="text" class="mb-2"
-                                    :rules="[rules.required]"
-                                    :readonly="sending"
-                                    outlined
+                                        v-model="form.name"
+                                        label="Name / Company"
+                                        type="text" class="mb-2"
+                                        :rules="[rules.required]"
+                                        :readonly="sending"
+                                        outlined
                                 />
                                 <v-text-field
-                                    v-model="form.email"
-                                    label="E-mail address"
-                                    type="email"
-                                    class="mb-2"
-                                    :rules="[rules.required, rules.email]"
-                                    :readonly="sending"
-                                    outlined
+                                        v-model="form.email"
+                                        label="E-mail address"
+                                        type="email"
+                                        class="mb-2"
+                                        :rules="[rules.required, rules.email]"
+                                        :readonly="sending"
+                                        outlined
                                 />
                                 <v-textarea
-                                    v-model="form.message"
-                                    label="Message"
-                                    class="mb-2"
-                                    :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
-                                    counter
-                                    :maxlength="counter.message.max"
-                                    :readonly="sending"
-                                    outlined
+                                        v-model="form.message"
+                                        label="Message"
+                                        class="mb-2"
+                                        :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
+                                        counter
+                                        :maxlength="counter.message.max"
+                                        :readonly="sending"
+                                        outlined
                                 />
                                 <v-alert v-if="error" class="mb-8" color="error" outlined>
                                     <template v-if="error.message">
@@ -57,26 +66,26 @@
                                     </template>
                                 </v-alert>
                                 <v-btn
-                                    color="primary"
-                                    large
-                                    depressed
-                                    :loading="sending"
-                                    @click="preview"
+                                        color="primary"
+                                        large
+                                        depressed
+                                        :loading="sending"
+                                        @click="preview"
                                 >
-                                    <v-icon left>arrow_forward</v-icon>
+                                    <v-icon left>open_in_new</v-icon>
                                     Preview
                                 </v-btn>
                             </v-form>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-lazy>
+                        </v-lazy>
+                    </v-col>
+                </v-row>
+            </v-card-subtitle>
+        </v-card>
 
-
+        <!-- Message Preview -->
         <v-dialog v-model="previewing" scrollable max-width="640px">
             <v-card flat>
-                <v-card-title>
+                <v-card-title class="pr-4">
                     <span class="primary--text lighten-1" :class="$store.getters['breakpoints/font/h3']">Message Preview</span>
                     <v-spacer/>
                     <v-btn icon @click="previewing = false">
@@ -95,15 +104,16 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer/>
-                    <v-btn depressed large text @click="previewing = false">Cancel</v-btn>
+                    <v-btn depressed large @click="previewing = false" text>Close</v-btn>
                     <v-btn color="primary" depressed large @click="send">Send</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
 
+        <!-- Confirm Submission -->
         <v-dialog v-model="confirming" scrollable max-width="480px" persistent>
             <v-card flat>
-                <v-card-title>
+                <v-card-title class="pr-4">
                     <span class="primary--text lighten-1" :class="$store.getters['breakpoints/font/h3']">Confirmation</span>
                     <v-spacer/>
                     <v-btn icon @click="confirm">
@@ -112,15 +122,16 @@
                 </v-card-title>
                 <v-card-text class="pt-4">
                     <p :class="$store.getters['breakpoints/font/small']">
-                        THANK YOU for contacting me, <span class="primary--text">{{ form.name }}</span>.
+                        Thank you for contacting me, <span class="primary--text">{{ form.name }}</span>.
                     </p>
                     <p class="mb-0" :class="$store.getters['breakpoints/font/small']">
-                        I will get in touch with you soon.
+                        I will get in touch with you soon through the e-mail address you provided
+                        (<span class="primary--text">{{ form.email }}</span>).
                     </p>
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer/>
-                    <v-btn depressed large text @click="confirm">Close</v-btn>
+                    <v-btn depressed large @click="confirm" text>Close</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>

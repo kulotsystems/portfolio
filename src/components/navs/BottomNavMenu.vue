@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-navigation app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48">
+    <v-bottom-navigation v-if="windowHeight > 512" app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48" fixed>
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
@@ -17,7 +17,8 @@
         components: {},
         data() {
             return {
-
+                // https://stackoverflow.com/questions/54166847/how-to-access-the-window-object-in-vue-js
+                windowHeight: window.innerHeight
             }
         },
         computed: {
@@ -50,7 +51,20 @@
                     if(this.$route.params.slug)
                         this.$router.push({ name: 'projects' });
                 }
+            },
+
+            onResize() {
+                this.windowHeight = window.innerHeight
             }
+        },
+
+        mounted() {
+            this.$nextTick(() => {
+                window.addEventListener('resize', this.onResize);
+            });
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.onResize);
         }
     }
 </script>
