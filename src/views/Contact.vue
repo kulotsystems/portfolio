@@ -29,10 +29,11 @@
                             <v-form @submit.prevent="send" ref="contactForm">
                                 <v-text-field
                                         v-model="form.name"
-                                        label="Name / Company"
+                                        label="Name"
                                         type="text" class="mb-2"
                                         :rules="[rules.required]"
                                         :readonly="sending"
+                                        hint="Your full name OR company that you're representing."
                                         outlined
                                 />
                                 <v-text-field
@@ -66,11 +67,11 @@
                                     </template>
                                 </v-alert>
                                 <v-btn
-                                        color="primary"
-                                        large
-                                        depressed
-                                        :loading="sending"
-                                        @click="preview"
+                                    color="primary"
+                                    large
+                                    depressed
+                                    :loading="sending"
+                                    @click="preview"
                                 >
                                     <v-icon left>open_in_new</v-icon>
                                     Preview
