@@ -30,7 +30,9 @@
                                 <v-text-field
                                         v-model="form.name"
                                         label="Name"
-                                        type="text" class="mb-2"
+                                        type="text"
+                                        class="mb-2"
+                                        background-color="white"
                                         :rules="[rules.required]"
                                         :readonly="sending"
                                         hint="Your full name OR company that you're representing."
@@ -41,6 +43,7 @@
                                         label="E-mail address"
                                         type="email"
                                         class="mb-2"
+                                        background-color="white"
                                         :rules="[rules.required, rules.email]"
                                         :readonly="sending"
                                         outlined
@@ -49,6 +52,7 @@
                                         v-model="form.message"
                                         label="Message"
                                         class="mb-2"
+                                        background-color="white"
                                         :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
                                         counter
                                         :maxlength="counter.message.max"
