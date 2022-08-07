@@ -85,12 +85,12 @@
                     </template>
                 </p>
 
-                <div class="mt-7">
-                    <v-btn color="primary" v-if="project.repository" large outlined @click="$store.commit('goto', project.repository)">
+                <div class="mt-7 primary lighten-5 py-3 px-2 text-center rounded">
+                    <v-btn color="primary" v-if="project.repository" large text @click="$store.commit('goto', project.repository)">
                         <v-icon small left>$github</v-icon>
                         Repo<template v-if="!$vuetify.breakpoint.md || $vuetify.breakpoint.md && !project.production">sitory</template>
                     </v-btn>
-                    <v-btn color="primary" v-if="project.production" large outlined @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
+                    <v-btn color="primary" v-if="project.production" large text @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
                         <v-icon small left>open_in_new</v-icon>
                         See Live
                     </v-btn>

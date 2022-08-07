@@ -26,7 +26,7 @@
                     </v-col>
                     <v-col cols="12" md="7" xl="6" class="pl-md-16">
                         <v-lazy v-model="$store.state.transitions.lazy.contact.form" transition="slide-x-transition">
-                            <v-form @submit.prevent="send" ref="contactForm">
+                            <v-form @submit.prevent="preview" ref="contactForm">
                                 <v-text-field
                                         v-model="form.name"
                                         label="Name"
