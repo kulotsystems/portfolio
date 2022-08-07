@@ -68,6 +68,7 @@
                                 </v-alert>
                                 <v-btn
                                     color="primary"
+                                    class="py-6"
                                     large
                                     depressed
                                     :loading="sending"
@@ -94,13 +95,13 @@
                     </v-btn>
                 </v-card-title>
                 <v-card-text class="pt-4">
-                    <p class="mb-0 font-weight-bold" :class="$store.getters['breakpoints/font/xSmall']">Name / Company</p>
+                    <p class="mb-0 font-weight-bold" :class="$store.getters['breakpoints/font/small']">Name</p>
                     <p class="mb-8" :class="$store.getters['breakpoints/font/xSmall']">{{ form.name }}</p>
 
-                    <p class="mb-0 font-weight-bold" :class="$store.getters['breakpoints/font/xSmall']">E-mail Address</p>
+                    <p class="mb-0 font-weight-bold" :class="$store.getters['breakpoints/font/small']">E-mail Address</p>
                     <p class="mb-8" :class="$store.getters['breakpoints/font/xSmall']">{{ form.email }}</p>
 
-                    <p class="mb-0 font-weight-bold" :class="$store.getters['breakpoints/font/xSmall']">Message</p>
+                    <p class="mb-0 font-weight-bold" :class="$store.getters['breakpoints/font/small']">Message</p>
                     <p :class="$store.getters['breakpoints/font/xSmall']" style="white-space: pre-line">{{ form.message }}</p>
                 </v-card-text>
                 <v-card-actions>
