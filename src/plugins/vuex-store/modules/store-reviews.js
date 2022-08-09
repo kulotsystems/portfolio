@@ -10,7 +10,7 @@ import michael from './reviews/michael.js';
 import florencio from './reviews/florencio.js';
 import junjun from './reviews/jun-jun.js';
 import ivan from './reviews/ivan.js';
-
+import kylie from './reviews/kylie.js';
 
 export default {
     namespaced: true,
@@ -25,6 +25,7 @@ export default {
         florencio,
         junjun,
         ivan,
+	kylie,
 
     }
 }
