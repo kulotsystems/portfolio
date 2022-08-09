@@ -66,7 +66,7 @@ export default {
         review: {
             as     : ['student', ''],
             rating : 5,
-            content: 'Sir Arvic is like my mentor to coding, if I never met him I would be confused of being a future developer. My knowledge and skill just improved by suprise and I learned a lot from him. '
+            content: 'Sir Arvic is like my mentor to coding. If I never met him I would be confused of being a future developer. My knowledge and skill just improved by surprise and I learned a lot from him.'
         },
         // ===================================================================================================
 
