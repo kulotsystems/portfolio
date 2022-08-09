@@ -25,6 +25,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Rename index to 404
+        run: npm run rename-index
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
         with:
