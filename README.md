@@ -90,6 +90,7 @@ Download and install the following tools:
 #### Staging
 - **<https://kulotsystems.vercel.app>**
 - **<https://kulotsystems.netlify.app>**
+- **<https://kulotsystems.github.io/portfolio>**
 
 #### Production
 - **<https://kulotsystems.tech/portfolio>**
