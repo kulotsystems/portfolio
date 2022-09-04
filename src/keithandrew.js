@@ -66,7 +66,9 @@ export default {
         review: {
             as     : ['friend', 'teacher'],
             rating : 5,
-            content: 'Good friend with a good heart'
+            content: '
+            We hardly know each other but we are like friends right away and are helping me with the project I am working on. 
+            Sometimes there's a joke that's just silly haha. I hope the friendship lasts a long time.'
         },
         // ===================================================================================================
 
