@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="windowWidth > 600">
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
@@ -24,7 +24,10 @@
         name: 'TopButtonMenu',
         components: {},
         data() {
-            return {}
+            return {
+                // https://stackoverflow.com/questions/54166847/how-to-access-the-window-object-in-vue-js
+                windowWidth: window.innerWidth
+            }
         },
         computed: {
             menuItems() {
@@ -45,7 +48,20 @@
                     if(this.$route.params.slug)
                         this.$router.push({ name: 'projects' });
                 }
+            },
+
+            onResize() {
+                this.windowWidth = window.innerWidth;
             }
+        },
+
+        mounted() {
+            this.$nextTick(() => {
+                window.addEventListener('resize', this.onResize);
+            });
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.onResize);
         }
     }
 </script>
