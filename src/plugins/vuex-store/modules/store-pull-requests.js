@@ -5,6 +5,8 @@
 |
 */
 
+import ronhedwig from './reviews/ron-hedwig.js';
+
 export default {
     namespaced: true,
 
@@ -14,7 +16,8 @@ export default {
             florencio: 'https://github.com/kulotsystems/portfolio/pull/11',
             junjun   : 'https://github.com/kulotsystems/portfolio/pull/25',
             ivan     : 'https://github.com/kulotsystems/portfolio/pull/38',
-            kylie    : 'https://github.com/kulotsystems/portfolio/pull/80'
+            kylie    : 'https://github.com/kulotsystems/portfolio/pull/80',
+            ronhedwig: 'https://github.com/kulotsystems/portfolio/pull/98'
         }
     },
 
