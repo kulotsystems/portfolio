@@ -66,7 +66,7 @@ export default {
         review: {
             as     : ['student', ''],
             rating : 5,
-            content: 'I am a student of Sir Arvic since my Senior Highschool. When I was Grade 11, I am new to programming and Sir Arvic was our teacher. He taught programming to us so right and fluently. Even that has no idea of programming can learn from him. I promise he\'s better than watching Youtube. He\'s also better at motivating students that are so down in programming. Also optimistic and will everyday make you special. Because of Sir Arvic, I am now good at programming, coding, communicating, and collaborating with people. Lastly, I am thankful that I\'m one of his students. Sir Arvic is best of best! 😎'
+            content: 'I am a student of Sir Arvic since my Senior Highschool. That time, I am new to programming and he was our teacher. He taught programming fluently that even newbies can learn from him. He\'s also better at motivating students to be optimistic in programming and will make learning worth the time. I am now good at coding, communicating, and collaborating with people. I am thankful that I\'m one of his students. Sir Arvic is best of best! 😎'
         },
         // ===================================================================================================
 
