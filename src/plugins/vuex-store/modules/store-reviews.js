@@ -11,6 +11,7 @@ import florencio from './reviews/florencio.js';
 import junjun from './reviews/jun-jun.js';
 import ivan from './reviews/ivan.js';
 import kylie from './reviews/kylie.js';
+import ronhedwig from './reviews/ron-hedwig.js';
 
 export default {
     namespaced: true,
@@ -26,6 +27,6 @@ export default {
         junjun,
         ivan,
 	    kylie,
-
+        ronhedwig
     }
 }
