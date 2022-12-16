@@ -11,17 +11,20 @@
                 <v-row>
                     <v-col cols="12" md="5" xl="6">
                         <p>
-                            Please fill in the form {{ $vuetify.breakpoint.smAndDown ? 'below' : 'on the right' }}
-                            for any inquiries about my services.
-                            I will do my best to get in touch with you.
-                        </p>
-                        <p>
-                            You can also reach me at
-                            <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a> and
+                            If you're interested in learning more about my services or have any questions,
+                            please don't hesitate to reach out to me using the form
+                            {{ $vuetify.breakpoint.smAndDown ? 'below' : 'on the right' }}
+                            or by connecting with me on
+                            <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a>
+                            or
                             <a :href="$store.getters.profile.socials.Facebook" target="_blank">Facebook</a>.
                         </p>
                         <p>
-                            Stay awesome!
+                            I'm always happy to discuss how I can help you achieve your goals
+                            and would be happy to provide more information on the value I can bring to your project.
+                        </p>
+                        <p>
+                            I look forward to connecting with you and learning more about your needs. Thank you for considering my services.
                         </p>
                     </v-col>
                     <v-col cols="12" md="7" xl="6" class="pl-md-16">
