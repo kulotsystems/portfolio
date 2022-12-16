@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    import profilePhoto from '../../assets/img/kulotsystems-v1.jpg';
+    import profilePhoto from '../../assets/img/kulotsystems-v2.jpg';
 
     export default {
         name: 'Profile',
