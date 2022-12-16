@@ -3,20 +3,22 @@
         <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16 pb-8">
             <v-card-text>
                 <p class="font-weight-bold mb-0" :class="$store.getters['breakpoints/font/h1']">
-                    Let's take your business to the Web.
+                    Let's Transform Your Business and Inspire the Future Together
                 </p>
             </v-card-text>
 
             <v-card-subtitle :class="$store.getters['breakpoints/font/p']">
                 <v-row>
-                    <v-col cols="12" lg="10" xl="9">
+                    <v-col cols="12">
                         <p>
-                            Hi there! I am {{ $store.getters.profile.name.firstName }},
-                            a full-stack developer helping small to medium-sized businesses and organizations
-                            automate their business logic using web technologies.
+                            Hello World! My name is {{ $store.getters.profile.name.firstName }}
+                            and I am a full-stack developer with a passion for helping small to medium-sized businesses and organizations
+                            streamline their operations through the use of web technologies.
                         </p>
+
                         <p>
-                            I am also an educator inspiring young people to learn tech.
+                            In addition to my work as a developer,
+                            I am also an educator who is dedicated to inspiring the next generation of tech professionals.
                         </p>
                     </v-col>
                 </v-row>
@@ -42,10 +44,10 @@
                                 Collaborators
                             </p>
                             <p class="mb-0" :class="$store.getters['breakpoints/font/p']">
-                                The entire codebase for this application is available on
+                                This application's codebase can be found on
                                 <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
-                                {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'On the right' }}
-                                are some reviews from my collaborators.
+                                {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'To the right' }},
+                                you'll find reviews from my colleagues and collaborators.
                             </p>
                         </v-col>
                         <v-col cols="12" md="7" lg="8" xl="7">

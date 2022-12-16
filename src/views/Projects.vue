@@ -10,9 +10,9 @@
 
             <v-card-subtitle>
                 <p class="mb-10" :class="$store.getters['breakpoints/font/p']">
-                    Most of my projects are systems that
-                    follow certain requirements that solve a specific problem for a wide range of users.
-                    But above anything else, I love building projects that are also useful and fun for me to use.
+                    I enjoy creating projects that are both useful and fun to use.
+                    In this page, you'll find a mix of functional systems and personal projects
+                    that demonstrate my ability to develop solutions for a variety of users.
                 </p>
                 <v-row>
                     <v-lazy v-model="project.transition" transition="slide-x-transition" v-for="(project, slug, index) in projects" :key="slug" class="col-sm-6 col-md-4 col-lg-3 col-12">
