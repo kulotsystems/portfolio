@@ -27,20 +27,21 @@
             </div>
         </v-card-text>
         <v-card-actions class="justify-center">
-            <button-social class="mx-1" text :url="$store.getters.profile.socials.Twitter"  outlined :large="$vuetify.breakpoint.xl">$twitter</button-social>
-            <button-social class="mx-1" text :url="$store.getters.profile.socials.Facebook" outlined :large="$vuetify.breakpoint.xl">$facebook</button-social>
-            <button-social class="mx-1" text :url="$store.getters.profile.socials.Github"   outlined :large="$vuetify.breakpoint.xl">$github</button-social>
+            <button-social icon="mdi-twitter"  class="mx-1" text :url="$store.getters.profile.socials.Twitter"  outlined :large="$vuetify.display.xl"/>
+            <button-social icon="mdi-facebook" class="mx-1" text :url="$store.getters.profile.socials.Facebook" outlined :large="$vuetify.display.xl"/>
+            <button-social icon="mdi-github"   class="mx-1" text :url="$store.getters.profile.socials.Github"   outlined :large="$vuetify.display.xl"/>
         </v-card-actions>
     </v-card>
 </template>
 
 <script>
+    import { defineAsyncComponent } from 'vue';
     import profilePhoto from '../../assets/img/kulotsystems-v2.jpg';
 
     export default {
         name: 'Profile',
         components: {
-            'button-social': () => import('../../components/buttons/ButtonSocial.vue')
+            'button-social': defineAsyncComponent(() => import('../../components/buttons/ButtonSocial.vue'))
         },
         data() {
             return {
@@ -50,9 +51,9 @@
         computed: {
             avatarSize() {
                 let size = 160;
-                if(this.$vuetify.breakpoint.lg)
+                if(this.$vuetify.display.lg)
                     size = 200;
-                else if(this.$vuetify.breakpoint.xl)
+                else if(this.$vuetify.display.xl)
                     size = 250;
                 return size;
             }

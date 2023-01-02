@@ -23,11 +23,11 @@
                 </v-row>
             </v-card-subtitle>
             <v-card-actions class="px-4">
-                <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.xl" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'projects' })" rounded color="primary" elevation="0">
+                <v-btn :large="$vuetify.display.mdAndDown" :x-large="$vuetify.display.xl" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'projects' })" rounded color="primary" elevation="0">
                     <v-icon left>{{ $store.getters['navigation/mainMenuItems'][1].icon }}</v-icon>
-                    <span v-if="$vuetify.breakpoint.smAndUp">See&nbsp;</span>My Projects
+                    <span v-if="$vuetify.display.smAndUp">See&nbsp;</span>My Projects
                 </v-btn>
-                <v-btn :large="$vuetify.breakpoint.mdAndDown" :x-large="$vuetify.breakpoint.xl" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'contact' })"  rounded color="primary" text>
+                <v-btn :large="$vuetify.display.mdAndDown" :x-large="$vuetify.display.xl" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'contact' })"  rounded color="primary" text>
                     <v-icon left>{{ $store.getters['navigation/mainMenuItems'][2].icon }}</v-icon>
                     Let's Talk
                 </v-btn>
@@ -45,7 +45,7 @@
                             <p class="mb-0" :class="$store.getters['breakpoints/font/p']">
                                 This application's codebase can be found on
                                 <a href="https://github.com/kulotsystems/portfolio" target="_blank">GitHub</a>.
-                                {{ $vuetify.breakpoint.smAndDown ? 'Below' : 'To the right' }},
+                                {{ $vuetify.display.smAndDown ? 'Below' : 'To the right' }},
                                 you'll find reviews from my colleagues and collaborators.
                             </p>
                         </v-col>
@@ -60,10 +60,12 @@
 </template>
 
 <script>
+    import { defineAsyncComponent } from 'vue';
+
     export default {
         name: 'Overview',
         components: {
-            'carousel-reviews': () => import('../components/carousels/CarouselReviews.vue')
+            'carousel-reviews': defineAsyncComponent(() => import('../components/carousels/CarouselReviews.vue'))
         },
         data() {
             return {

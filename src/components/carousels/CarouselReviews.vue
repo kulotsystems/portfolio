@@ -3,21 +3,20 @@
         v-model="slide"
         :continuous="false"
         :height="height"
-        :show-arrows="$vuetify.breakpoint.lgAndUp"
+        :show-arrows="$vuetify.display.lgAndUp"
         hide-delimiter-background
         light
         cycle
         interval="15000"
         style="border-radius: 8px;"
-        :dark="$vuetify.theme.dark"
     >
         <template v-slot:prev="{ on, attrs }">
-            <v-btn :class="{ 'primary lighten-5': !$vuetify.theme.dark, 'light darken-2': $vuetify.theme.dark }" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
+            <v-btn class="primary lighten-5" :large="$vuetify.display.sm" :x-large="$vuetify.display.mdAndUp" :fab="$vuetify.display.xl" icon v-bind="attrs" v-on="on">
                 <v-icon color="primary" style="opacity: 0.7">chevron_left</v-icon>
             </v-btn>
         </template>
         <template v-slot:next="{ on, attrs }">
-            <v-btn :class="{ 'primary lighten-5': !$vuetify.theme.dark, 'light darken-2': $vuetify.theme.dark }" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
+            <v-btn class="primary lighten-5" :large="$vuetify.display.sm" :x-large="$vuetify.display.mdAndUp" :fab="$vuetify.display.xl" icon v-bind="attrs" v-on="on">
                 <v-icon color="primary" style="opacity: 0.7">chevron_right</v-icon>
             </v-btn>
         </template>
@@ -28,10 +27,12 @@
 </template>
 
 <script>
+    import { defineAsyncComponent } from 'vue';
+
     export default {
         name: 'CarouselReviews',
         components: {
-            'review': () => import('../../components/cards/Review.vue')
+            'review': defineAsyncComponent(() => import('../../components/cards/Review.vue'))
         },
         data() {
             return {
@@ -44,15 +45,15 @@
             },
             height() {
                 let height = 0;
-                if(this.$vuetify.breakpoint.xs)
+                if(this.$vuetify.display.xs)
                     height = 530;
-                else if(this.$vuetify.breakpoint.sm)
+                else if(this.$vuetify.display.sm)
                     height = 400;
-                else if(this.$vuetify.breakpoint.md)
+                else if(this.$vuetify.display.md)
                     height = 640;
-                else if(this.$vuetify.breakpoint.lg)
+                else if(this.$vuetify.display.lg)
                     height = 530;
-                else if(this.$vuetify.breakpoint.xl)
+                else if(this.$vuetify.display.xl)
                     height = 530;
                 return height;
             }

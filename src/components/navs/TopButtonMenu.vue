@@ -3,17 +3,16 @@
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
-            :text="menuItem.name !== activeMenuItem"
-            :class="(menuItem.name === activeMenuItem ? (!$vuetify.theme.dark ? 'primary--text ' : 'white--text ') : (!$vuetify.theme.dark ? 'white--text ' : '')) + $store.getters['breakpoints/button/md']"
-            :large="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
-            :x-large="$vuetify.breakpoint.xl"
-            :color="!$vuetify.theme.dark ? 'white' : (menuItem.name === activeMenuItem ? 'primary' : 'grey')"
+            :variant="menuItem.name !== activeMenuItem ? 'text' : 'flat'"
+            :class="(menuItem.name === activeMenuItem ? 'primary--text ' : '') + $store.getters['breakpoints/button/md']"
+            :size="($vuetify.display.md || $vuetify.display.lg) ? 'large' : (($vuetify.display.xl) ? 'x-large' : 'default')"
+            color="white"
             elevation="0"
             @click="menuClick(menuItem.name)"
-            :width="$vuetify.breakpoint.lgAndDown ? 125 : 160"
+            :width="$vuetify.display.lgAndDown ? 125 : 160"
             class="mx-1"
         >
-            <v-icon left>{{ menuItem.icon }}</v-icon>
+            <v-icon :icon="menuItem.icon" start/>
             {{ menuItem.text }}
         </v-btn>
     </div>
@@ -54,11 +53,11 @@
                 this.windowWidth = window.innerWidth;
             }
         },
-
         mounted() {
             this.$nextTick(() => {
                 window.addEventListener('resize', this.onResize);
             });
+
         },
         beforeDestroy() {
             window.removeEventListener('resize', this.onResize);

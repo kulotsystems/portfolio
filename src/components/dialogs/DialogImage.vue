@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-sheet v-model="$store.state.dialog.image.opened" :retain-focus="false" :max-width="maxWidth" scrollable>
+    <v-navigation-drawer location="bottom" temporary v-model="$store.state.dialog.image.opened" :retain-focus="false" :max-width="maxWidth" scrollable>
         <v-card tile elevation="24">
             <v-card-title class="pa-3">
                 <p class="ma-0">
@@ -23,7 +23,7 @@
                 </v-img>
             </v-card-text>
         </v-card>
-    </v-bottom-sheet>
+    </v-navigation-drawer>
 </template>
 
 <script>
@@ -39,9 +39,9 @@
             },
             maxWidth() {
                 let width = 600;
-                if(this.$vuetify.breakpoint.sm)
+                if(this.$vuetify.display.sm)
                     width = 960;
-                else if(this.$vuetify.breakpoint.mdAndUp)
+                else if(this.$vuetify.display.mdAndUp)
                     width = 1200;
                 return width;
             }

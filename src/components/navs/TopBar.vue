@@ -1,18 +1,17 @@
 <template>
-    <v-app-bar app flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  !$vuetify.theme.dark, 'light darken-2 grey--text':  $vuetify.theme.dark }">
+    <v-app-bar color="primary" class="white--text" app flat :height="$store.getters['breakpoints/appbar/height']">
         <v-row>
-            <v-container class="pa-0 pr-md-5 pr-xl-4 fill-height">
+            <v-container class="pa-0 pr-md-5 pr-xl-4 fill-height d-flex align-center">
                 <v-app-bar-nav-icon
-                    v-if="!$store.getters['navigation/sidebarOpened']"
+                    v-if="$vuetify.display.smAndDown"
+                    @click="toggleSidebar"
                     dark
-                    @click="$store.commit('navigation/openSidebar')"
-                    :class="{ 'grey--text': $vuetify.theme.dark }"
                 />
-                <v-app-bar-title v-if="!$store.getters['navigation/sidebarOpened']" :class="$store.getters['breakpoints/font/h3']">
+                <v-app-bar-title :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
                 </v-app-bar-title>
                 <v-spacer/>
-                <top-button-menu   v-if="$vuetify.breakpoint.smAndUp"/>
+                <top-button-menu v-if="$vuetify.display.smAndUp"/>
                 <top-dropdown-menu v-else/>
             </v-container>
         </v-row>
@@ -20,17 +19,25 @@
 </template>
 
 <script>
+    import { defineAsyncComponent } from 'vue';
     export default {
         name: 'TopBar',
         components: {
-            'top-button-menu'  : () => import('./TopButtonMenu.vue'),
-            'top-dropdown-menu': () => import('./TopDropdownMenu.vue')
+            'top-button-menu'  : defineAsyncComponent(() => import('./TopButtonMenu.vue')),
+            'top-dropdown-menu': defineAsyncComponent(() => import('./TopDropdownMenu.vue'))
         },
         data() {
             return {}
         },
         computed: {},
-        methods: {}
+        methods: {
+            toggleSidebar() {
+                if(!this.$store.getters['navigation/sidebarOpened'])
+                    this.$store.commit('navigation/openSidebar');
+                else
+                    this.$store.commit('navigation/closeSidebar');
+            }
+        }
     }
 </script>
 

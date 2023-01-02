@@ -7,13 +7,14 @@
             <router-view/>
             <v-icon ref="mdi-init" style="visibility: hidden">dashboard</v-icon>
         </v-main>
-        <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>
-        <dialog-loader/>
-        <dialog-image/>
+<!--        <bottom-nav-menu v-if="$vuetify.display.xsOnly"/>-->
+<!--        <dialog-loader/>-->
+<!--        <dialog-image/>-->
     </v-app>
 </template>
 
 <script>
+    import { defineAsyncComponent } from 'vue';
     import TopBar  from './components/navs/TopBar.vue';
     import Sidebar from './components/navs/Sidebar.vue';
     import DialogLoader from './components/dialogs/DialogLoader.vue';
@@ -24,8 +25,8 @@
             'topbar'         : TopBar,
             'sidebar'        : Sidebar,
             'dialog-loader'  : DialogLoader,
-            'dialog-image'   : () => import('./components/dialogs/DialogImage.vue'),
-            'bottom-nav-menu': () => import('./components/navs/BottomNavMenu.vue'),
+            'dialog-image'   : defineAsyncComponent(() => import('./components/dialogs/DialogImage.vue')),
+            'bottom-nav-menu': defineAsyncComponent(() => import('./components/navs/BottomNavMenu.vue')),
         },
         data() {
             return {

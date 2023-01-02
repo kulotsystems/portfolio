@@ -1,8 +1,6 @@
 <template>
     <v-btn fab :color="color" :outlined="outlined" :text="text" :large="large" :small="small" :x-small="xSmall" @click="$store.commit('goto', url)">
-        <v-icon>
-            <slot></slot>
-        </v-icon>
+        <v-icon :icon="icon"/>
     </v-btn>
 </template>
 
@@ -11,6 +9,10 @@
         name: 'ButtonSocial',
         components: {},
         props: {
+            icon: {
+                type   : String,
+                default: 'mdi-vuetify'
+            },
             outlined: {
                 type   : Boolean,
                 default: false

@@ -1,10 +1,10 @@
-import vuetify from '../../../vuetify/Vuetify.js'
+import vuetify from '../../../vuetify/Vuetify.js';
 
 export default {
     namespaced: true,
 
     state: {
-        breakpoint: vuetify.framework.breakpoint
+        breakpoint: vuetify.display
     },
 
     getters: {

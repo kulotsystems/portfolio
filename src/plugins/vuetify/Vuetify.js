@@ -6,93 +6,30 @@
 |
 */
 
+// styles
 import '@fontsource/roboto';
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
-import 'vuetify/dist/vuetify.min.css';
+import '@mdi/font/css/materialdesignicons.css';
+import 'vuetify/styles';
 
-import Vue from 'vue';
-import Vuetify from 'vuetify';
-Vue.use(Vuetify);
+// composables
+import { createVuetify } from 'vuetify';
 
-import Twitter    from '../../components/svgs/Twitter.vue';
-import Facebook   from '../../components/svgs/Facebook.vue';
-import GitHub     from '../../components/svgs/GitHub.vue';
-import HTML       from '../../components/svgs/HTML.vue';
-import CSS        from '../../components/svgs/CSS.vue';
-import JavaScript from '../../components/svgs/JavaScript.vue';
-import PHP        from '../../components/svgs/PHP.vue';
-import VueJS      from '../../components/svgs/VueJS.vue';
-import React      from '../../components/svgs/React.vue';
-import VuetifyJS  from '../../components/svgs/VuetifyJS.vue';
-import Laravel    from '../../components/svgs/Laravel.vue';
-import MySQL      from '../../components/svgs/MySQL.vue';
-import jQuery     from '../../components/svgs/jQuery.vue';
-import Bootstrap  from '../../components/svgs/Bootstrap.vue';
-
-export default new Vuetify({
-    icons: {
-        iconfont: 'mdiSvg',
-        values: {
-            twitter: {
-                component: Twitter
-            },
-            facebook: {
-                component: Facebook
-            },
-            github: {
-                component: GitHub
-            },
-            html: {
-                component: HTML
-            },
-            css: {
-                component: CSS
-            },
-            bootstrap: {
-                component: Bootstrap
-            },
-            javascript: {
-                component: JavaScript
-            },
-            jquery: {
-                component: jQuery
-            },
-            php: {
-                component: PHP
-            },
-            mysql: {
-                component: MySQL
-            },
-            vue: {
-                component: VueJS
-            },
-            react: {
-                component: React
-            },
-            vuetify: {
-                component: VuetifyJS
-            },
-            laravel: {
-                component: Laravel
-            },
-        },
-    },
+// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+export default createVuetify({
     theme: {
         themes: {
             light: {
-                primary  : '#4169e1',
-                info     : '#363062',
-                light    : '#c8c8c8',
-                dark     : '#444444'
-            },
-            dark: {
-                primary  : '#5278e9',
-                info     : '#363062',
-                light    : '#444444',
-                dark     : '#c8c8c8'
+                colors: {
+                    primary  : '#4169e1',
+                    secondary: '#ac4cbc',
+                    success  : '#68cf29',
+                    info     : '#363062',
+                    warning  : '#ffab2d',
+                    error    : '#f72b50',
+                    light    : '#c8c8c8',
+                    dark     : '#444444'
+                }
             }
         }
     }
 });
-
-

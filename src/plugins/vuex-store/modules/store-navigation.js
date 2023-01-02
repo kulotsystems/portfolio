@@ -15,17 +15,17 @@ export default {
                 {
                     text: 'OVERVIEW',
                     name: 'overview',
-                    icon: 'space_dashboard'
+                    icon: 'mdi-view-dashboard'
                 },
                 {
                     text: 'PROJECTS',
                     name: 'projects',
-                    icon: 'grid_view'
+                    icon: 'mdi-view-grid'
                 },
                 {
                     text: 'CONTACT',
                     name: 'contact',
-                    icon: 'message'
+                    icon: 'mdi-message-text'
                 }
             ]
         },

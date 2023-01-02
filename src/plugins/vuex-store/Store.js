@@ -7,9 +7,7 @@
 */
 
 
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
+import { createStore } from 'vuex';
 
 
 // --- MODULES ------------------------------------------------------------
@@ -30,7 +28,7 @@ const isDarkMode = () => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
-export default new Vuex.Store({
+export default createStore({
 
     state: {
         app: {
