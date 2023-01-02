@@ -4,26 +4,26 @@ export default {
     namespaced: true,
 
     state: {
-        breakpoint: vuetify.framework.breakpoint
+        breakpoint: vuetify.display
     },
 
     getters: {
         md: (state) => {
             if(state.breakpoint.mdAndDown)
-                return 'py-4 px-3';
+                return 'py-3 px-3';
             else if(state.breakpoint.lg)
-                return 'py-5 px-4';
+                return 'py-4 px-4';
             else if(state.breakpoint.xl)
-                return 'py-6 px-5';
+                return 'py-5 px-5';
         },
 
         lg: (state) => {
             if(state.breakpoint.mdAndDown)
-                return 'py-5 px-4';
+                return 'py-4 px-4';
             else if(state.breakpoint.lg)
-                return 'py-7 px-5';
+                return 'py-6 px-5';
             else if(state.breakpoint.xl)
-                return 'py-8 px-6';
+                return 'py-7 px-6';
         }
     }
 }

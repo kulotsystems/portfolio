@@ -1,5 +1,5 @@
 <template>
-    <v-skeleton-loader
+    <v-progress-circular
         v-if="$store.state.dialog.loader.opened"
         id="dialog-loader"
         type="image"

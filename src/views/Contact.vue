@@ -13,7 +13,7 @@
                         <p>
                             If you're interested in learning more about my services or have any questions,
                             please don't hesitate to reach out to me using the form
-                            {{ $vuetify.breakpoint.smAndDown ? 'below' : 'on the right' }}
+                            {{ $vuetify.display.smAndDown ? 'below' : 'on the right' }}
                             or by connecting with me on
                             <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a>
                             or

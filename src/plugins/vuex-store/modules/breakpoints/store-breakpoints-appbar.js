@@ -4,7 +4,7 @@ export default {
     namespaced: true,
 
     state: {
-        breakpoint: vuetify.framework.breakpoint
+        breakpoint: vuetify.display
     },
 
     getters: {

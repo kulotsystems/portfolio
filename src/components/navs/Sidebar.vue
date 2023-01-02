@@ -3,21 +3,14 @@
         <v-navigation-drawer
             app
             v-model="$store.state.navigation.sidebar.opened"
-            :permanent="$vuetify.breakpoint.mdAndUp"
+            :permanent="$vuetify.display.mdAndUp"
             :width="width"
             overlay-opacity="0.1"
             class="grey lighten-5"
             floating
         >
-            <v-app-bar color="primary" class="white--text" flat :height="$store.getters['breakpoints/appbar/height']">
-                <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
-                <v-app-bar-title :class="$store.getters['breakpoints/font/h3']">
-                    {{ $store.getters.appName }}
-                </v-app-bar-title>
-                <v-spacer v-if="$vuetify.breakpoint.mdAndUp"/>
-            </v-app-bar>
             <profile/>
-            <!--<template v-slot:append v-if="$vuetify.breakpoint.smAndUp && windowHeight >= 640">
+            <!--<template v-slot:append v-if="$vuetify.display.smAndUp && windowHeight >= 640">
                 <side-nav-menu class="mb-5"/>
             </template>-->
         </v-navigation-drawer>
@@ -25,11 +18,13 @@
 </template>
 
 <script>
+    import { defineAsyncComponent } from 'vue';
+
     export default {
         name: 'Sidebar',
         components: {
-            'profile'      : () => import('../cards/Profile.vue'),
-            // 'side-nav-menu': () => import('./SideNavMenu.vue')
+            'profile'      : defineAsyncComponent(() => import('../cards/Profile.vue')),
+            // 'side-nav-menu': defineAsyncComponent(() => import('./SideNavMenu.vue'))
         },
         data() {
             return {
@@ -39,9 +34,9 @@
         },
         computed: {
             width() {
-                if(this.$vuetify.breakpoint.mdAndDown)
+                if(this.$vuetify.display.mdAndDown)
                     return 256;
-                else if(this.$vuetify.breakpoint.lg)
+                else if(this.$vuetify.display.lg)
                     return 320;
                 else
                     return 384;

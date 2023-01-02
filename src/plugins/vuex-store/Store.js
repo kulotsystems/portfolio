@@ -7,9 +7,7 @@
 */
 
 
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
+import { createStore } from 'vuex';
 
 
 // --- MODULES ------------------------------------------------------------
@@ -23,7 +21,7 @@ import breakpoints  from './modules/store-breakpoints.js';
 import transitions  from './modules/store-transitions.js';
 
 
-export default new Vuex.Store({
+export default createStore({
 
     state: {
         app: {

@@ -19,7 +19,7 @@
                                     <v-spacer/>
                                     <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
                                         <template v-slot:activator="{ on, attrs }">
-                                            <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.breakpoint.xl">
+                                            <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.display.xl">
                                                 <v-icon>more_vert</v-icon>
                                             </v-btn>
                                         </template>
@@ -93,9 +93,9 @@
             },
             avatarSize() {
                 let size = 100;
-                if(this.$vuetify.breakpoint.md || this.$vuetify.breakpoint.lg)
+                if(this.$vuetify.display.md || this.$vuetify.display.lg)
                     size = 120;
-                else if(this.$vuetify.breakpoint.xl)
+                else if(this.$vuetify.display.xl)
                     size = 140;
                 return size;
             },
