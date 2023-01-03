@@ -1,5 +1,5 @@
 <template>
-    <v-btn fab :color="color" :outlined="outlined" :text="text" :large="large" :small="small" :x-small="xSmall" @click="$store.commit('goto', url)">
+    <v-btn icon :color="color" :variant="variant" :size="size" @click="$store.commit('goto', url)">
         <v-icon :icon="icon"/>
     </v-btn>
 </template>
@@ -13,29 +13,17 @@
                 type   : String,
                 default: 'mdi-vuetify'
             },
-            outlined: {
-                type   : Boolean,
-                default: false
-            },
-            text: {
-                type   : Boolean,
-                default: false
+            variant: {
+                type   : String,
+                default: 'text'
             },
             color: {
                 type   : String,
                 default: 'primary'
             },
-            large: {
-                type   : Boolean,
-                default: false
-            },
-            small: {
-                type   : Boolean,
-                default: false
-            },
-            xSmall: {
-                type   : Boolean,
-                default: false
+            size: {
+                type   : String,
+                default: 'default'
             },
             url: {
                 type   : String,

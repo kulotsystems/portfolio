@@ -1,7 +1,5 @@
 <template>
-    <v-icon :small="small">
-        <slot></slot>
-    </v-icon>
+    <v-icon :size="size" :icon="icon"/>
 </template>
 
 <script>
@@ -9,9 +7,13 @@
         name: 'LabelDevTool',
         components: {},
         props: {
-            small: {
-                type   : Boolean,
-                default: false
+            size: {
+                type   : String,
+                default: 'small'
+            },
+            icon: {
+                type   : String,
+                default: 'mdi-vuetify'
             }
         },
         data() {
