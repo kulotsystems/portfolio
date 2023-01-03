@@ -5,100 +5,96 @@
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                     Contact Me
                 </p>
+                <div :class="$store.getters['breakpoints/font/p']">
+                    <v-row>
+                        <v-col cols="12" md="5" xl="6">
+                            <p>
+                                If you're interested in learning more about my services or have any questions,
+                                please don't hesitate to reach out to me using the form
+                                {{ $vuetify.display.smAndDown ? 'below' : 'on the right' }}
+                                or by connecting with me on
+                                <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a>
+                                or
+                                <a :href="$store.getters.profile.socials.Facebook" target="_blank">Facebook</a>.
+                            </p>
+                            <p>
+                                I'm always happy to discuss how I can help you achieve your goals
+                                and would be happy to provide more information on the value I can bring to your project.
+                            </p>
+                            <p>
+                                I look forward to connecting with you and learning more about your needs. Thank you for considering my services.
+                            </p>
+                        </v-col>
+                        <v-col cols="12" md="7" xl="6" class="pl-md-16">
+                            <v-lazy v-model="$store.state.transitions.lazy.contact.form" transition="slide-x-transition">
+                                <v-form @submit.prevent="preview" ref="contactForm">
+                                    <v-text-field
+                                        v-model="form.name"
+                                        label="Name"
+                                        type="text"
+                                        class="mb-2"
+                                        background-color="white"
+                                        :rules="[rules.required]"
+                                        :readonly="sending"
+                                        hint="Your full name OR company that you're representing."
+                                        outlined
+                                    />
+                                    <v-text-field
+                                        v-model="form.email"
+                                        label="E-mail address"
+                                        type="email"
+                                        class="mb-2"
+                                        background-color="white"
+                                        :rules="[rules.required, rules.email]"
+                                        :readonly="sending"
+                                        outlined
+                                    />
+                                    <v-textarea
+                                        v-model="form.message"
+                                        label="Message"
+                                        class="mb-2"
+                                        background-color="white"
+                                        :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
+                                        counter
+                                        :maxlength="counter.message.max"
+                                        :readonly="sending"
+                                        outlined
+                                    />
+                                    <v-alert v-if="error" class="mb-8" color="error" outlined>
+                                        <template v-if="error.message">
+                                            {{ error.message }}
+                                            <ul v-if="error.response.data.errors">
+                                                <li v-for="err in error.response.data.errors">{{ err[0] }}</li>
+                                            </ul>
+                                        </template>
+                                        <template v-else>
+                                            {{ error }}
+                                        </template>
+                                    </v-alert>
+                                    <v-btn
+                                        color="primary"
+                                        class="py-6"
+                                        large
+                                        depressed
+                                        :loading="sending"
+                                        @click="preview"
+                                    >
+                                        <v-icon left>open_in_new</v-icon>
+                                        Preview
+                                    </v-btn>
+                                </v-form>
+                            </v-lazy>
+                        </v-col>
+                    </v-row>
+                </div>
             </v-card-text>
-
-            <v-card-subtitle :class="$store.getters['breakpoints/font/p']">
-                <v-row>
-                    <v-col cols="12" md="5" xl="6">
-                        <p>
-                            If you're interested in learning more about my services or have any questions,
-                            please don't hesitate to reach out to me using the form
-                            {{ $vuetify.display.smAndDown ? 'below' : 'on the right' }}
-                            or by connecting with me on
-                            <a :href="$store.getters.profile.socials.Twitter" target="_blank">Twitter</a>
-                            or
-                            <a :href="$store.getters.profile.socials.Facebook" target="_blank">Facebook</a>.
-                        </p>
-                        <p>
-                            I'm always happy to discuss how I can help you achieve your goals
-                            and would be happy to provide more information on the value I can bring to your project.
-                        </p>
-                        <p>
-                            I look forward to connecting with you and learning more about your needs. Thank you for considering my services.
-                        </p>
-                    </v-col>
-                    <v-col cols="12" md="7" xl="6" class="pl-md-16">
-                        <v-lazy v-model="$store.state.transitions.lazy.contact.form" transition="slide-x-transition">
-                            <v-form @submit.prevent="preview" ref="contactForm">
-                                <v-text-field
-                                    v-model="form.name"
-                                    label="Name"
-                                    type="text"
-                                    class="mb-2"
-                                    :background-color="$vuetify.theme.dark ? 'light' : 'white'"
-                                    :color="$vuetify.theme.dark ? 'white': 'primary'"
-                                    :rules="[rules.required]"
-                                    :readonly="sending"
-                                    hint="Your full name OR company that you're representing."
-                                    outlined
-                                />
-                                <v-text-field
-                                    v-model="form.email"
-                                    label="E-mail address"
-                                    type="email"
-                                    class="mb-2"
-                                    :background-color="$vuetify.theme.dark ? 'light' : 'white'"
-                                    :color="$vuetify.theme.dark ? 'white': 'primary'"
-                                    :rules="[rules.required, rules.email]"
-                                    :readonly="sending"
-                                    outlined
-                                />
-                                <v-textarea
-                                    v-model="form.message"
-                                    label="Message"
-                                    class="mb-2"
-                                    :background-color="$vuetify.theme.dark ? 'light' : 'white'"
-                                    :color="$vuetify.theme.dark ? 'white': 'primary'"
-                                    :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
-                                    counter
-                                    :maxlength="counter.message.max"
-                                    :readonly="sending"
-                                    outlined
-                                />
-                                <v-alert v-if="error" class="mb-8" color="error" outlined>
-                                    <template v-if="error.message">
-                                        {{ error.message }}
-                                        <ul v-if="error.response.data.errors">
-                                            <li v-for="err in error.response.data.errors">{{ err[0] }}</li>
-                                        </ul>
-                                    </template>
-                                    <template v-else>
-                                        {{ error }}
-                                    </template>
-                                </v-alert>
-                                <v-btn
-                                    color="primary"
-                                    class="py-6"
-                                    large
-                                    depressed
-                                    :loading="sending"
-                                    @click="preview"
-                                >
-                                    <v-icon left>open_in_new</v-icon>
-                                    Preview
-                                </v-btn>
-                            </v-form>
-                        </v-lazy>
-                    </v-col>
-                </v-row>
-            </v-card-subtitle>
         </v-card>
 
         <!-- Message Preview -->
         <v-dialog v-model="previewing" scrollable max-width="640px">
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span :class="($vuetify.theme.dark ? '' : 'primary--text lighten-1 ') + $store.getters['breakpoints/font/h3']">Message Preview</span>
+                    <span class="primary--text lighten-1" :class="$store.getters['breakpoints/font/h3']">Message Preview</span>
                     <v-spacer/>
                     <v-btn icon @click="previewing = false">
                         <v-icon>close</v-icon>
@@ -126,7 +122,7 @@
         <v-dialog v-model="confirming" scrollable max-width="480px" persistent>
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span :class="($vuetify.theme.dark ? '' : 'primary--text lighten-1 ') + $store.getters['breakpoints/font/h3']">Confirmation</span>
+                    <span class="primary--text lighten-1" :class="$store.getters['breakpoints/font/h3']">Confirmation</span>
                     <v-spacer/>
                     <v-btn icon @click="confirm">
                         <v-icon>close</v-icon>
