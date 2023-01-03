@@ -5,30 +5,29 @@
                 <p class="font-weight-bold mb-0" :class="$store.getters['breakpoints/font/h1']">
                     Let's tech things up!
                 </p>
+                <div :class="$store.getters['breakpoints/font/p']">
+                    <v-row>
+                        <v-col cols="12">
+                            <p>
+                                Hi there, my name is <b>Arvic</b>.
+                                I'm a full-stack web developer
+                                committed to helping organizations and businesses
+                                streamline their operations through the use of web technologies.
+                                I also live my passion for education,
+                                adapting to the latest tech trends
+                                and inspiring the next generation of tech professionals.
+                            </p>
+                        </v-col>
+                    </v-row>
+                </div>
             </v-card-text>
-
-            <v-card-subtitle :class="$store.getters['breakpoints/font/p']">
-                <v-row>
-                    <v-col cols="12">
-                        <p>
-                            Hi there, my name is <b>Arvic</b>.
-                            I'm a full-stack web developer
-                            committed to helping organizations and businesses
-                            streamline their operations through the use of web technologies.
-                            I also live my passion for education,
-                            adapting to the latest tech trends
-                            and inspiring the next generation of tech professionals.
-                        </p>
-                    </v-col>
-                </v-row>
-            </v-card-subtitle>
             <v-card-actions class="px-4">
-                <v-btn :large="$vuetify.display.mdAndDown" :x-large="$vuetify.display.xl" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'projects' })" rounded color="primary" elevation="0">
-                    <v-icon left>{{ $store.getters['navigation/mainMenuItems'][1].icon }}</v-icon>
+                <v-btn :size="($vuetify.display.mdAndDown) ? 'large' : (($vuetify.display.xl) ? 'x-large' : 'default')" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'projects' })" rounded color="primary" variant="flat">
+                    <v-icon start :icon="$store.getters['navigation/mainMenuItems'][1].icon"/>
                     <span v-if="$vuetify.display.smAndUp">See&nbsp;</span>My Projects
                 </v-btn>
-                <v-btn :large="$vuetify.display.mdAndDown" :x-large="$vuetify.display.xl" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'contact' })"  rounded color="primary" text>
-                    <v-icon left>{{ $store.getters['navigation/mainMenuItems'][2].icon }}</v-icon>
+                <v-btn :size="($vuetify.display.mdAndDown) ? 'large' : (($vuetify.display.xl) ? 'x-large' : 'default')" :class="$store.getters['breakpoints/button/lg']" @click="goto({ name: 'contact' })"  rounded color="primary" variant="text">
+                    <v-icon start :icon="$store.getters['navigation/mainMenuItems'][2].icon"/>
                     Let's Talk
                 </v-btn>
             </v-card-actions>
