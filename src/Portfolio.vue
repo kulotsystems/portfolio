@@ -107,6 +107,10 @@
         cursor: text !important;
     }
 
+    .v-card-subtitle {
+        white-space: normal !important;
+    }
+
     p.text-body-2, .text-body-2 p {
         line-height: 25px !important;
     }

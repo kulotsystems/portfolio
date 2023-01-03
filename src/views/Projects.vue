@@ -6,20 +6,17 @@
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                     Featured Projects
                 </p>
-            </v-card-text>
-
-            <v-card-subtitle>
                 <p class="mb-10" :class="$store.getters['breakpoints/font/p']">
                     I enjoy creating projects that are both useful and fun to use.
                     In this page, you'll find a mix of functional systems and personal projects
                     that demonstrate my ability to develop solutions for a variety of users.
                 </p>
                 <v-row>
-                    <v-lazy v-model="project.transition" transition="slide-x-transition" v-for="(project, slug, index) in projects" :key="slug" class="col-sm-6 col-md-4 col-lg-3 col-12">
+                    <v-col cols="12" sm="6" md="4" lg="3" v-model="project.transition" v-for="(project, slug, index) in projects" :key="slug">
                         <project :project="{ slug: slug, ...project }"/>
-                    </v-lazy>
+                    </v-col>
                 </v-row>
-            </v-card-subtitle>
+            </v-card-text>
         </v-card>
 
         <!-- open source -->
@@ -51,15 +48,15 @@
             <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.display.mdAndUp }">
                 <v-card :elevation="$vuetify.display.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.display.smAndDown }">
                     <v-app-bar flat class="transparent">
-                        <v-btn icon class="mr-1" @click="$router.back()" :x-large="$vuetify.display.xl">
-                            <v-icon>arrow_back</v-icon>
+                        <v-btn icon class="mr-1" @click="$router.back()" :size="($vuetify.display.xl) ? 'x-large' : 'default'">
+                            <v-icon icon="mdi-arrow-left"/>
                         </v-btn>
                         <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.display.smAndDown ? ' font-weight-bold dark--text text--lighten-1' : '')">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
                         <v-btn icon @click="$store.commit('dialog/image/show', { image: project.cover, title: project.title })">
-                            <v-icon :small="$vuetify.display.lgAndDown">open_in_full</v-icon>
+                            <v-icon :size="($vuetify.display.lgAndDown) ? 'small' : 'default'" icon="mdi-open-in-full"/>
                         </v-btn>
                     </v-app-bar>
                     <v-card-text class="pt-0">
@@ -76,9 +73,7 @@
                         </v-img>
                     </v-card-text>
                     <v-card-actions class="pt-0 pt-md-2">
-                        <label-dev-tool v-for="tech in project.techStack" :key="tech" :small="tech !== 'php'" class="mx-2">
-                            ${{ tech }}
-                        </label-dev-tool>
+                        <label-dev-tool v-for="tech in project.techStack" :key="tech" class="mx-2" :icon="$store.getters['technologies/stacks'][tech]['icon']" :size="small"/>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -109,12 +104,12 @@
                 </p>
 
                 <div class="mt-7 primary lighten-5 py-3 px-2 text-center rounded">
-                    <v-btn color="primary" v-if="project.repository" large text @click="$store.commit('goto', project.repository)">
-                        <v-icon small left>$github</v-icon>
+                    <v-btn color="primary" v-if="project.repository" size="large" variant="text" @click="$store.commit('goto', project.repository)">
+                        <v-icon size="small" start icon="mdi-github"/>
                         Repo<template v-if="!$vuetify.display.md || $vuetify.display.md && !project.production">sitory</template>
                     </v-btn>
-                    <v-btn color="primary" v-if="project.production" large text @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
-                        <v-icon small left>open_in_new</v-icon>
+                    <v-btn color="primary" v-if="project.production" size="large" variant="text" @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
+                        <v-icon size="small" start icon="mdi-open-in-new"/>
                         See Live
                     </v-btn>
                 </div>

@@ -14,26 +14,26 @@
         </v-img>
         <v-card-title>
             <div class="title">
-                {{ project.title }}
+                {{ project.title }}s
             </div>
         </v-card-title>
         <v-card-text>
             <p class="description mb-0">{{ project.desc }}</p>
         </v-card-text>
         <v-card-actions>
-            <button-social v-if="project.production" :url="project.production" class="mx-0" :x-small="$vuetify.display.lgAndDown" text>open_in_new</button-social>
-            <button-social v-if="project.repository" :url="project.repository" class="mx-0" :x-small="$vuetify.display.lgAndDown" text>$github</button-social>
+            <button-social v-if="project.production" :url="project.production" class="mx-0" :size="($vuetify.display.lgAndDown) ? 'x-small' : 'default'" icon="mdi-open-in-new" variant="text" size="small"/>
+            <button-social v-if="project.repository" :url="project.repository" class="mx-0" :size="($vuetify.display.lgAndDown) ? 'x-small' : 'default'" icon="mdi-github" variant="text" size="small"/>
             <v-spacer/>
             <v-btn
-                text
+                variant="text"
                 color="primary"
                 exact
                 router
                 :to="{ name: 'projects', params: { slug: this.project.slug } }"
-                :x-large="$vuetify.display.xl"
+                :size="($vuetify.display.xl) ? 'x-large' : 'default'"
             >
                 Read More
-                <v-icon right :large="$vuetify.display.xl">chevron_right</v-icon>
+                <v-icon end :size="($vuetify.display.xl) ? 'large' : 'default'" icon="mdi-chevron-right"/>
             </v-btn>
         </v-card-actions>
     </v-card>
