@@ -10,14 +10,14 @@
         interval="15000"
         style="border-radius: 8px;"
     >
-        <template v-slot:prev="{ on, attrs }">
-            <v-btn class="primary lighten-5" :large="$vuetify.display.sm" :x-large="$vuetify.display.mdAndUp" :fab="$vuetify.display.xl" icon v-bind="attrs" v-on="on">
-                <v-icon color="primary" style="opacity: 0.7">chevron_left</v-icon>
+        <template v-slot:prev="{ props }">
+            <v-btn variant="text" class="primary lighten-5" :large="$vuetify.display.sm" :x-large="$vuetify.display.mdAndUp" :fab="$vuetify.display.xl" icon @click="props.onClick">
+                <v-icon color="primary" icon="mdi-chevron-left"/>
             </v-btn>
         </template>
-        <template v-slot:next="{ on, attrs }">
-            <v-btn class="primary lighten-5" :large="$vuetify.display.sm" :x-large="$vuetify.display.mdAndUp" :fab="$vuetify.display.xl" icon v-bind="attrs" v-on="on">
-                <v-icon color="primary" style="opacity: 0.7">chevron_right</v-icon>
+        <template v-slot:next="{ props }">
+            <v-btn variant="text" class="primary lighten-5" :large="$vuetify.display.sm" :x-large="$vuetify.display.mdAndUp" :fab="$vuetify.display.xl" icon @click="props.onClick">
+                <v-icon color="primary" icon="mdi-chevron-right"/>
             </v-btn>
         </template>
         <v-carousel-item v-for="(review, module) in reviews" :key="module">

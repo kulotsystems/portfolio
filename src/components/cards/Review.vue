@@ -4,47 +4,51 @@
             <v-row justify="center">
                 <v-col cols="12" sm="11" md="10" lg="8" class="pa-0">
                     <v-list-item class="px-3 px-sm-0" three-line>
-                        <v-list-item-avatar tile :size="avatarSize">
-                            <v-img v-if="avatar" :src="avatar" style="border-radius: 100%">
-                                <template v-slot:placeholder>
-                                    <v-skeleton-loader type="card-avatar"/>
-                                </template>
-                            </v-img>
-                            <v-img v-else class="primary lighten-3"/>
-                        </v-list-item-avatar>
-                        <v-list-item-content class="pa-0">
+                        <template v-slot:prepend>
+                            <v-avatar :size="avatarSize" class="mt-2">
+                                <v-img v-if="avatar" :src="avatar" style="border-radius: 100%">
+                                    <template v-slot:placeholder>
+                                        <v-row class="fill-height ma-0" align="center" justify="center">
+                                            <v-progress-circular indeterminate color="primary lighten-3"/>
+                                        </v-row>
+                                    </template>
+                                </v-img>
+                                <v-img v-else class="primary lighten-3"/>
+                            </v-avatar>
+                        </template>
+                        <v-sheet class="pa-0">
                             <div class="justify-center">
-                                <div style="display: flex;">
-                                    <v-rating :value="review.review.rating" class="pt-1 pt-xl-2" style="opacity: 0.65" readonly dense half-increments/>
+                                <div class="pt-1 pr-1" style="display: flex;">
+                                    <v-rating v-model="review.review.rating" color="primary" class="pt-1 pt-xl-2" readonly dense half-increments/>
                                     <v-spacer/>
                                     <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
-                                        <template v-slot:activator="{ on, attrs }">
-                                            <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.display.xl">
-                                                <v-icon>more_vert</v-icon>
+                                        <template v-slot:activator="{ props }">
+                                            <v-btn icon variant="text" color="primary" v-bind="props" :large="$vuetify.display.xl">
+                                                <v-icon icon="mdi-dots-vertical"/>
                                             </v-btn>
                                         </template>
                                         <v-list dense class="pa-0">
                                             <v-list-item class="pa-0" v-if="pullRequest">
-                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(pullRequest)">
-                                                    <v-icon small left>open_in_new</v-icon>
+                                                <v-btn block tile variant="text" color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(pullRequest)">
+                                                    <v-icon icon="mdi-open-in-new" small start/>
                                                     <span>Pull Request</span>
                                                 </v-btn>
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.twitter !== ''">
-                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.twitter)">
-                                                    <v-icon small left large>$twitter</v-icon>
+                                                <v-btn block tile variant="text" color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.twitter)">
+                                                    <v-icon icon="mdi-twitter" small start/>
                                                     Twitter
                                                 </v-btn>
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.facebook !== ''">
-                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.facebook)">
-                                                    <v-icon small left>$facebook</v-icon>
+                                                <v-btn block tile variant="text" color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.facebook)">
+                                                    <v-icon icon="mdi-facebook" small start/>
                                                     Facebook
                                                 </v-btn>
                                             </v-list-item>
                                             <v-list-item class="pa-0" v-if="review.socials.github !== ''">
-                                                <v-btn block tile text color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.github)">
-                                                    <v-icon small left>$github</v-icon>
+                                                <v-btn block tile variant="text" color="primary" :class="$store.getters['breakpoints/button/md']" @click="goto(review.socials.github)">
+                                                    <v-icon icon="mdi-github" small start/>
                                                     GitHub
                                                 </v-btn>
                                             </v-list-item>
@@ -58,7 +62,7 @@
                                     {{ role }}
                                 </v-list-item-subtitle>
                             </div>
-                        </v-list-item-content>
+                        </v-sheet>
                     </v-list-item>
                     <v-list-item class="px-3 px-sm-0 info--text text--lighten-3 font-weight-bold" :class="$store.getters['breakpoints/font/small']">
                         <p><q>{{ review.review.content }}</q></p>
