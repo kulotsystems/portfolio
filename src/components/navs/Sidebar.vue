@@ -48,9 +48,11 @@
             // }
         },
         mounted() {
-            // this.$nextTick(() => {
-            //     window.addEventListener('resize', this.onResize);
-            // });
+            this.$nextTick(() => {
+                // window.addEventListener('resize', this.onResize);
+                if(this.$vuetify.display.mdAndUp)
+                    this.$store.commit('navigation/openSidebar');
+            });
         },
         beforeDestroy() {
             // window.removeEventListener('resize', this.onResize);
