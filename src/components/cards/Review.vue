@@ -18,8 +18,8 @@
                         </template>
                         <v-sheet class="pa-0">
                             <div class="justify-center">
-                                <div class="pt-1 pr-1" style="display: flex;">
-                                    <v-rating v-model="review.review.rating" color="primary" class="pt-1 pt-xl-2" readonly dense half-increments/>
+                                <div class="pt-1 pr-1 d-flex align-center">
+                                    <v-rating v-model="review.review.rating" color="primary" class="pt-1 pt-xl-2" density="compact" readonly half-increments/>
                                     <v-spacer/>
                                     <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
                                         <template v-slot:activator="{ props }">
@@ -65,7 +65,7 @@
                         </v-sheet>
                     </v-list-item>
                     <v-list-item class="px-3 px-sm-0 text-info text--lighten-3 font-weight-bold" :class="$store.getters['breakpoints/font/small']">
-                        <p><q>{{ review.review.content }}</q></p>
+                        <p class="pt-3"><q>{{ review.review.content }}</q></p>
                     </v-list-item>
                 </v-col>
             </v-row>
