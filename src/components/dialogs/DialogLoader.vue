@@ -1,5 +1,6 @@
 <template>
-    <v-progress-circular
+    <!--
+    <v-skeleton-loader
         v-if="$store.state.dialog.loader.opened"
         id="dialog-loader"
         type="image"
@@ -7,6 +8,8 @@
         width="100%"
         height="100%"
     />
+    -->
+    <v-overlay v-model="$store.state.dialog.loader.opened"/>
 </template>
 
 <script>

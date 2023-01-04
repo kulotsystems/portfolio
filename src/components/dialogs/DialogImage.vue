@@ -1,14 +1,14 @@
 <template>
-    <v-navigation-drawer location="bottom" temporary v-model="$store.state.dialog.image.opened" :retain-focus="false" :max-width="maxWidth" scrollable>
+    <v-dialog transition="dialog-bottom-transition" v-model="$store.state.dialog.image.opened" :retain-focus="false" :max-width="maxWidth" scrollable>
         <v-card tile elevation="24">
-            <v-card-title class="pa-3">
+            <v-card-title class="pa-3 d-flex">
                 <p class="ma-0">
-                    <v-icon class="pb-1">photo</v-icon>
+                    <v-icon class="pb-1" icon="mdi-image" size="small"/>
                     {{ dialog.title }}
                 </p>
                 <v-spacer></v-spacer>
-                <v-btn @click="$store.commit('dialog/image/hide')" icon large>
-                    <v-icon>close</v-icon>
+                <v-btn @click="$store.commit('dialog/image/hide')" icon size="large" variant="text">
+                    <v-icon icon="mdi-close"/>
                 </v-btn>
             </v-card-title>
 
@@ -23,7 +23,7 @@
                 </v-img>
             </v-card-text>
         </v-card>
-    </v-navigation-drawer>
+    </v-dialog>
 </template>
 
 <script>
