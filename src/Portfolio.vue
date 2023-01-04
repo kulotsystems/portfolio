@@ -7,9 +7,9 @@
             <router-view/>
             <v-icon ref="mdi-init" style="visibility: hidden">dashboard</v-icon>
         </v-main>
-<!--        <bottom-nav-menu v-if="$vuetify.display.xsOnly"/>-->
-<!--        <dialog-loader/>-->
-<!--        <dialog-image/>-->
+        <bottom-nav-menu v-if="$vuetify.display.xs"/>
+        <dialog-loader/>
+        <dialog-image/>
     </v-app>
 </template>
 
