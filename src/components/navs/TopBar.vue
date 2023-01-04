@@ -1,6 +1,6 @@
 <template>
     <v-app-bar color="primary" class="text-white" app flat :height="$store.getters['breakpoints/appbar/height']">
-        <div class="pa-0 pr-md-5 pr-xl-4 fill-height d-flex align-center w-100">
+        <div class="pa-0 px-md-5 px-xl-4 fill-height d-flex align-center w-100">
             <v-app-bar-nav-icon
                 v-if="$vuetify.display.smAndDown"
                 @click="toggleSidebar"
