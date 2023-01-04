@@ -94,7 +94,7 @@
         <v-dialog v-model="previewing" scrollable max-width="640px">
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span class="primary--text lighten-1" :class="$store.getters['breakpoints/font/h3']">Message Preview</span>
+                    <span class="text-primary lighten-1" :class="$store.getters['breakpoints/font/h3']">Message Preview</span>
                     <v-spacer/>
                     <v-btn icon @click="previewing = false">
                         <v-icon>close</v-icon>
@@ -122,7 +122,7 @@
         <v-dialog v-model="confirming" scrollable max-width="480px" persistent>
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span class="primary--text lighten-1" :class="$store.getters['breakpoints/font/h3']">Confirmation</span>
+                    <span class="text-primary lighten-1" :class="$store.getters['breakpoints/font/h3']">Confirmation</span>
                     <v-spacer/>
                     <v-btn icon @click="confirm">
                         <v-icon>close</v-icon>
@@ -130,11 +130,11 @@
                 </v-card-title>
                 <v-card-text class="pt-4">
                     <p :class="$store.getters['breakpoints/font/small']">
-                        Thank you for contacting me, <span class="primary--text">{{ form.name }}</span>.
+                        Thank you for contacting me, <span class="text-primary">{{ form.name }}</span>.
                     </p>
                     <p class="mb-0" :class="$store.getters['breakpoints/font/small']">
                         I will get in touch with you soon through the e-mail address you provided
-                        (<span class="primary--text">{{ form.email }}</span>).
+                        (<span class="text-primary">{{ form.email }}</span>).
                     </p>
                 </v-card-text>
                 <v-card-actions>

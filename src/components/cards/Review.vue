@@ -55,7 +55,7 @@
                                         </v-list>
                                     </v-menu>
                                 </div>
-                                <v-list-item-title class="mb-1 mb-xl-0 pl-1 dark--text text--lighten-1" :class="$store.getters['breakpoints/font/p']">
+                                <v-list-item-title class="mb-1 mb-xl-0 pl-1 text-dark text--lighten-1" :class="$store.getters['breakpoints/font/p']">
                                     {{ fullName }}
                                 </v-list-item-title>
                                 <v-list-item-subtitle class="pl-1" :class="$store.getters['breakpoints/font/xSmall']">
@@ -64,7 +64,7 @@
                             </div>
                         </v-sheet>
                     </v-list-item>
-                    <v-list-item class="px-3 px-sm-0 info--text text--lighten-3 font-weight-bold" :class="$store.getters['breakpoints/font/small']">
+                    <v-list-item class="px-3 px-sm-0 text-info text--lighten-3 font-weight-bold" :class="$store.getters['breakpoints/font/small']">
                         <p><q>{{ review.review.content }}</q></p>
                     </v-list-item>
                 </v-col>

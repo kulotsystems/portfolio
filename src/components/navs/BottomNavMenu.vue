@@ -1,12 +1,13 @@
 <template>
-    <v-bottom-navigation v-if="windowHeight > 512" app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48" fixed>
+    <v-bottom-navigation v-if="windowHeight > 512" app grow model-value="activeMenuItem.index" :height="48" fixed>
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             @click="menuClick(menuItem.name)"
+            :class="{ 'bg-primary': menuItem.name === activeMenuItem.item.name }"
         >
-            <span :class="{ 'primary--text': menuItem.name !== activeMenuItem.item.name }">{{ menuItem.text }}</span>
-            <v-icon>{{ menuItem.icon }}</v-icon>
+            <v-icon :icon="menuItem.icon" :color="(menuItem.name === activeMenuItem.item.name) ? 'white' : 'dark'" :style="{ opacity: (menuItem.name === activeMenuItem.item.name) ? 1 : 0.8 }"/>
+            <span :class="{ 'text-primary': menuItem.name !== activeMenuItem.item.name }">{{ menuItem.text }}</span>
         </v-btn>
     </v-bottom-navigation>
 </template>
