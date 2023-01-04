@@ -21,8 +21,8 @@
             <p class="description mb-0">{{ project.desc }}</p>
         </v-card-text>
         <v-card-actions>
-            <button-social v-if="project.production" :url="project.production" class="mx-0" :size="($vuetify.display.lgAndDown) ? 'x-small' : 'default'" icon="mdi-open-in-new" variant="text" size="small"/>
-            <button-social v-if="project.repository" :url="project.repository" class="mx-0" :size="($vuetify.display.lgAndDown) ? 'x-small' : 'default'" icon="mdi-github" variant="text" size="small"/>
+            <button-social v-if="project.production" :url="project.production" class="mx-0" :button-size="($vuetify.display.lgAndDown) ? 'x-small' : 'default'" icon="mdi-open-in-new" variant="text" size="small"/>
+            <button-social v-if="project.repository" :url="project.repository" class="mx-0" :button-size="($vuetify.display.lgAndDown) ? 'x-small' : 'default'" icon="mdi-github" variant="text" size="small"/>
             <v-spacer/>
             <v-btn
                 variant="text"

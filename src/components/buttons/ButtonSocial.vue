@@ -1,6 +1,6 @@
 <template>
-    <v-btn icon :color="color" :variant="variant" :size="size" @click="$store.commit('goto', url)">
-        <v-icon :icon="icon"/>
+    <v-btn icon :color="color" :variant="variant" :size="buttonSize" @click="$store.commit('goto', url)">
+        <v-icon :icon="icon" :size="iconSize"/>
     </v-btn>
 </template>
 
@@ -21,7 +21,11 @@
                 type   : String,
                 default: 'primary'
             },
-            size: {
+            buttonSize: {
+                type   : String,
+                default: 'default'
+            },
+            iconSize: {
                 type   : String,
                 default: 'default'
             },

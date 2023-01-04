@@ -17,9 +17,9 @@
             </div>
         </v-card-text>
         <v-card-actions class="justify-center">
-            <button-social icon="mdi-twitter"  class="mx-1" text :url="$store.getters.profile.socials.Twitter"  outlined :large="$vuetify.display.xl"/>
-            <button-social icon="mdi-facebook" class="mx-1" text :url="$store.getters.profile.socials.Facebook" outlined :large="$vuetify.display.xl"/>
-            <button-social icon="mdi-github"   class="mx-1" text :url="$store.getters.profile.socials.Github"   outlined :large="$vuetify.display.xl"/>
+            <button-social icon="mdi-twitter"  class="mx-1" text :url="$store.getters.profile.socials.Twitter"  button-size="large" icon-size="large"/>
+            <button-social icon="mdi-facebook" class="mx-1" text :url="$store.getters.profile.socials.Facebook" button-size="large" icon-size="large"/>
+            <button-social icon="mdi-github"   class="mx-1" text :url="$store.getters.profile.socials.Github"   button-size="large" icon-size="large"/>
         </v-card-actions>
     </v-card>
 </template>

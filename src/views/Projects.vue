@@ -47,18 +47,18 @@
             <!-- project cover -->
             <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.display.mdAndUp }">
                 <v-card :elevation="$vuetify.display.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.display.smAndDown }">
-                    <v-app-bar flat class="transparent">
+                    <v-toolbar flat class="bg-transparent">
                         <v-btn icon class="mr-1" @click="$router.back()" :size="($vuetify.display.xl) ? 'x-large' : 'default'">
                             <v-icon icon="mdi-arrow-left"/>
                         </v-btn>
-                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.display.smAndDown ? ' font-weight-bold text-dark text--lighten-1' : '')">
+                        <v-toolbar-title class="ml-0 pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.display.smAndDown ? ' font-weight-bold text-dark text--lighten-1' : '')">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
                         <v-btn icon @click="$store.commit('dialog/image/show', { image: project.cover, title: project.title })">
-                            <v-icon :size="($vuetify.display.lgAndDown) ? 'small' : 'default'" icon="mdi-open-in-full"/>
+                            <v-icon :size="($vuetify.display.lgAndDown) ? 'small' : 'default'" icon="mdi-arrow-expand"/>
                         </v-btn>
-                    </v-app-bar>
+                    </v-toolbar>
                     <v-card-text class="pt-0">
                         <v-img
                             :src="project.cover"
@@ -80,7 +80,7 @@
 
             <!-- project intro -->
             <v-col cols="12" md="5" class="mb-5" :class="($vuetify.display.smAndDown ? 'px-7 ' : '') + $store.getters['breakpoints/font/p']">
-                <p>
+                <p class="mb-4">
                     <b>{{ project.title }}</b> is
                     <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
                         an {{ project.desc.substr(3) }}
@@ -89,7 +89,7 @@
                         a {{ project.desc.substr(2) }}
                     </template>
                 </p>
-                <p>
+                <p class="mb-4">
                     This project was built using
                     <template v-for="(tech, index) in project.techStack">
                         <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="text-primary">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
@@ -103,7 +103,7 @@
                     </template>
                 </p>
 
-                <div class="mt-7 primary lighten-5 py-3 px-2 text-center rounded">
+                <div class="mt-7 bg-blue-lighten-5 py-3 px-2 text-center rounded">
                     <v-btn color="primary" v-if="project.repository" size="large" variant="text" @click="$store.commit('goto', project.repository)">
                         <v-icon size="small" start icon="mdi-github"/>
                         Repo<template v-if="!$vuetify.display.md || $vuetify.display.md && !project.production">sitory</template>
