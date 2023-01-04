@@ -133,9 +133,6 @@
             goto(url) {
                 window.open(url, '_blank');
             }
-        },
-        created() {
-            console.log(this.$store.getters.fontBody);
         }
     }
 </script>
