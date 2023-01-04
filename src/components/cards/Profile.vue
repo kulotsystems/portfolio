@@ -2,7 +2,7 @@
     <v-card flat tile class="transparent">
         <v-card-text class="pt-9" align="center">
             <v-avatar :size="avatarSize">
-                <v-img :src="profilePhoto" @load="$store.commit('navigation/loadSidebar')">
+                <v-img :src="profilePhoto">
                     <template v-slot:placeholder>
                         <v-row class="fill-height ma-0" align="center" justify="center">
                             <v-progress-circular indeterminate color="primary lighten-3"/>
@@ -12,18 +12,8 @@
             </v-avatar>
 
             <div class="mt-4">
-                <p
-                    class="text-h4 text-xl-h3 primary--text font-weight-bold mb-0"
-                    :class="{ 'text--darken-1': !$vuetify.theme.dark, 'text--lighten-2': $vuetify.theme.dark }"
-                >
-                    <small>{{ $store.getters.fullName }}</small>
-                </p>
-                <p
-                     class="text-body-1 text-xl-h6 primary--text mb-0"
-                     :class="{ 'text--darken-1': !$vuetify.theme.dark, 'text--lighten-2': $vuetify.theme.dark }"
-                >
-                    {{ $store.getters.profile.position }}
-                </p>
+                <p class="text-h4 text-xl-h3 text-primary text--darken-1 font-weight-bold mb-0"><small>{{ $store.getters.fullName }}</small></p>
+                <p class="text-body-1 text-xl-h6 text-primary text--darken-1 mb-0">{{ $store.getters.profile.position }}</p>
             </div>
         </v-card-text>
         <v-card-actions class="justify-center">

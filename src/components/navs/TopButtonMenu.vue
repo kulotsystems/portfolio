@@ -4,12 +4,11 @@
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             :variant="menuItem.name !== activeMenuItem ? 'text' : 'flat'"
-            :class="(menuItem.name === activeMenuItem ? 'primary--text ' : '') + $store.getters['breakpoints/button/md']"
+            :class="(menuItem.name === activeMenuItem ? 'text-primary ' : '') + $store.getters['breakpoints/button/md']"
             :size="($vuetify.display.md || $vuetify.display.lg) ? 'large' : (($vuetify.display.xl) ? 'x-large' : 'default')"
             color="white"
             elevation="0"
             @click="menuClick(menuItem.name)"
-            :width="$vuetify.display.lgAndDown ? 125 : 160"
             class="mx-1"
         >
             <v-icon :icon="menuItem.icon" start/>

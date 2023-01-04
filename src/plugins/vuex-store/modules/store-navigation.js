@@ -15,7 +15,7 @@ export default {
                 {
                     text: 'OVERVIEW',
                     name: 'overview',
-                    icon: 'mdi-view-dashboard'
+                    icon: 'mdi-account-circle'
                 },
                 {
                     text: 'PROJECTS',

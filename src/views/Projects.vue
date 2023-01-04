@@ -51,7 +51,7 @@
                         <v-btn icon class="mr-1" @click="$router.back()" :size="($vuetify.display.xl) ? 'x-large' : 'default'">
                             <v-icon icon="mdi-arrow-left"/>
                         </v-btn>
-                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.display.smAndDown ? ' font-weight-bold dark--text text--lighten-1' : '')">
+                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.display.smAndDown ? ' font-weight-bold text-dark text--lighten-1' : '')">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
@@ -92,7 +92,7 @@
                 <p>
                     This project was built using
                     <template v-for="(tech, index) in project.techStack">
-                        <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
+                        <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="text-primary">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
                     </template>.
                     I started it on {{ formatDate(project.timeFrame.start) }}
                     <template v-if="project.timeFrame.end">
