@@ -91,11 +91,11 @@
         <!-- Message Preview -->
         <v-dialog v-model="previewing" scrollable max-width="640px">
             <v-card flat>
-                <v-card-title class="pr-4">
+                <v-card-title class="pr-4 d-flex">
                     <span class="text-primary lighten-1" :class="$store.getters['breakpoints/font/h3']">Message Preview</span>
                     <v-spacer/>
-                    <v-btn icon @click="previewing = false">
-                        <v-icon>close</v-icon>
+                    <v-btn icon variant="text" @click="previewing = false">
+                        <v-icon icon="mdi-close"/>
                     </v-btn>
                 </v-card-title>
                 <v-card-text class="pt-4">
@@ -186,9 +186,10 @@
         },
         computed: {},
         methods : {
-            preview() {
+            async preview() {
                 const contactForm = this.$refs.contactForm;
-                if(contactForm.validate() && !this.sending) {
+                const { valid } = await contactForm.validate();
+                if(valid && !this.sending) {
                     this.previewing = true;
                 }
             },
