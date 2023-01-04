@@ -14,7 +14,7 @@
         </v-img>
         <v-card-title>
             <div class="title">
-                {{ project.title }}s
+                {{ project.title }}
             </div>
         </v-card-title>
         <v-card-text>
