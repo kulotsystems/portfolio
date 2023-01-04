@@ -2,13 +2,13 @@
     <v-container class="pl-md-0 pb-5 pb-md-12">
         <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
-                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
+                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-8">
                     Contact Me
                 </p>
                 <div :class="$store.getters['breakpoints/font/p']">
                     <v-row>
                         <v-col cols="12" md="5" xl="6">
-                            <p>
+                            <p class="mb-4">
                                 If you're interested in learning more about my services or have any questions,
                                 please don't hesitate to reach out to me using the form
                                 {{ $vuetify.display.smAndDown ? 'below' : 'on the right' }}
@@ -17,11 +17,11 @@
                                 or
                                 <a :href="$store.getters.profile.socials.Facebook" target="_blank">Facebook</a>.
                             </p>
-                            <p>
+                            <p class="mb-4">
                                 I'm always happy to discuss how I can help you achieve your goals
                                 and would be happy to provide more information on the value I can bring to your project.
                             </p>
-                            <p>
+                            <p class="mb-4">
                                 I look forward to connecting with you and learning more about your needs. Thank you for considering my services.
                             </p>
                         </v-col>
@@ -37,7 +37,7 @@
                                         :rules="[rules.required]"
                                         :readonly="sending"
                                         hint="Your full name OR company that you're representing."
-                                        outlined
+                                        variant="outlined"
                                     />
                                     <v-text-field
                                         v-model="form.email"
@@ -47,7 +47,7 @@
                                         background-color="white"
                                         :rules="[rules.required, rules.email]"
                                         :readonly="sending"
-                                        outlined
+                                        variant="outlined"
                                     />
                                     <v-textarea
                                         v-model="form.message"
@@ -58,7 +58,7 @@
                                         counter
                                         :maxlength="counter.message.max"
                                         :readonly="sending"
-                                        outlined
+                                        variant="outlined"
                                     />
                                     <v-alert v-if="error" class="mb-8" color="error" outlined>
                                         <template v-if="error.message">
@@ -73,13 +73,11 @@
                                     </v-alert>
                                     <v-btn
                                         color="primary"
-                                        class="py-6"
-                                        large
-                                        depressed
+                                        size="large"
                                         :loading="sending"
                                         @click="preview"
                                     >
-                                        <v-icon left>open_in_new</v-icon>
+                                        <v-icon icon="mdi-open-in-new" start/>
                                         Preview
                                     </v-btn>
                                 </v-form>

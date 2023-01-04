@@ -3,7 +3,7 @@
         <!-- featured projects -->
         <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
-                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
+                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-8">
                     Featured Projects
                 </p>
                 <p class="mb-10" :class="$store.getters['breakpoints/font/p']">
