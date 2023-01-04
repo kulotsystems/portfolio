@@ -10,9 +10,6 @@
             floating
         >
             <profile/>
-            <!--<template v-slot:append v-if="$vuetify.display.smAndUp && windowHeight >= 640">
-                <side-nav-menu class="mb-5"/>
-            </template>-->
         </v-navigation-drawer>
     </nav>
 </template>
@@ -23,13 +20,11 @@
     export default {
         name: 'Sidebar',
         components: {
-            'profile'      : defineAsyncComponent(() => import('../cards/Profile.vue')),
-            // 'side-nav-menu': defineAsyncComponent(() => import('./SideNavMenu.vue'))
+            'profile': defineAsyncComponent(() => import('../cards/Profile.vue')),
         },
         data() {
             return {
-                // https://stackoverflow.com/questions/54166847/how-to-access-the-window-object-in-vue-js
-                windowHeight: window.innerHeight
+
             }
         },
         computed: {
@@ -43,25 +38,17 @@
             },
         },
         methods : {
-            // onResize() {
-            //     this.windowHeight = window.innerHeight
-            // }
+
         },
         mounted() {
             this.$nextTick(() => {
-                // window.addEventListener('resize', this.onResize);
                 if(this.$vuetify.display.mdAndUp)
                     this.$store.commit('navigation/openSidebar');
             });
-        },
-        beforeDestroy() {
-            // window.removeEventListener('resize', this.onResize);
         }
     }
 </script>
 
 <style>
-    .v-app-bar-title__content {
-        width: 100% !important;
-    }
+
 </style>

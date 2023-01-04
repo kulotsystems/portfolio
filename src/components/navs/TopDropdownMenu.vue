@@ -1,7 +1,7 @@
 <template>
     <v-menu offset-y transition="slide-y-transition">
-        <template v-slot:activator="{ on, attrs }">
-            <v-btn text color="white" v-bind="attrs" v-on="on" width="125" class="mx-1" style="justify-content: right">
+        <template v-slot:activator="{ props }">
+            <v-btn text color="white" v-bind="props" width="125" class="mx-1" style="justify-content: right">
                 {{ activeMenuItem.text }}
                 <v-icon right>more_vert</v-icon>
             </v-btn>
