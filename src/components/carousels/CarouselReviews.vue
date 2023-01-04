@@ -63,7 +63,7 @@
 </script>
 
 <style>
-    .v-carousel .theme--light.v-btn.v-btn--icon {
+    .v-carousel .v-theme--light.v-btn.v-btn--icon {
         color: #6482fe;
     }
 
