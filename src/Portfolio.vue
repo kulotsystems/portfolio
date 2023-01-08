@@ -52,15 +52,23 @@
 
         },
         mounted() {
+            // check if material-design-icons is loaded
             const mdiInit = this.$refs['mdi-init'];
-            const mdiTmr  = setInterval(() => {
+            const loaded = () => {
                 const width = mdiInit.$el.offsetWidth;
                 if(width <= 50) {
-                    clearInterval(mdiTmr);
                     mdiInit.$el.remove();
                     this.mdiLoading = false;
+                    return true;
                 }
-            }, 100);
+                return false;
+            }
+            if(!loaded()) {
+                const mdiTmr = setInterval(() => {
+                    if(loaded())
+                        clearInterval(mdiTmr);
+                }, 60);
+            }
         }
     }
 </script>
