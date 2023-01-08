@@ -1,10 +1,9 @@
 <template>
-    <v-app :class="{ 'mdi-loading': mdiLoading }">
+    <v-app>
         <topbar/>
         <sidebar/>
         <v-main class="grey lighten-5">
             <router-view/>
-            <v-icon ref="mdi-init" style="visibility: hidden">dashboard</v-icon>
         </v-main>
         <bottom-nav-menu v-if="$vuetify.display.xs"/>
         <dialog-loader/>
@@ -31,8 +30,7 @@
             return {
                 sidebar: {
                     opened: false
-                },
-                mdiLoading: true
+                }
             }
         },
         computed: {},
@@ -53,25 +51,6 @@
         },
         methods : {
 
-        },
-        mounted() {
-            // check if material-design-icons is loaded
-            const mdiInit = this.$refs['mdi-init'];
-            const loaded = () => {
-                const width = mdiInit.$el.offsetWidth;
-                if(width <= 50) {
-                    mdiInit.$el.remove();
-                    this.mdiLoading = false;
-                    return true;
-                }
-                return false;
-            }
-            if(!loaded()) {
-                const mdiTmr = setInterval(() => {
-                    if(loaded())
-                        clearInterval(mdiTmr);
-                }, 60);
-            }
         }
     }
 </script>
@@ -121,9 +100,5 @@
 
     .v-btn.v-size--x-large {
         font-size: 1.1rem;
-    }
-
-    .mdi-loading .material-icons {
-        color: transparent !important;
     }
 </style>
