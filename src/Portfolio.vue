@@ -1,9 +1,10 @@
 <template>
-    <v-app>
+    <v-app :class="{ 'mdi-loading': mdiLoading }">
         <topbar/>
         <sidebar/>
         <v-main class="grey lighten-5">
             <router-view/>
+            <v-icon ref="mdi-init" style="visibility: hidden">dashboard</v-icon>
         </v-main>
         <bottom-nav-menu v-if="$vuetify.breakpoint.xsOnly"/>
         <dialog-loader/>
@@ -29,7 +30,8 @@
             return {
                 sidebar: {
                     opened: false
-                }
+                },
+                mdiLoading: true
             }
         },
         computed: {},
@@ -48,6 +50,17 @@
         },
         methods : {
 
+        },
+        mounted() {
+            const mdiInit = this.$refs['mdi-init'];
+            const mdiTmr  = setInterval(() => {
+                const width = mdiInit.$el.offsetWidth;
+                if(width <= 50) {
+                    clearInterval(mdiTmr);
+                    mdiInit.$el.remove();
+                    this.mdiLoading = false;
+                }
+            }, 100);
         }
     }
 </script>
@@ -93,5 +106,9 @@
 
     .v-btn.v-size--x-large {
         font-size: 1.1rem;
+    }
+
+    .mdi-loading .material-icons {
+        color: transparent !important;
     }
 </style>
