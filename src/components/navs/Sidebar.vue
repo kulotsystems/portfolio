@@ -6,10 +6,15 @@
             :permanent="$vuetify.breakpoint.mdAndUp"
             :width="width"
             overlay-opacity="0.1"
-            class="grey lighten-5"
+            :class="{
+                'grey lighten-5': $store.getters.isLightMode && !$vuetify.breakpoint.mdAndUp,
+                'dark darken-2' : $store.getters.isDarkMode  && !$vuetify.breakpoint.mdAndUp,
+                'transparent'   : $vuetify.breakpoint.mdAndUp
+            }"
+            :dark="$store.getters.isDarkMode"
             floating
         >
-            <v-app-bar color="primary" class="white--text" flat :height="$store.getters['breakpoints/appbar/height']">
+            <v-app-bar flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  $store.getters.isLightMode, 'dark darken-2 grey--text':  $store.getters.isDarkMode }" :dark="$store.getters.isDarkMode">
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
                 <v-app-bar-title :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
@@ -17,9 +22,20 @@
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp"/>
             </v-app-bar>
             <profile/>
-            <!--<template v-slot:append v-if="$vuetify.breakpoint.smAndUp && windowHeight >= 640">
-                <side-nav-menu class="mb-5"/>
-            </template>-->
+            <template v-slot:append>
+                <div class="pa-3 d-flex justify-center">
+                    <v-btn block text>
+                    <v-switch
+                        v-model="isDarkMode"
+                        label="Dark Mode"
+                        inset
+                        flat
+                        dense
+                        @change="toggleTheme"
+                    />
+                    </v-btn>
+                </div>
+            </template>
         </v-navigation-drawer>
     </nav>
 </template>
@@ -28,13 +44,11 @@
     export default {
         name: 'Sidebar',
         components: {
-            'profile'      : () => import('../cards/Profile.vue'),
-            // 'side-nav-menu': () => import('./SideNavMenu.vue')
+            'profile': () => import('../cards/Profile.vue')
         },
         data() {
             return {
-                // https://stackoverflow.com/questions/54166847/how-to-access-the-window-object-in-vue-js
-                windowHeight: window.innerHeight
+                isDarkMode: false
             }
         },
         computed: {
@@ -45,20 +59,18 @@
                     return 320;
                 else
                     return 384;
-            },
+            }
         },
         methods : {
-            // onResize() {
-            //     this.windowHeight = window.innerHeight
-            // }
+            toggleTheme() {
+                if(this.isDarkMode)
+                    this.$store.commit('goDark');
+                else
+                    this.$store.commit('goLight');
+            }
         },
-        mounted() {
-            // this.$nextTick(() => {
-            //     window.addEventListener('resize', this.onResize);
-            // });
-        },
-        beforeDestroy() {
-            // window.removeEventListener('resize', this.onResize);
+        created() {
+            this.isDarkMode = this.$store.getters.isDarkMode;
         }
     }
 </script>

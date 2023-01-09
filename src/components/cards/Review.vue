@@ -15,9 +15,9 @@
                         <v-list-item-content class="pa-0">
                             <div class="justify-center">
                                 <div style="display: flex;">
-                                    <v-rating :value="review.review.rating" class="pt-1 pt-xl-2" style="opacity: 0.65" readonly dense half-increments/>
+                                    <v-rating :value="review.review.rating" class="pt-1 pt-xl-2" :color="$store.getters.isLightMode ? 'primary' : 'white'" style="opacity: 0.65" readonly dense half-increments/>
                                     <v-spacer/>
-                                    <v-menu content-class="dropdown" offset-y transition="slide-y-transition">
+                                    <v-menu content-class="dropdown" offset-y transition="slide-y-transition" :dark="$store.getters.isDarkMode">
                                         <template v-slot:activator="{ on, attrs }">
                                             <v-btn icon v-bind="attrs" v-on="on" :large="$vuetify.breakpoint.xl">
                                                 <v-icon>more_vert</v-icon>
@@ -51,7 +51,7 @@
                                         </v-list>
                                     </v-menu>
                                 </div>
-                                <v-list-item-title class="mb-1 mb-xl-0 pl-1 dark--text text--lighten-1" :class="$store.getters['breakpoints/font/p']">
+                                <v-list-item-title class="mb-1 mb-xl-0 pl-1" :class="($store.getters.isLightMode ? 'dark--text text--lighten-1 ': 'grey--text ') + $store.getters['breakpoints/font/p']">
                                     {{ fullName }}
                                 </v-list-item-title>
                                 <v-list-item-subtitle class="pl-1" :class="$store.getters['breakpoints/font/xSmall']">

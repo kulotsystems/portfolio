@@ -1,7 +1,7 @@
 <template>
     <v-container class="pl-md-0 pb-5 pb-md-12">
         <!-- all projects -->
-        <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
+        <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4" :dark="$store.getters.isDarkMode">
             <v-card-text>
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                     Featured Projects
@@ -26,7 +26,7 @@
         <v-row v-else class="mt-sm-1 mt-md-2 mt-lg-3">
             <!-- project cover -->
             <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.breakpoint.mdAndUp }">
-                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.breakpoint.smAndDown }">
+                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.breakpoint.smAndDown }" :dark="$store.getters.isDarkMode">
                     <v-app-bar flat class="transparent">
                         <v-btn icon class="mr-1" @click="$router.back()" :x-large="$vuetify.breakpoint.xl">
                             <v-icon>arrow_back</v-icon>
@@ -62,39 +62,46 @@
 
             <!-- project intro -->
             <v-col cols="12" md="5" class="mb-5" :class="($vuetify.breakpoint.smAndDown ? 'px-7 ' : '') + $store.getters['breakpoints/font/p']">
-                <p>
-                    <b>{{ project.title }}</b> is
-                    <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
-                        an {{ project.desc.substr(3) }}
-                    </template>
-                    <template v-else>
-                        a {{ project.desc.substr(2) }}
-                    </template>
-                </p>
-                <p>
-                    This project was built using
-                    <template v-for="(tech, index) in project.techStack">
-                        <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
-                    </template>.
-                    I started it on {{ formatDate(project.timeFrame.start) }}
-                    <template v-if="project.timeFrame.end">
-                        then completed it on {{ formatDate(project.timeFrame.end) }}.
-                    </template>
-                    <template v-else>
-                        and still open for changes and maintenance at present.
-                    </template>
-                </p>
+                <v-sheet class="transparent" :dark="$store.getters.isDarkMode">
+                    <p>
+                        <b>{{ project.title }}</b> is
+                        <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
+                            an {{ project.desc.substr(3) }}
+                        </template>
+                        <template v-else>
+                            a {{ project.desc.substr(2) }}
+                        </template>
+                    </p>
+                    <p>
+                        This project was built using
+                        <template v-for="(tech, index) in project.techStack">
+                            <a :href="$store.getters['technologies/stacks'][tech].url" target="_blank" class="primary--text">{{ $store.getters['technologies/stacks'][tech].text }}</a><template v-if="project.techStack.length > 2 && index < (project.techStack.length - 1)">, </template><template v-if="index === (project.techStack.length - 2)"> and </template>
+                        </template>.
+                        I started it on {{ formatDate(project.timeFrame.start) }}
+                        <template v-if="project.timeFrame.end">
+                            then completed it on {{ formatDate(project.timeFrame.end) }}.
+                        </template>
+                        <template v-else>
+                            and still open for changes and maintenance at present.
+                        </template>
+                    </p>
 
-                <div class="mt-7 primary lighten-5 py-3 px-2 text-center rounded">
-                    <v-btn color="primary" v-if="project.repository" large text @click="$store.commit('goto', project.repository)">
-                        <v-icon small left>$github</v-icon>
-                        Repo<template v-if="!$vuetify.breakpoint.md || $vuetify.breakpoint.md && !project.production">sitory</template>
-                    </v-btn>
-                    <v-btn color="primary" v-if="project.production" large text @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
-                        <v-icon small left>open_in_new</v-icon>
-                        See Live
-                    </v-btn>
-                </div>
+                    <v-sheet
+                        class="mt-7 py-3 px-2 text-center rounded"
+                        :class="{
+                            'primary lighten-5': $store.getters.isLightMode
+                        }"
+                    >
+                        <v-btn color="primary" v-if="project.repository" large text @click="$store.commit('goto', project.repository)">
+                            <v-icon small left>$github</v-icon>
+                            Repo<template v-if="!$vuetify.breakpoint.md || $vuetify.breakpoint.md && !project.production">sitory</template>
+                        </v-btn>
+                        <v-btn color="primary" v-if="project.production" large text @click="$store.commit('goto', project.production)" :class="{ 'ml-3': project.repository }">
+                            <v-icon small left>open_in_new</v-icon>
+                            See Live
+                        </v-btn>
+                    </v-sheet>
+                </v-sheet>
             </v-col>
         </v-row>
     </v-container>

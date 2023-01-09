@@ -1,7 +1,7 @@
 <template>
-    <v-menu offset-y transition="slide-y-transition">
+    <v-menu offset-y transition="slide-y-transition" :dark="$store.getters.isDarkMode">
         <template v-slot:activator="{ on, attrs }">
-            <v-btn text color="white" v-bind="attrs" v-on="on" width="125" class="mx-1" style="justify-content: right">
+            <v-btn text color="white" v-bind="attrs" v-on="on" width="125" class="mx-1" :class="{ 'grey--text': $store.getters.isDarkMode }" style="justify-content: right">
                 {{ activeMenuItem.text }}
                 <v-icon right>more_vert</v-icon>
             </v-btn>
@@ -11,7 +11,11 @@
                 v-for="menuItem in menuItems"
                 :key="menuItem.name"
                 @click="menuClick(menuItem.name)"
-                :class="{ 'primary white--text': menuItem.name === activeMenuItem.name, 'primary--text': menuItem.name !== activeMenuItem.name}"
+                :class="{
+                    'primary white--text': menuItem.name === activeMenuItem.name,
+                    'primary--text'      : $store.getters.isLightMode && menuItem.name !== activeMenuItem.name,
+                    'grey--text'         : $store.getters.isDarkMode  && menuItem.name !== activeMenuItem.name
+                }"
             >
                 <v-list-item-title>
                     <span class="text-button">{{ menuItem.text }}</span>

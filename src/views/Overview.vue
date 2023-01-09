@@ -1,6 +1,6 @@
 <template>
     <v-container class="pl-md-0 pb-5 pb-md-12">
-        <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16 pb-8">
+        <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16 pb-8" :dark="$store.getters.isDarkMode">
             <v-card-text>
                 <p class="font-weight-bold mb-0" :class="$store.getters['breakpoints/font/h1']">
                     Let's Transform Your Business and Inspire the Future Together
@@ -36,7 +36,7 @@
         </v-card>
 
         <v-lazy v-model="$store.state.transitions.lazy.overview.collaborators" transition="slide-x-transition">
-            <v-card flat class="transparent mb-16">
+            <v-card flat class="transparent mb-16" :dark="$store.getters.isDarkMode">
                 <v-card-text>
                     <v-row>
                         <v-col cols="12" md="5" lg="4" xl="5" class="pr-md-10">
