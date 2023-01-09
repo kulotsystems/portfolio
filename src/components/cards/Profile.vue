@@ -14,13 +14,13 @@
             <div class="mt-4">
                 <p
                     class="text-h4 text-xl-h3 primary--text font-weight-bold mb-0"
-                   :class="{ 'text--darken-1': $store.getters.isLightMode, 'text--lighten-1': $store.getters.isDarkMode }"
+                   :class="{ 'text--darken-1': $store.getters.isLightMode, 'text--lighten-2': $store.getters.isDarkMode }"
                 >
                     <small>{{ $store.getters.fullName }}</small>
                 </p>
                 <p
                      class="text-body-1 text-xl-h6 primary--text mb-0"
-                    :class="{ 'text--darken-1': $store.getters.isLightMode, 'text--lighten-1': $store.getters.isDarkMode }"
+                    :class="{ 'text--darken-1': $store.getters.isLightMode, 'text--lighten-2': $store.getters.isDarkMode }"
                 >
                     {{ $store.getters.profile.position }}
                 </p>
