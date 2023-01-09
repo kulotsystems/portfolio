@@ -24,7 +24,6 @@
             <profile/>
             <template v-slot:append>
                 <div class="pa-3 d-flex justify-center">
-                    <v-btn block text>
                     <v-switch
                         v-model="isDarkMode"
                         label="Dark Mode"
@@ -32,8 +31,8 @@
                         flat
                         dense
                         @change="toggleTheme"
+                        class="text-button"
                     />
-                    </v-btn>
                 </div>
             </template>
         </v-navigation-drawer>
