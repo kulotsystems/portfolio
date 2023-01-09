@@ -24,10 +24,8 @@ import transitions  from './modules/store-transitions.js';
 
 // detect dark mode
 const isDarkMode = () => {
-    console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (!window.matchMedia)
         return false;
-
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
