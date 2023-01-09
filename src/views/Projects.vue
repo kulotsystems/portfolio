@@ -31,7 +31,7 @@
                         <v-btn icon class="mr-1" @click="$router.back()" :x-large="$vuetify.breakpoint.xl">
                             <v-icon>arrow_back</v-icon>
                         </v-btn>
-                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.breakpoint.smAndDown ? ' font-weight-bold dark--text text--lighten-1' : '')">
+                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.breakpoint.smAndDown ? ' font-weight-bold text--lighten-1 ' + ($store.getters.isLightMode ? 'dark--text' : 'grey--text') : '')">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
@@ -62,7 +62,7 @@
 
             <!-- project intro -->
             <v-col cols="12" md="5" class="mb-5" :class="($vuetify.breakpoint.smAndDown ? 'px-7 ' : '') + $store.getters['breakpoints/font/p']">
-                <v-sheet class="transparent" :dark="$store.getters.isDarkMode">
+                <v-sheet class="transparent" :class="{ 'grey--text text--lighten-1': $store.getters.isDarkMode }" :dark="$store.getters.isDarkMode">
                     <p>
                         <b>{{ project.title }}</b> is
                         <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
