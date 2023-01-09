@@ -13,6 +13,7 @@
             }"
             :dark="$store.getters.isDarkMode"
             floating
+            style="height: 100%"
         >
             <v-app-bar flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  $store.getters.isLightMode, 'dark darken-2 grey--text':  $store.getters.isDarkMode }" :dark="$store.getters.isDarkMode">
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
