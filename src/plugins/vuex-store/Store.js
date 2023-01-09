@@ -22,13 +22,21 @@ import pullRequests from './modules/store-pull-requests.js';
 import breakpoints  from './modules/store-breakpoints.js';
 import transitions  from './modules/store-transitions.js';
 
+// detect dark mode
+const isDarkMode = () => {
+    if (!window.matchMedia)
+        return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
 
 export default new Vuex.Store({
 
     state: {
         app: {
             name : 'kulotsystems',
-            theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
+            theme: localStorage.getItem('theme')
+                       ? localStorage.getItem('theme')
+                       : (isDarkMode ? 'dark' : 'light')
         },
         profile: {
             name: {
