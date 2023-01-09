@@ -27,7 +27,8 @@ export default new Vuex.Store({
 
     state: {
         app: {
-            name: 'kulotsystems'
+            name : 'kulotsystems',
+            theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
         },
         profile: {
             name: {
@@ -50,6 +51,12 @@ export default new Vuex.Store({
         appName: (state) => {
             return state.app.name;
         },
+        isLightMode: (state) => {
+            return state.app.theme === 'light';
+        },
+        isDarkMode: (state) => {
+            return state.app.theme === 'dark';
+        },
         profile: (state) => {
             return state.profile;
         },
@@ -71,6 +78,14 @@ export default new Vuex.Store({
     mutations: {
         goto: (state, url) => {
             window.open(url, '_blank');
+        },
+        goLight: (state) => {
+            state.app.theme = 'light';
+            localStorage.setItem('theme', state.app.theme);
+        },
+        goDark: (state) => {
+            state.app.theme = 'dark';
+            localStorage.setItem('theme', state.app.theme);
         }
     },
 

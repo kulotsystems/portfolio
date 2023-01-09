@@ -1,11 +1,14 @@
 <template>
-    <v-bottom-navigation v-if="windowHeight > 512" app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48" fixed>
+<v-bottom-navigation v-if="windowHeight > 512" app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48" fixed :dark="$store.getters.isDarkMode">
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             @click="menuClick(menuItem.name)"
         >
-            <span :class="{ 'primary--text': menuItem.name !== activeMenuItem.item.name }">{{ menuItem.text }}</span>
+            <span :class="{
+                'primary--text': $store.getters.isLightMode && menuItem.name !== activeMenuItem.item.name,
+                'grey--text'   : $store.getters.isDarkMode  && menuItem.name !== activeMenuItem.item.name
+            }">{{ menuItem.text }}</span>
             <v-icon>{{ menuItem.icon }}</v-icon>
         </v-btn>
     </v-bottom-navigation>
