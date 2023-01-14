@@ -9,16 +9,16 @@
         cycle
         interval="15000"
         style="border-radius: 8px;"
-        :dark="$store.getters.isDarkMode"
+        :dark="$vuetify.theme.dark"
     >
         <template v-slot:prev="{ on, attrs }">
-            <v-btn :class="{ 'primary lighten-5': $store.getters.isLightMode, 'dark darken-2': $store.getters.isDarkMode }" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
-                <v-icon :color="$store.getters.isLightMode ? 'primary' : 'grey'" style="opacity: 0.7">chevron_left</v-icon>
+            <v-btn :class="{ 'primary lighten-5': !$vuetify.theme.dark }" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
+                <v-icon color="primary" style="opacity: 0.7">chevron_left</v-icon>
             </v-btn>
         </template>
         <template v-slot:next="{ on, attrs }">
-            <v-btn :class="{ 'primary lighten-5': $store.getters.isLightMode, 'dark darken-2': $store.getters.isDarkMode }" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
-                <v-icon :color="$store.getters.isLightMode ? 'primary' : 'grey'" style="opacity: 0.7">chevron_right</v-icon>
+            <v-btn :class="{ 'primary lighten-5': !$vuetify.theme.dark }" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp" :fab="$vuetify.breakpoint.xl" icon v-bind="attrs" v-on="on">
+                <v-icon color="primary" style="opacity: 0.7">chevron_right</v-icon>
             </v-btn>
         </template>
         <v-carousel-item v-for="(review, module) in reviews" :key="module">

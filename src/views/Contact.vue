@@ -1,6 +1,6 @@
 <template>
     <v-container class="pl-md-0 pb-5 pb-md-12">
-        <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4" :dark="$store.getters.isDarkMode">
+        <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                     Contact Me
@@ -35,7 +35,7 @@
                                     label="Name"
                                     type="text"
                                     class="mb-2"
-                                    :background-color="$store.getters.isLightMode ? 'white' : 'dark'"
+                                    :background-color="$vuetify.theme.dark ? 'light' : 'white'"
                                     :rules="[rules.required]"
                                     :readonly="sending"
                                     hint="Your full name OR company that you're representing."
@@ -46,7 +46,7 @@
                                     label="E-mail address"
                                     type="email"
                                     class="mb-2"
-                                    :background-color="$store.getters.isLightMode ? 'white' : 'dark'"
+                                    :background-color="$vuetify.theme.dark ? 'light' : 'white'"
                                     :rules="[rules.required, rules.email]"
                                     :readonly="sending"
                                     outlined
@@ -55,7 +55,7 @@
                                     v-model="form.message"
                                     label="Message"
                                     class="mb-2"
-                                    :background-color="$store.getters.isLightMode ? 'white' : 'dark'"
+                                    :background-color="$vuetify.theme.dark ? 'light' : 'white'"
                                     :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
                                     counter
                                     :maxlength="counter.message.max"
@@ -92,10 +92,10 @@
         </v-card>
 
         <!-- Message Preview -->
-        <v-dialog v-model="previewing" scrollable max-width="640px" :dark="$store.getters.isDarkMode">
+        <v-dialog v-model="previewing" scrollable max-width="640px">
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span :class="($store.getters.isLightMode ? 'primary--text lighten-1 ' : '' ) + $store.getters['breakpoints/font/h3']">Message Preview</span>
+                    <span :class="'primary--text lighten-1 ' + $store.getters['breakpoints/font/h3']">Message Preview</span>
                     <v-spacer/>
                     <v-btn icon @click="previewing = false">
                         <v-icon>close</v-icon>
@@ -120,10 +120,10 @@
         </v-dialog>
 
         <!-- Confirm Submission -->
-        <v-dialog v-model="confirming" scrollable max-width="480px" persistent :dark="$store.getters.isDarkMode">
+        <v-dialog v-model="confirming" scrollable max-width="480px" persistent>
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span :class="($store.getters.isLightMode ? 'primary--text lighten-1 ' : '' ) + $store.getters['breakpoints/font/h3']">Confirmation</span>
+                    <span :class="'primary--text lighten-1 ' + $store.getters['breakpoints/font/h3']">Confirmation</span>
                     <v-spacer/>
                     <v-btn icon @click="confirm">
                         <v-icon>close</v-icon>

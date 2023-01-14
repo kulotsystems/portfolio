@@ -7,15 +7,14 @@
             :width="width"
             overlay-opacity="0.1"
             :class="{
-                'grey lighten-5': $store.getters.isLightMode && !$vuetify.breakpoint.mdAndUp,
-                'dark darken-2' : $store.getters.isDarkMode  && !$vuetify.breakpoint.mdAndUp,
+                'grey lighten-5': !$vuetify.breakpoint.mdAndUp && !$vuetify.theme.dark,
+                'light darken-2': !$vuetify.breakpoint.mdAndUp && $vuetify.theme.dark,
                 'transparent'   : $vuetify.breakpoint.mdAndUp
             }"
-            :dark="$store.getters.isDarkMode"
             floating
             style="height: 100%"
         >
-            <v-app-bar flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  $store.getters.isLightMode, 'dark darken-2 grey--text':  $store.getters.isDarkMode }" :dark="$store.getters.isDarkMode">
+            <v-app-bar flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  !$vuetify.theme.dark, 'light darken-2 grey--text':  $vuetify.theme.dark }">
                 <v-spacer v-if="$vuetify.breakpoint.mdAndUp" />
                 <v-app-bar-title :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}
@@ -63,14 +62,19 @@
         },
         methods : {
             toggleTheme() {
-                if(this.isDarkMode)
+                if(this.isDarkMode) {
                     this.$store.commit('goDark');
-                else
+                    this.$vuetify.theme.dark = true;
+                }
+                else {
                     this.$store.commit('goLight');
+                    this.$vuetify.theme.dark = false;
+                }
             }
         },
         created() {
             this.isDarkMode = this.$store.getters.isDarkMode;
+            this.$vuetify.theme.dark = this.isDarkMode;
         }
     }
 </script>

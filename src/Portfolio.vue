@@ -2,7 +2,7 @@
     <v-app :class="{ 'mdi-loading': mdiLoading }">
         <topbar/>
         <sidebar/>
-        <v-main :class="{ 'grey lighten-5': $store.getters.isLightMode, 'dark darken-3': $store.getters.isDarkMode }">
+        <v-main :class="{ 'grey lighten-5': !$vuetify.theme.dark, 'light darken-3': $vuetify.theme.dark }">
             <router-view/>
             <v-icon ref="mdi-init" style="visibility: hidden">dashboard</v-icon>
         </v-main>

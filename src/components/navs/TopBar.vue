@@ -1,12 +1,12 @@
 <template>
-    <v-app-bar app flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  $store.getters.isLightMode, 'dark darken-2 grey--text':  $store.getters.isDarkMode }" :dark="$store.getters.isDarkMode">
+    <v-app-bar app flat :height="$store.getters['breakpoints/appbar/height']" :class="{ 'primary white--text':  !$vuetify.theme.dark, 'light darken-2 grey--text':  $vuetify.theme.dark }">
         <v-row>
             <v-container class="pa-0 pr-md-5 pr-xl-4 fill-height">
                 <v-app-bar-nav-icon
                     v-if="!$store.getters['navigation/sidebarOpened']"
                     dark
                     @click="$store.commit('navigation/openSidebar')"
-                    :class="{ 'grey--text': $store.getters.isDarkMode }"
+                    :class="{ 'grey--text': $vuetify.theme.dark }"
                 />
                 <v-app-bar-title v-if="!$store.getters['navigation/sidebarOpened']" :class="$store.getters['breakpoints/font/h3']">
                     {{ $store.getters.appName }}

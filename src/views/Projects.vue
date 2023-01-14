@@ -1,7 +1,7 @@
 <template>
     <v-container class="pl-md-0 pb-5 pb-md-12">
         <!-- all projects -->
-        <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4" :dark="$store.getters.isDarkMode">
+        <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
                     Featured Projects
@@ -26,12 +26,12 @@
         <v-row v-else class="mt-sm-1 mt-md-2 mt-lg-3">
             <!-- project cover -->
             <v-col cols="12" md="7" :class="{ 'px-7': $vuetify.breakpoint.mdAndUp }">
-                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.breakpoint.smAndDown }" :dark="$store.getters.isDarkMode">
+                <v-card :elevation="$vuetify.breakpoint.smAndDown ? 0 : 4" :class="{ 'transparent': $vuetify.breakpoint.smAndDown }">
                     <v-app-bar flat class="transparent">
                         <v-btn icon class="mr-1" @click="$router.back()" :x-large="$vuetify.breakpoint.xl">
                             <v-icon>arrow_back</v-icon>
                         </v-btn>
-                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.breakpoint.smAndDown ? ' font-weight-bold text--lighten-1 ' + ($store.getters.isLightMode ? 'dark--text' : 'grey--text') : '')">
+                        <v-toolbar-title class="pl-0" :class="$store.getters['breakpoints/font/p'] + ($vuetify.breakpoint.smAndDown ? ' font-weight-bold text--lighten-1 dark--text' : '')">
                             Project: {{ project.title }}
                         </v-toolbar-title>
                         <v-spacer/>
@@ -62,7 +62,7 @@
 
             <!-- project intro -->
             <v-col cols="12" md="5" class="mb-5" :class="($vuetify.breakpoint.smAndDown ? 'px-7 ' : '') + $store.getters['breakpoints/font/p']">
-                <v-sheet class="transparent" :class="{ 'grey--text text--lighten-1': $store.getters.isDarkMode }" :dark="$store.getters.isDarkMode">
+                <v-sheet class="transparent" :class="{ 'grey--text text--lighten-1': $vuetify.theme.dark }">
                     <p>
                         <b>{{ project.title }}</b> is
                         <template v-if="project.desc.substr(0, 2).toLowerCase() === 'an'">
@@ -88,9 +88,7 @@
 
                     <v-sheet
                         class="mt-7 py-3 px-2 text-center rounded"
-                        :class="{
-                            'primary lighten-5': $store.getters.isLightMode
-                        }"
+                        :class="{ 'primary lighten-5': !$vuetify.theme.dark }"
                     >
                         <v-btn color="primary" v-if="project.repository" large text @click="$store.commit('goto', project.repository)">
                             <v-icon small left>$github</v-icon>
