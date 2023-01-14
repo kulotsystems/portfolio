@@ -33,6 +33,7 @@
                             dense
                             @click.stop="switchChange"
                             color="dark"
+                            :ripple="false"
                         />
                     </v-btn>
                 </div>
