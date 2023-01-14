@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-sheet v-model="$store.state.dialog.image.opened" :retain-focus="false" :max-width="maxWidth" scrollable :dark="$store.getters.isDarkMode">
+    <v-bottom-sheet v-model="$store.state.dialog.image.opened" :retain-focus="false" :max-width="maxWidth" scrollable>
         <v-card tile elevation="24">
             <v-card-title class="pa-3">
                 <p class="ma-0">

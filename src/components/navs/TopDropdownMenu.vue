@@ -1,7 +1,7 @@
 <template>
-    <v-menu offset-y transition="slide-y-transition" :dark="$store.getters.isDarkMode">
+    <v-menu offset-y transition="slide-y-transition">
         <template v-slot:activator="{ on, attrs }">
-            <v-btn text color="white" v-bind="attrs" v-on="on" width="125" class="mx-1" :class="{ 'grey--text': $store.getters.isDarkMode }" style="justify-content: right">
+            <v-btn text color="white" v-bind="attrs" v-on="on" width="125" class="mx-1" style="justify-content: right" :class="{ 'grey--text': $vuetify.theme.dark }">
                 {{ activeMenuItem.text }}
                 <v-icon right>more_vert</v-icon>
             </v-btn>
@@ -13,8 +13,8 @@
                 @click="menuClick(menuItem.name)"
                 :class="{
                     'primary white--text': menuItem.name === activeMenuItem.name,
-                    'primary--text'      : $store.getters.isLightMode && menuItem.name !== activeMenuItem.name,
-                    'grey--text'         : $store.getters.isDarkMode  && menuItem.name !== activeMenuItem.name
+                    'primary--text'      : !$vuetify.theme.dark && menuItem.name !== activeMenuItem.name,
+                    'grey--text'         : $vuetify.theme.dark  && menuItem.name !== activeMenuItem.name
                 }"
             >
                 <v-list-item-title>

@@ -6,7 +6,6 @@
         tile
         width="100%"
         height="100%"
-        :dark="$store.getters.isDarkMode"
     />
 </template>
 

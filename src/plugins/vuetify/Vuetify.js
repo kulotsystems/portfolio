@@ -81,13 +81,13 @@ export default new Vuetify({
         themes: {
             light: {
                 primary  : '#4169e1',
-                secondary: '#ac4cbc',
-                success  : '#68cf29',
-                info     : '#363062',
-                warning  : '#ffab2d',
-                error    : '#f72b50',
                 light    : '#c8c8c8',
                 dark     : '#444444'
+            },
+            dark: {
+                primary  : '#4169e1',
+                light    : '#444444',
+                dark     : '#c8c8c8'
             }
         }
     }

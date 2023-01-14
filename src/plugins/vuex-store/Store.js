@@ -59,9 +59,6 @@ export default new Vuex.Store({
         appName: (state) => {
             return state.app.name;
         },
-        isLightMode: (state) => {
-            return state.app.theme === 'light';
-        },
         isDarkMode: (state) => {
             return state.app.theme === 'dark';
         },
