@@ -24,15 +24,17 @@
             <profile/>
             <template v-slot:append>
                 <div class="pa-3 d-flex justify-center">
-                    <v-switch
-                        v-model="isDarkMode"
-                        label="Dark Mode"
-                        inset
-                        flat
-                        dense
-                        @change="toggleTheme"
-                        class="text-button"
-                    />
+                    <v-btn block text large @click="switchClick">
+                        <v-switch
+                            v-model="isDarkMode"
+                            label="Dark Mode"
+                            inset
+                            flat
+                            dense
+                            @click.stop="switchChange"
+                            color="dark"
+                        />
+                    </v-btn>
                 </div>
             </template>
         </v-navigation-drawer>
@@ -70,6 +72,13 @@
                     this.$store.commit('goLight');
                     this.$vuetify.theme.dark = false;
                 }
+            },
+            switchClick() {
+                this.isDarkMode = !this.isDarkMode;
+                this.toggleTheme();
+            },
+            switchChange() {
+                this.toggleTheme();
             }
         },
         created() {
