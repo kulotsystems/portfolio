@@ -36,6 +36,7 @@
                                     type="text"
                                     class="mb-2"
                                     :background-color="$vuetify.theme.dark ? 'light' : 'white'"
+                                    :color="$vuetify.theme.dark ? 'white': 'primary'"
                                     :rules="[rules.required]"
                                     :readonly="sending"
                                     hint="Your full name OR company that you're representing."
@@ -47,6 +48,7 @@
                                     type="email"
                                     class="mb-2"
                                     :background-color="$vuetify.theme.dark ? 'light' : 'white'"
+                                    :color="$vuetify.theme.dark ? 'white': 'primary'"
                                     :rules="[rules.required, rules.email]"
                                     :readonly="sending"
                                     outlined
@@ -56,6 +58,7 @@
                                     label="Message"
                                     class="mb-2"
                                     :background-color="$vuetify.theme.dark ? 'light' : 'white'"
+                                    :color="$vuetify.theme.dark ? 'white': 'primary'"
                                     :rules="[rules.required, rules.max_chars(form.message, counter.message.max)]"
                                     counter
                                     :maxlength="counter.message.max"
