@@ -6,7 +6,7 @@
             @click="menuClick(menuItem.name)"
         >
             <span :class="{
-                'primary--text': menuItem.name !== activeMenuItem.item.name,
+                'primary--text': menuItem.name !== activeMenuItem.item.name && !$vuetify.theme.dark,
                 'grey--text'   : menuItem.name !== activeMenuItem.item.name && $vuetify.theme.dark
             }">{{ menuItem.text }}</span>
             <v-icon>{{ menuItem.icon }}</v-icon>
