@@ -98,7 +98,7 @@
         <v-dialog v-model="previewing" scrollable max-width="640px">
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span :class="'primary--text lighten-1 ' + $store.getters['breakpoints/font/h3']">Message Preview</span>
+                    <span :class="($vuetify.theme.dark ? '' : 'primary--text lighten-1 ') + $store.getters['breakpoints/font/h3']">Message Preview</span>
                     <v-spacer/>
                     <v-btn icon @click="previewing = false">
                         <v-icon>close</v-icon>
@@ -126,7 +126,7 @@
         <v-dialog v-model="confirming" scrollable max-width="480px" persistent>
             <v-card flat>
                 <v-card-title class="pr-4">
-                    <span :class="'primary--text lighten-1 ' + $store.getters['breakpoints/font/h3']">Confirmation</span>
+                    <span :class="($vuetify.theme.dark ? '' : 'primary--text lighten-1 ') + $store.getters['breakpoints/font/h3']">Confirmation</span>
                     <v-spacer/>
                     <v-btn icon @click="confirm">
                         <v-icon>close</v-icon>
