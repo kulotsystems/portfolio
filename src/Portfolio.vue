@@ -72,6 +72,16 @@
                         clearInterval(mdiTmr);
                 }, 60);
             }
+
+            // show a glimpse of sidebar on xs-screen on first load
+            if(this.$vuetify.breakpoint.smAndDown && this.$route.name === 'overview') {
+                setTimeout(() => {
+                    this.$store.commit('navigation/openSidebar');
+                    setTimeout(() => {
+                        this.$store.commit('navigation/closeSidebar');
+                    }, 2048);
+                }, 128);
+            }
         }
     }
 </script>
