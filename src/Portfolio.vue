@@ -133,6 +133,13 @@
     .v-application .topbar-backdrop {
         display: none;
     }
+    .v-application, .topbar-backdrop {
+        transition: .2s cubic-bezier(.4,0,.2,1);
+        transition-duration: 0.2s;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0s;
+        transition-property: all;
+    }
     @media screen and (min-width: 2500px) {
         :root {
             --gap: calc((100% - 2276px) / 2);
