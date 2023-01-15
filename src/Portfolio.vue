@@ -1,5 +1,6 @@
 <template>
     <v-app :class="{ 'mdi-loading': mdiLoading }">
+        <div class="topbar-backdrop"></div>
         <topbar/>
         <sidebar/>
         <v-main :class="{ 'grey lighten-5': !$vuetify.theme.dark, 'light darken-3': $vuetify.theme.dark }">
@@ -118,5 +119,50 @@
 
     .mdi-loading .material-icons {
         color: transparent !important;
+    }
+
+    .v-application.theme--light {
+        background: #fafafa;
+    }
+
+    .v-application.theme--dark {
+        background: #000000;
+    }
+
+    /* center content on screen >= 2500px */
+    .v-application .topbar-backdrop {
+        display: none;
+    }
+    @media screen and (min-width: 2500px) {
+        :root {
+            --gap: calc((100% - 2276px) / 2);
+        }
+        .v-application {
+            padding-left: var(--gap);
+            padding-right: var(--gap);
+        }
+        .v-navigation-drawer {
+            left: var(--gap);
+        }
+        .v-application--wrap > header {
+            margin-left: var(--gap);
+            margin-right: var(--gap)
+        }
+
+        .v-application .topbar-backdrop {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 80px;
+            width: 100%;
+        }
+
+        .v-application.theme--light .topbar-backdrop {
+            background: #4169e1;
+        }
+        .v-application.theme--dark .topbar-backdrop {
+            background: #191919;
+        }
     }
 </style>
