@@ -157,12 +157,16 @@
             height: 80px;
             width: 100%;
         }
-
         .v-application.theme--light .topbar-backdrop {
             background: #4169e1;
         }
         .v-application.theme--dark .topbar-backdrop {
             background: #191919;
+        }
+
+        #dialog-loader {
+            margin-left: calc(var(--gap) * -1);
+            margin-right: calc(var(--gap) * -1);
         }
     }
 </style>
