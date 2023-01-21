@@ -85,6 +85,25 @@
         created() {
             this.isDarkMode = this.$store.getters.isDarkMode;
             this.$vuetify.theme.dark = this.isDarkMode;
+        },
+        mounted() {
+            // watch for system theme change [https://davidwalsh.name/detect-system-theme-preference-change-using-javascript]
+            if(window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)')
+                    .addEventListener('change',({ matches }) => {
+                        localStorage.removeItem('theme');
+                        if (matches) {
+                            this.isDarkMode = true;
+                            this.$vuetify.theme.dark = true;
+                            this.$store.commit('goDark', false);
+                        }
+                        else {
+                            this.isDarkMode = false;
+                            this.$vuetify.theme.dark = false;
+                            this.$store.commit('goLight', false);
+                        }
+                    });
+            }
         }
     }
 </script>

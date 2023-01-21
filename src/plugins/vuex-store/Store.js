@@ -84,13 +84,19 @@ export default new Vuex.Store({
         goto: (state, url) => {
             window.open(url, '_blank');
         },
-        goLight: (state) => {
+        goLight: (state, save) => {
             state.app.theme = 'light';
-            localStorage.setItem('theme', state.app.theme);
+            if(save === undefined)
+                save = true;
+            if(save)
+                localStorage.setItem('theme', state.app.theme);
         },
-        goDark: (state) => {
+        goDark: (state, save) => {
             state.app.theme = 'dark';
-            localStorage.setItem('theme', state.app.theme);
+            if(save === undefined)
+                save = true;
+            if(save)
+                localStorage.setItem('theme', state.app.theme);
         }
     },
 
