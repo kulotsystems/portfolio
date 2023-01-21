@@ -78,7 +78,14 @@
                 setTimeout(() => {
                     this.$store.commit('navigation/openSidebar');
                     setTimeout(() => {
-                        this.$store.commit('navigation/closeSidebar');
+                        const tmr = setInterval(() => {
+                            if(this.$store.getters['navigation/sidebarLoaded']) {
+                                clearInterval(tmr);
+                                this.$store.commit('navigation/closeSidebar');
+                            }
+                            else if(!this.$store.getters['navigation/sidebarOpened'])
+                                clearInterval(tmr);
+                        }, 128);
                     }, 2048);
                 }, 128);
             }

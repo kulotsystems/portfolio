@@ -31,7 +31,8 @@ export default {
         },
 
         sidebar: {
-            opened: false
+            opened: false,
+            loaded: false
         }
     },
 
@@ -46,6 +47,10 @@ export default {
 
         sidebarOpened: (state) => {
             return state.sidebar.opened;
+        },
+
+        sidebarLoaded: (state) => {
+            return state.sidebar.loaded;
         }
     },
 
@@ -60,6 +65,10 @@ export default {
 
         closeSidebar: (state) => {
             state.sidebar.opened = false;
+        },
+
+        loadSidebar: (state) => {
+            state.sidebar.loaded = true;
         }
     }
 }
