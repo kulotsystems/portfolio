@@ -2,7 +2,7 @@
     <v-card flat tile class="transparent">
         <v-card-text class="pt-9" align="center">
             <v-avatar :size="avatarSize">
-                <v-img :src="profilePhoto">
+                <v-img :src="profilePhoto" @load="$store.commit('navigation/loadSidebar')">
                     <template v-slot:placeholder>
                         <v-row class="fill-height ma-0" align="center" justify="center">
                             <v-progress-circular indeterminate color="primary lighten-3"/>
