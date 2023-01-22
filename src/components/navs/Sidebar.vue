@@ -64,13 +64,14 @@
             }
         },
         methods : {
-            toggleTheme() {
+            toggleTheme(save) {
+                if(save === undefined) save = true;
                 if(this.isDarkMode) {
-                    this.$store.commit('goDark');
+                    this.$store.commit('goDark', save);
                     this.$vuetify.theme.dark = true;
                 }
                 else {
-                    this.$store.commit('goLight');
+                    this.$store.commit('goLight', save);
                     this.$vuetify.theme.dark = false;
                 }
             },
@@ -92,16 +93,8 @@
                 window.matchMedia('(prefers-color-scheme: dark)')
                     .addEventListener('change',({ matches }) => {
                         localStorage.removeItem('theme');
-                        if (matches) {
-                            this.isDarkMode = true;
-                            this.$vuetify.theme.dark = true;
-                            this.$store.commit('goDark', false);
-                        }
-                        else {
-                            this.isDarkMode = false;
-                            this.$vuetify.theme.dark = false;
-                            this.$store.commit('goLight', false);
-                        }
+                        this.isDarkMode = matches;
+                        this.toggleTheme(false);
                     });
             }
         }
