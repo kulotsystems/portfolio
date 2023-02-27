@@ -46,7 +46,7 @@ export default new Vuex.Store({
                 lastName  : 'Babol',
                 nameSuffix: '',
             },
-            position: 'Full-Stack Web Developer and Dedicated Tech Educator',
+            position: 'Full-Stack Web Developer and Innovative Tech Educator',
             socials : {
                 Twitter : 'https://twitter.com/kulotsystems',
                 Facebook: 'https://web.facebook.com/kulotsystem',
