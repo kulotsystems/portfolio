@@ -129,12 +129,10 @@
             'button-org'    : defineAsyncComponent(() => import('../components/buttons/ButtonOrg.vue')),
             'label-dev-tool': defineAsyncComponent(() => import('../components/labels/LabelDevTool.vue')),
             'project'       : defineAsyncComponent(() => import('../components/cards/Project.vue')),
-            'project-classy'             : defineAsyncComponent(() => import('../components/articles/ProjectSanayon.vue')),
+            'project-classy'             : defineAsyncComponent(() => import('../components/articles/ProjectClassy.vue')),
             'project-schedule'           : defineAsyncComponent(() => import('../components/articles/ProjectSchedule.vue')),
             'project-dtr-lgu-nabua'      : defineAsyncComponent(() => import('../components/articles/ProjectDtrLguNabua.vue')),
-            'project-lending-system'     : defineAsyncComponent(() => import('../components/articles/ProjectAppexGBLendingSystem.vue')),
-            'project-pageant-tabulations': defineAsyncComponent(() => import('../components/articles/ProjectPageantTabulations.vue')),
-            'project-sanayon'            : defineAsyncComponent(() => import('../components/articles/ProjectSanayon.vue')),
+            'project-lending-system'     : defineAsyncComponent(() => import('../components/articles/ProjectAppexGBLendingSystem.vue'))
         },
         data() {
             return {}
