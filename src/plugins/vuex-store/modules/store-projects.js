@@ -9,8 +9,6 @@ import classyCover     from '../../../assets/img/classy/classy-cover-v3.png';
 import scheduleCover   from '../../../assets/img/schedule/schedule-cover-v2.png';
 import dtrCover        from '../../../assets/img/dtr/dtr-cover-v2.png';
 import appexgbCover    from '../../../assets/img/appexgb/appexgb-cover-v3.png';
-import tabulationCover from '../../../assets/img/tabulation/tabulation-cover-v1.png';
-import sanayonCover    from '../../../assets/img/sanayon/sanayon-cover-v1.png';
 
 export default {
     namespaced: true,
@@ -64,31 +62,7 @@ export default {
                     start  : '2021-05',
                     end    : null
                 }
-            },
-            'pageant-tabulations': {
-                title      : 'Pageant Tabulations',
-                desc       : 'A collection of tabulation systems that I created and managed for different beauty pageant events.',
-                cover      : tabulationCover,
-                production : null,
-                repository : 'https://github.com/kulotsystems/pageant-tabulations',
-                techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
-                timeFrame  : {
-                    start  : '2019-02',
-                    end    : null
-                }
-            },
-            'sanayon': {
-                title      : 'Sanayon',
-                desc       : 'A shopping app that caters for local sellers and buyers and promotes locally-produced products.',
-                cover      : sanayonCover,
-                production : null,
-                repository : 'https://github.com/kulotsystems/sanayonph',
-                techStack  : ['html', 'css', 'javascript', 'vue', 'vuetify', 'php', 'mysql', 'laravel'],
-                timeFrame  : {
-                    start  : '2021-09',
-                    end    : '2022-04'
-                }
-            },
+            }
         }
     },
 

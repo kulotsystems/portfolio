@@ -114,12 +114,10 @@
             'button-social' : () => import('../components/buttons/ButtonSocial.vue'),
             'label-dev-tool': () => import('../components/labels/LabelDevTool.vue'),
             'project'       : () => import('../components/cards/Project.vue'),
-            'project-classy'             : () => import('../components/articles/ProjectSanayon.vue'),
+            'project-classy'             : () => import('../components/articles/ProjectClassy.vue'),
             'project-schedule'           : () => import('../components/articles/ProjectSchedule.vue'),
             'project-dtr-lgu-nabua'      : () => import('../components/articles/ProjectDtrLguNabua.vue'),
-            'project-lending-system'     : () => import('../components/articles/ProjectAppexGBLendingSystem.vue'),
-            'project-pageant-tabulations': () => import('../components/articles/ProjectPageantTabulations.vue'),
-            'project-sanayon'            : () => import('../components/articles/ProjectSanayon.vue'),
+            'project-lending-system'     : () => import('../components/articles/ProjectAppexGBLendingSystem.vue')
         },
         data() {
             return {}
