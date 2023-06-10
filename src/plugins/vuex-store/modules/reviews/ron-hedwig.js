@@ -84,7 +84,7 @@ export default {
         socials: {
             github  : 'https://github.com/ronhedwigzape',
             twitter : 'https://twitter.com/ronhedwigzape',
-            facebook: 'https://www.facebook.com/ronhedwig.zape.hogwarts.headmaster'
+            facebook: 'https://www.facebook.com/ronhedwigzape'
         }
         // ===================================================================================================
 
