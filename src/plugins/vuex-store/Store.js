@@ -49,7 +49,7 @@ export default new Vuex.Store({
             position: 'Full-Stack Web Developer and Innovative Tech Educator',
             socials : {
                 Twitter : 'https://twitter.com/kulotsystems',
-                Facebook: 'https://web.facebook.com/kulotsystem',
+                Facebook: 'https://web.facebook.com/kulotsystems.arvicbabol',
                 Github  : 'https://github.com/kulotsystems',
             }
         }
