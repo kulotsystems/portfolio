@@ -12,6 +12,7 @@ import junjun from './reviews/jun-jun.js';
 import ivan from './reviews/ivan.js';
 import kylie from './reviews/kylie.js';
 import ronhedwig from './reviews/ron-hedwig.js';
+import ruel from './reviews/ruel.js';
 
 export default {
     namespaced: true,
@@ -26,7 +27,8 @@ export default {
         florencio,
         junjun,
         ivan,
-	    kylie,
-        ronhedwig
+        kylie,
+        ronhedwig,
+        ruel,
     }
 }
