@@ -19,7 +19,7 @@ export default {
                 title      : 'Classy',
                 desc       : 'A class management app that I use to store school records and give online activities and exams to students.',
                 cover      : classyCover,
-                production : 'https://www.kulotsystems.tech/old/apps/classy/temp',
+                production : 'https://kulotsystems.tech/old/apps/classy/temp',
                 repository : null,
                 techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
                 timeFrame  : {
@@ -31,7 +31,7 @@ export default {
                 title      : 'Schedule',
                 desc       : 'An app that displays class schedules and provides Classy account creation and retrieval to students.',
                 cover      : scheduleCover,
-                production : 'https://www.kulotsystems.tech/old/login/redirect.php?app=schedule&account=student',
+                production : 'https://kulotsystems.tech/old/login/redirect.php?app=schedule&account=student',
                 repository : null,
                 techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'php', 'mysql'],
                 timeFrame  : {
@@ -55,7 +55,7 @@ export default {
                 title      : 'DTR @ LGU Nabua',
                 desc       : 'A web portal hooked into the DTR machine of LGU Nabua that provides DTR viewing and monitoring to employees.',
                 cover      : dtrCover,
-                production : 'https://www.kulotsystems.tech/dtr',
+                production : 'https://kulotsystems.tech/dtr',
                 repository : 'https://github.com/kulotsystems/dtr-lgu-nabua',
                 techStack  : ['html', 'css', 'bootstrap', 'javascript', 'jquery', 'vue', 'php', 'mysql', 'laravel'],
                 timeFrame  : {

@@ -207,7 +207,7 @@
                     this.error   = null;
 
                     const siteKey  = '6LcyEWgnAAAAAMtQWPoL-YsQsFhuqTrql6ra5Fbw';
-                    const endpoint = 'https://www.kulotsystems.tech/api/portfolio/contact';
+                    const endpoint = 'https://kulotsystems.tech/api/portfolio/contact';
                     load(siteKey)
                         .then(recaptcha => {
                             recaptcha.execute('submit')
