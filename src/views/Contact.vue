@@ -206,7 +206,7 @@
                     this.sending = true;
                     this.error   = null;
 
-                    const siteKey  = '6Lf9HVAhAAAAAHxMVa_vdI1n4wt8tR-7aSjaFczb';
+                    const siteKey  = '6LcyEWgnAAAAAMtQWPoL-YsQsFhuqTrql6ra5Fbw';
                     const endpoint = 'https://www.kulotsystems.tech/api/portfolio/contact';
                     load(siteKey)
                         .then(recaptcha => {
