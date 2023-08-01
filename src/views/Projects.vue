@@ -1,6 +1,6 @@
 <template>
     <v-container class="pl-md-0 pb-5 pb-md-12">
-        <!-- all projects -->
+        <!-- featured projects -->
         <v-card v-if="!project" flat class="transparent mt-2 mt-sm-3 mt-md-4">
             <v-card-text>
                 <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
@@ -19,6 +19,31 @@
                         <project :project="{ slug: slug, ...project }"/>
                     </v-lazy>
                 </v-row>
+            </v-card-subtitle>
+        </v-card>
+
+        <!-- open source -->
+        <v-card v-if="!project" flat class="transparent mt-8 mt-sm-9 mt-md-10">
+            <v-card-text>
+                <p class="text-h4 text-md-h3 text-xl-h2 font-weight-bold mb-0">
+                    Open-Source Projects
+                </p>
+            </v-card-text>
+
+            <v-card-subtitle>
+                <p class="mb-7" :class="$store.getters['breakpoints/font/p']">
+                    In addition to working on personal and client projects,
+                    I am passionately committed to contributing to and maintaining
+                    various open-source projects in the following organizations:
+                </p>
+
+                <button-org
+                    v-for="(organization, slug, index) in organizations"
+                    :key="slug"
+                    :organization="organization"
+                    :block="$vuetify.breakpoint.xs"
+                    class="mr-0 mr-sm-3 mt-3"
+                />
             </v-card-subtitle>
         </v-card>
 
@@ -112,6 +137,7 @@
         name: 'Projects',
         components: {
             'button-social' : () => import('../components/buttons/ButtonSocial.vue'),
+            'button-org'    : () => import('../components/buttons/ButtonOrg.vue'),
             'label-dev-tool': () => import('../components/labels/LabelDevTool.vue'),
             'project'       : () => import('../components/cards/Project.vue'),
             'project-classy'             : () => import('../components/articles/ProjectClassy.vue'),
@@ -131,6 +157,9 @@
                     return this.projects[this.$route.params.slug];
                 else
                     return null;
+            },
+            organizations() {
+                return this.$store.getters['organizations/all'];
             }
         },
         methods : {
