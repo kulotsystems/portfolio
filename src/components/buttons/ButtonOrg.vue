@@ -5,7 +5,7 @@
         x-large
         height="64"
         color="dark"
-        outlined
+        variant="outlined"
         :block="block"
         style="text-transform: unset; justify-content: left"
         @click="openLink"
