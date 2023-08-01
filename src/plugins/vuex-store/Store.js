@@ -13,14 +13,15 @@ Vue.use(Vuex);
 
 
 // --- MODULES ------------------------------------------------------------
-import dialog       from './modules/store-dialog.js';
-import projects     from './modules/store-projects.js';
-import navigation   from './modules/store-navigation.js';
-import technologies from './modules/store-technologies.js';
-import reviews      from './modules/store-reviews.js';
-import pullRequests from './modules/store-pull-requests.js';
-import breakpoints  from './modules/store-breakpoints.js';
-import transitions  from './modules/store-transitions.js';
+import dialog        from './modules/store-dialog.js';
+import projects      from './modules/store-projects.js';
+import organizations from './modules/store-organizations.js';
+import navigation    from './modules/store-navigation.js';
+import technologies  from './modules/store-technologies.js';
+import reviews       from './modules/store-reviews.js';
+import pullRequests  from './modules/store-pull-requests.js';
+import breakpoints   from './modules/store-breakpoints.js';
+import transitions   from './modules/store-transitions.js';
 
 // detect dark mode
 const isDarkMode = () => {
@@ -58,6 +59,9 @@ export default new Vuex.Store({
     getters: {
         appName: (state) => {
             return state.app.name;
+        },
+        appTheme: (state) => {
+            return state.app.theme;
         },
         isDarkMode: (state) => {
             return state.app.theme === 'dark';
@@ -107,6 +111,7 @@ export default new Vuex.Store({
     modules: {
         dialog,
         projects,
+        organizations,
         navigation,
         technologies,
         reviews,
