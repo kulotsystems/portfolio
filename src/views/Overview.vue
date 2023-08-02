@@ -3,7 +3,7 @@
         <v-card flat class="transparent mt-2 mt-sm-3 mt-md-4 mb-16 pb-8">
             <v-card-text>
                 <p class="font-weight-bold mb-0" :class="$store.getters['breakpoints/font/h1']">
-                    Let's Transform Your Business and Inspire the Future Together
+                    Let's tech things up!
                 </p>
             </v-card-text>
 
@@ -11,14 +11,13 @@
                 <v-row>
                     <v-col cols="12">
                         <p>
-                            Hello World! My name is {{ $store.getters.profile.name.firstName }}
-                            and I am a full-stack developer with a passion for helping small to medium-sized businesses and organizations
+                            Hi there, my name is <b>Arvic</b>.
+                            I'm a full-stack web developer
+                            committed to helping organizations and businesses
                             streamline their operations through the use of web technologies.
-                        </p>
-
-                        <p>
-                            In addition to my work as a developer,
-                            I am also an educator who is dedicated to inspiring the next generation of tech professionals.
+                            I also live my passion for education,
+                            adapting to the latest tech trends
+                            and inspiring the next generation of tech professionals.
                         </p>
                     </v-col>
                 </v-row>
