@@ -1,14 +1,13 @@
 <template>
-<v-bottom-navigation v-if="windowHeight > 512" app grow :value="activeMenuItem.index" active-class="primary white--text" :height="48" fixed>
+    <v-bottom-navigation v-if="windowHeight > 512" app grow :value="activeMenuItem.index" :height="48" fixed>
         <v-btn
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             @click="menuClick(menuItem.name)"
         >
-            <span :class="{
-                'primary--text': menuItem.name !== activeMenuItem.item.name && !$vuetify.theme.dark,
-                'grey--text'   : menuItem.name !== activeMenuItem.item.name && $vuetify.theme.dark
-            }">{{ menuItem.text }}</span>
+            <span :class="{ 'grey--text': menuItem.name !== activeMenuItem.item.name }">
+                {{ menuItem.text }}
+            </span>
             <v-icon>{{ menuItem.icon }}</v-icon>
         </v-btn>
     </v-bottom-navigation>
