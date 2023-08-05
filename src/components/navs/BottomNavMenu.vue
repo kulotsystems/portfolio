@@ -5,7 +5,7 @@
             :key="menuItem.name"
             @click="menuClick(menuItem.name)"
         >
-            <span :class="{ 'grey--text': menuItem.name !== activeMenuItem.item.name }">
+            <span :class="{ 'grey--text': menuItem.name !== activeMenuItem.item.name && $vuetify.theme.dark }">
                 {{ menuItem.text }}
             </span>
             <v-icon>{{ menuItem.icon }}</v-icon>
