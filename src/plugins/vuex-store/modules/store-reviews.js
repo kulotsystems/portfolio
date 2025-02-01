@@ -13,6 +13,7 @@ import ivan from './reviews/ivan.js';
 import kylie from './reviews/kylie.js';
 import ronhedwig from './reviews/ron-hedwig.js';
 import ruel from './reviews/ruel.js';
+import louie from './reviews/louie.js';
 
 export default {
     namespaced: true,
@@ -30,5 +31,6 @@ export default {
         kylie,
         ronhedwig,
         ruel,
+        louie,
     }
 }
